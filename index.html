@@ -2,47 +2,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Planetært.dk</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Planetært.dk – Vi lever planetært</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: #f4f7f1;
+      color: #2e2e2e;
+    }
+    header {
+      background: #a5d6a7;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    nav {
+      background: #81c784;
+      display: flex;
+      justify-content: space-around;
+      padding: 1rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      text-align: center;
+      background: url('HERO-BILLEDE.jpg') no-repeat center center;
+      background-size: cover;
+      padding: 6rem 1rem;
+      color: white;
+    }
+    .hero h2 {
+      font-size: 2rem;
+    }
+    .section {
+      padding: 2rem 1rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    .infoboxes {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    @media(min-width: 600px) {
+      .infoboxes {
+        flex-direction: row;
+      }
+    }
+    .infobox {
+      background: white;
+      border-left: 5px solid #81c784;
+      padding: 1rem;
+      flex: 1;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #c8e6c9;
+      font-size: 0.8rem;
+    }
+  </style>
 </head>
-<body class="bg-green-50 text-gray-800 font-sans">  <!-- HERO -->  <section class="text-center py-16 px-6 bg-green-100">
-    <h1 class="text-4xl font-bold mb-2">Det planetære bæredygtige liv er muligt</h1>
-    <p class="text-lg mb-6">Ikke perfekt – men bevidst. Her er 2 nemme ideer, og du er i gang:</p>
-    <ul class="mb-6 space-y-2">
-      <li>1. Spis mad der ellers ville blive smidt ud</li>
-      <li>2. Brug det, du allerede har</li>
-    </ul>
-    <a href="#ideer" class="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800">Se alle 100 levemål</a>
-  </section>  <!-- MIN VEJ -->  <section class="py-12 px-6">
-    <h2 class="text-2xl font-semibold mb-4">Min vej under grænserne</h2>
-    <p class="mb-4">Vi bor 79 m², cykler, elsker restemad og sover roligt. Her kan du følge med i vores hverdag – det gode og det skæve.</p>
-    <a href="#voresliv" class="text-green-700 underline">Læs om vores liv</a>
-  </section>  <!-- PLANETÆRE GRÆNSER -->  <section class="bg-green-100 py-12 px-6">
-    <h2 class="text-2xl font-semibold mb-4">Hvad er planetære grænser?</h2>
-    <p>De planetære grænser handler ikke om afsavn – men om balance. Vi har 9 grænser for klima, biodiversitet, vand osv. Går vi over dem, risikerer vi at tippe hele kloden.</p>
-    <a href="#graenser" class="text-green-700 underline mt-2 block">Læs mere og se grafik</a>
-  </section>  <!-- IDEER -->  <section id="ideer" class="py-12 px-6">
-    <h2 class="text-2xl font-semibold mb-4">100 idéer til planetært liv</h2>
-    <ul class="list-disc list-inside space-y-1">
-      <li>Spis sæsonens grønt</li>
-      <li>Del dine ting med naboen</li>
-      <li>Køb tøj brugt</li>
-      <li>Drop plastikposer</li>
-      <li>Lev uden flyrejser</li>
-    </ul>
-    <a href="#" class="text-green-700 underline mt-2 block">Se hele listen</a>
-  </section>  <!-- GUIDES -->  <section class="bg-green-100 py-12 px-6">
-    <h2 class="text-2xl font-semibold mb-4">Hverdags-guides</h2>
-    <ul class="list-disc list-inside space-y-1">
-      <li>Kompost uden have</li>
-      <li>Snackfri uge med børn</li>
-      <li>Madspildsjagt</li>
-      <li>Cykel som bil #2</li>
-    </ul>
-    <a href="#" class="text-green-700 underline mt-2 block">Se alle guides</a>
-  </section>  <!-- KONTAKT -->  <section class="py-12 px-6">
-    <h2 class="text-2xl font-semibold mb-4">Kontakt</h2>
-    <p>Har du spørgsmål, ideer eller vil du dele din rejse? Skriv til mig – jeg svarer med varme og nysgerrighed.</p>
-    <a href="mailto:kontakt@planetært.dk" class="text-green-700 underline mt-2 block">kontakt@planetært.dk</a>
-  </section></body>
+<body>
+  <header>
+    <h1>Vi lever planetært</h1>
+    <p>Ikke perfekt – men bevidst</p>
+  </header>  <nav>
+    <a href="#ideer">100 Idéer</a>
+    <a href="#vej">Min Vej</a>
+    <a href="#graenser">Planetære Grænser</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>  <section class="hero">
+    <h2>Det planetære bæredygtige liv er muligt</h2>
+    <p>To nemme idéer og du er på vej</p>
+  </section>  <section class="section" id="ideer">
+    <h3>Start her</h3>
+    <div class="infoboxes">
+      <div class="infobox">
+        <h4>1. Madspild</h4>
+        <p>Red en pose grønt – lav en suppe.</p>
+      </div>
+      <div class="infobox">
+        <h4>2. Del mere</h4>
+        <p>Byt ting, lån værktøj, del haven.</p>
+      </div>
+    </div>
+  </section>  <section class="section" id="vej">
+    <h3>Min vej til planetært liv</h3>
+    <p>Ærlig fortælling om hvordan vi startede og hvorfor det føles godt.</p>
+  </section>  <footer>
+    <p>&copy; 2025 Planetært.dk</p>
+  </footer>
+</body>
 </html>
