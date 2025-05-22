@@ -1,6 +1,6 @@
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Georgia', serif;
     background-color: #f8f9f4;
     color: #2e3b2e;
     margin: 0;
@@ -24,4 +24,42 @@ h1 {
 }
 section {
     padding: 2rem;
+}
+
+
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav li {
+    float: left;
+    position: relative;
+}
+
+nav li a {
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    color: #2e3b2e;
+}
+
+nav li ul {
+    display: none;
+    position: absolute;
+    background-color: #f8f9f4;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    min-width: 160px;
+    z-index: 1;
+}
+
+nav li:hover ul {
+    display: block;
+}
+
+nav li ul li {
+    float: none;
 }
