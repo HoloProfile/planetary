@@ -189,11 +189,12 @@
 
 .idea {
   background-color: rgba(213, 230, 213, 0.9);
-   color: #2c3e50;
+  color: #2c3e50;
   padding: 1.5rem;
   border-radius: 10px;
   text-align: left;
- box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Valgfri: lidt skygge */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  font-size: 1.1rem;
 }
 
 .idea h3 {
