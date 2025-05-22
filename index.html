@@ -2,9 +2,8 @@
 <html lang="da">
 <head>
   <meta charset="UTF-8">
-  <title>Planetært Liv</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <title>Planetært Liv</title>
   <style>
     body {
       font-family: Georgia, serif;
@@ -33,6 +32,7 @@
       cursor: pointer;
       user-select: none;
       z-index: 4;
+      display: block;
     }
 
     .nav-overlay {
@@ -47,10 +47,9 @@
     }
 
     .nav-links {
-      list-style-type: none;
+      list-style: none;
       padding: 2rem 1rem;
       margin: 0;
-      display: flex;
       flex-direction: column;
       background-color: #fff;
       position: fixed;
@@ -61,6 +60,7 @@
       transition: right 0.3s ease;
       box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
       z-index: 3;
+      display: flex;
     }
 
     .nav-links.open {
@@ -78,54 +78,30 @@
       font-size: 1.2rem;
     }
 
-    .hero-section {
-      background: url('assets/images/hero.jpg') no-repeat center center;
-      background-size: cover;
-      padding: 6rem 2rem;
-      text-align: center;
-      color: white;
-    }
+    /* Desktop: vis links i topbar og skjul burger */
+    @media (min-width: 768px) {
+      .burger {
+        display: none;
+      }
 
-    .hero-section h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
+      .nav-overlay {
+        display: none !important;
+      }
 
-    .hero-section p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-    }
+      .nav-links {
+        position: static;
+        display: flex !important;
+        flex-direction: row;
+        height: auto;
+        width: auto;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+      }
 
-    .start-button {
-      background-color: #3d5c3d;
-      color: white;
-      padding: 1rem 2rem;
-      text-decoration: none;
-      border-radius: 5px;
-      display: inline-block;
-    }
-
-    main {
-      padding: 3rem 1rem;
-      background-color: #ffffff;
-    }
-
-    section {
-      margin-bottom: 2.5rem;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-    }
-
-    section h2 {
-      font-size: 1.8rem;
-      margin-bottom: 0.5rem;
-    }
-
-    section p {
-      font-size: 1.1rem;
-      line-height: 1.6;
+      .nav-links li {
+        margin: 0 1rem;
+      }
     }
   </style>
 </head>
@@ -148,44 +124,12 @@
   </nav>
 </header>
 
-<section class="hero-section">
-  <h1>Et planetært liv – simpelt, stærkt og bæredygtigt</h1>
-  <p>Følg med – og vi viser dig hvordan!</p>
-  <a href="#start" class="start-button">Start her</a>
-</section>
-
-<main>
-  <section id="intro">
-    <h2>Hvem er vi?</h2>
-    <p>Vi er en familie der lever under de planetære grænser. Her deler vi erfaringer og konkrete ideer.</p>
-  </section>
-
-  <section id="learn">
-    <h2>Hvad kan man gøre her?</h2>
-    <p>Få inspiration, guides og konkrete tips til at leve bæredygtigt og med mening. Vi tror på, at handling starter med håb og fællesskab.</p>
-  </section>
-
-  <section id="contact">
-    <h2>Hvordan gør man?</h2>
-    <p>Vi viser dig vejen trin for trin – skriv endelig til os hvis du vil vide mere!</p>
-    <a href="mailto:kontakt@planetært.dk" class="start-button">Kontakt os</a>
-  </section>
-</main>
-
 <script>
- function toggleMenu() {
+  function toggleMenu() {
     const nav = document.getElementById("navLinks");
     const overlay = document.getElementById("navOverlay");
-
-    const isOpen = nav.classList.contains("open");
-
-    if (isOpen) {
-      nav.classList.remove("open");
-      overlay.style.display = "none";
-    } else {
-      nav.classList.add("open");
-      overlay.style.display = "block";
-    }
+    nav.classList.toggle("open");
+    overlay.style.display = nav.classList.contains("open") ? "block" : "none";
   }
 
   function closeMenu() {
@@ -193,6 +137,3 @@
     document.getElementById("navOverlay").style.display = "none";
   }
 </script>
-
-</body>
-</html>
