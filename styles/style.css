@@ -115,7 +115,7 @@
 .hero-section {
   background: url('styles/HEADER1.png') no-repeat center center;
   background-size: cover;
-  min-height: 70vh;
+  min-height: 60vh;
   padding: 6rem 2rem;
   text-align: center;
   color: white;
@@ -123,8 +123,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
+
 
 .hero-section::after {
   content: "";
