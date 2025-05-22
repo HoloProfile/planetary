@@ -231,18 +231,30 @@
   margin-bottom: 2rem;
 }
 
-.more-ideas-button {
-  background-color: #3d5c3d;
-  color: white;
-  padding: 1rem 2rem;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
+.more-ideas-box {
+  background-color: #e5f2e5;
+  padding: 2rem;
+  margin: 2rem auto;
+  text-align: center;
+  border-radius: 10px;
+  max-width: 600px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-.more-ideas-button:hover {
-  background-color: #2c3e50;
+.more-ideas-box p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.more-ideas-button {
+  display: inline-block;
+  background-color: #3d5c3d;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
 }
   .about-us {
   background-color: #f4f8f4;
