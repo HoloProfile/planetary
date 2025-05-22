@@ -197,6 +197,16 @@
 .idea h3 {
   margin-top: 0;
   color: #3d5c3d;
+
+@media (min-width: 768px) {
+  .ideas {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .idea {
+    width: 45%;
+  }
 }
 </style>
 </head>
