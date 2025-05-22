@@ -73,5 +73,29 @@
     font-weight: bold;
     font-size: 1.2rem;
   }
+@media (min-width: 768px) {
+  .burger {
+    display: none;
+  }
+
+  .nav-overlay {
+    display: none !important;
+  }
+
+  .nav-links {
+    display: flex !important;
+    flex-direction: row;
+    position: static;
+    height: auto;
+    width: auto;
+    box-shadow: none;
+    background: none;
+  }
+
+  .nav-links li {
+    margin: 0 1rem;
+  }
+}
+
 </style>
 </head>
