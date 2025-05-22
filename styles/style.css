@@ -2,42 +2,77 @@
   <meta charset="UTF-8">
   <title>Planetært Liv</title>
 
-  <style>
-    /* Her er hele din CSS */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem;
-      background-color: #f4f4f0;
-    }
+<style>
+  body {
+    font-family: Georgia, serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9f4;
+    color: #2c3e50;
+  }
 
-    .logo {
-      font-size: 1.5rem;
-    }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #d5e6d5;
+    position: relative;
+    z-index: 3;
+  }
 
-    .burger {
-      font-size: 2rem;
-      cursor: pointer;
-      user-select: none;
-    }
+  .logo {
+    font-size: 1.5rem;
+  }
 
-    .nav-links {
-      list-style-type: none;
-      padding: 0;
-      margin: 1rem 0 0 0;
-      display: none;
-      flex-direction: column;
-    }
+  .burger {
+    font-size: 2rem;
+    cursor: pointer;
+    user-select: none;
+    z-index: 4;
+  }
 
-    .nav-links li {
-      margin: 0.5rem 0;
-    }
+  .nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+  }
 
-    .nav-links a {
-      text-decoration: none;
-      color: #2c3e50;
-      font-weight: bold;
-    }
-  </style>
+  .nav-links {
+    list-style-type: none;
+    padding: 2rem 1rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100vh;
+    transition: right 0.3s ease;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 3;
+  }
+
+  .nav-links.open {
+    right: 0;
+  }
+
+  .nav-links li {
+    margin: 1rem 0;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+</style>
 </head>
