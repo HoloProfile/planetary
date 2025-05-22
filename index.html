@@ -173,11 +173,19 @@
 </main>
 
 <script>
-   function toggleMenu() {
+ function toggleMenu() {
     const nav = document.getElementById("navLinks");
     const overlay = document.getElementById("navOverlay");
-    nav.classList.toggle("open");
-    overlay.style.display = nav.classList.contains("open") ? "block" : "none";
+
+    const isOpen = nav.classList.contains("open");
+
+    if (isOpen) {
+      nav.classList.remove("open");
+      overlay.style.display = "none";
+    } else {
+      nav.classList.add("open");
+      overlay.style.display = "block";
+    }
   }
 
   function closeMenu() {
