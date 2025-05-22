@@ -256,16 +256,6 @@
   margin-bottom: 1rem;
   color: #2c3e50;
 }
-
-.more-ideas-button {
-  display: inline-block;
-  background-color: #3d5c3d;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-}
   .about-us {
   background-color: #f4f8f4;
   padding: 4rem 1.5rem;
@@ -307,14 +297,5 @@
   color: #2c3e50;
 }
 
-.story-button {
-  display: inline-block;
-  background-color: #3d5c3d;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-}
 </style>
 </head>
