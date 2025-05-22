@@ -163,5 +163,40 @@
   border-radius: 5px;
   display: inline-block;
 }
+.intro-start {
+  padding: 4rem 1rem;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.intro-start h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.intro-start p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.ideas {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.idea {
+  background-color: #e5f2e5;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.idea h3 {
+  margin-top: 0;
+  color: #3d5c3d;
+}
 </style>
 </head>
