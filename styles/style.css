@@ -210,5 +210,29 @@
     width: 45%;
   }
 }
+  .more-ideas-box {
+  background-color: #f0f8f0;
+  padding: 2rem;
+  margin: 2rem auto;
+  text-align: center;
+  border-radius: 10px;
+  max-width: 600px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.more-ideas-box p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.more-ideas-button {
+  background-color: #3d5c3d;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
 </style>
 </head>
