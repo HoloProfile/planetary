@@ -11,21 +11,142 @@
   color: #2c3e50;
 }
       </style>
+  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>100 Idéer – Planetært Liv</title>
-  <link rel="stylesheet" href="styles/style.css">
-</head>
+  <title>Planetært Liv</title>
+<link rel="stylesheet" href="styles/style.css">
+  <style>
+    body {
+      font-family: Georgia, serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9f4;
+      color: #2c3e50;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background-color: #d5e6d5;
+      position: relative;
+      z-index: 3;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+    }
+
+    .burger {
+      font-size: 2rem;
+      cursor: pointer;
+      user-select: none;
+      z-index: 4;
+      display: block;
+    }
+
+    .nav-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+      z-index: 2;
+    }
+
+    .nav-links {
+      list-style: none;
+      padding: 2rem 1rem;
+      margin: 0;
+      flex-direction: column;
+      background-color: #fff;
+      position: fixed;
+      top: 0;
+      right: -250px;
+      width: 250px;
+      height: 100vh;
+      transition: right 0.3s ease;
+      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+      z-index: 3;
+      display: none;
+    }
+
+    .nav-links.open {
+      display: flex;
+      right: 0;
+    }
+
+    .nav-links li {
+      margin: 1rem 0;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    /* Desktop: vis links i topbar og skjul burger */
+    @media (min-width: 768px) {
+      .burger {
+        display: none;
+      }
+
+      .nav-overlay {
+        display: none !important;
+      }
+
+      .nav-links {
+        position: static;
+        display: flex !important;
+        flex-direction: row;
+        height: auto;
+        width: auto;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+      }
+
+      .nav-links li {
+        margin: 0 1rem;
+      }
+    }
+.desktop-text {
+  display: none;
+}
+
+.mobile-text {
+  display: inline;
+}
+
+@media (min-width: 768px) {
+  .desktop-text {
+    display: inline;
+  }
+
+  .mobile-text {
+    display: none;
+  }
+}
+  </style>
 <body>
- <header>
+
+<div id="navOverlay" class="nav-overlay" onclick="closeMenu()"></div>
+
+<header>
   <nav class="navbar">
     <div class="logo">
-  🌍 <span class="desktop-text">100 ideer til at starte din vej mod et liv under planetære grænser</span>
-  <span class="mobile-text">Det planetære liv - 100 ideer</span>
+  🌍 <span class="desktop-text">Velkommen, til et liv under de planetære grænser</span>
+  <span class="mobile-text">Det planetære liv</span>
 </div>
     <div class="burger" onclick="toggleMenu()">☰</div>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#start" onclick="toggleMenu()">Start</a></li>
+      <li><a href="index.html" onclick="toggleMenu()">Start</a></li>
       <li><a href="100ideer.html">100 idéer</a></li>
       <li><a href="#viden" onclick="toggleMenu()">Viden</a></li>
       <li><a href="#projekter" onclick="toggleMenu()">Projekter</a></li>
@@ -34,6 +155,7 @@
     </ul>
   </nav>
 </header>
+
 
   <section class="all-ideas-box">
     <h2>🌱 100 idéer til et planetært liv</h2>
