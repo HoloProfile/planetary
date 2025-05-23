@@ -17,10 +17,23 @@
   <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-  <header class="navbar">
-    <div class="logo">🌍 Planetært Liv</div>
-    <a href="index.html" class="start-button">Tilbage til forsiden</a>
-  </header>
+ <header>
+  <nav class="navbar">
+    <div class="logo">
+  🌍 <span class="desktop-text">100 ideer til at starte din vej mod et liv under planetære grænser</span>
+  <span class="mobile-text">Det planetære liv - 100 ideer</span>
+</div>
+    <div class="burger" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#start" onclick="toggleMenu()">Start</a></li>
+      <li><a href="100ideer.html">100 idéer</a></li>
+      <li><a href="#viden" onclick="toggleMenu()">Viden</a></li>
+      <li><a href="#projekter" onclick="toggleMenu()">Projekter</a></li>
+      <li><a href="historie.html" onclick="toggleMenu()">Om og Historien</a></li>
+      <li><a href="#kontakt" onclick="toggleMenu()">Kontakt</a></li>
+    </ul>
+  </nav>
+</header>
 
   <section class="all-ideas-box">
     <h2>🌱 100 idéer til et planetært liv</h2>
