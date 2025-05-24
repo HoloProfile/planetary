@@ -1,4 +1,4 @@
-<head>
+o<head>
   <meta charset="UTF-8">
   <title>Planetært Liv</title>
 <meta name="theme-color" content="#f8f9f4">
@@ -313,6 +313,50 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   display: block;
   margin: 0 auto;
+}
+.floating-guide {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.floating-guide button {
+  background-color: #3d5c3d;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.guide-box {
+  display: none;
+  background-color: #f4f8f4;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 220px;
+}
+
+.guide-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.guide-box li {
+  margin: 0.5rem 0;
+}
+
+.guide-box a {
+  color: #2c3e50;
+  text-decoration: none;
+  font-size: 1rem;
 }
 </style>
 </head>
