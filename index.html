@@ -230,24 +230,26 @@
     document.getElementById("navOverlay").style.display = "none";
   }
 </script>
-<div class="floating-guide">
-  <button onclick="toggleGuide()">?</button>
-  <div id="guideBox" class="guide-box">
-    <p><strong>Hurtig guide:</strong></p>
-    <ul>
-      <li><a href="#start">Start her</a></li>
-      <li><a href="#ideer">100 idéer</a></li>
-      <li><a href="#om">Hvem er vi?</a></li>
-      <li><a href="#vores-historie">Vores historie</a></li>
-      <li><a href="#raaderum">Det sikre råderum</a></li>
-    </ul>
-  </div>
-</div>
 <script>
   function toggleGuide() {
     const box = document.getElementById("guideBox");
     box.style.display = box.style.display === "block" ? "none" : "block";
   }
 </script>
+      <div class="floating-guide">
+  <img src="billeder/ikon.png" alt="Guide ikon" class="floating-icon" onclick="toggleGuideBox()">
+  <div id="guideBox" class="guide-box">
+    <h3>Guide til siden</h3>
+    <p>Er du ny her? Så tag en hurtig tur rundt:</p>
+    <ul>
+      <li><strong><a href="#start">Start:</a></strong> To nemme idéer – kom i gang i dag!</li>
+      <li><strong><a href="100ideer.html">100 idéer:</a></strong> Vores komplette liste – opdelt i niveauer.</li>
+      <li><strong><a href="#om">Hvem er vi?</a></strong> Mød familien bag siden.</li>
+      <li><strong><a href="historie.html">Vores historie:</a></strong> Fra hverdag til bæredygtigt eksperiment.</li>
+      <li><strong><a href="viden.html">Det sikre råderum:</a></strong> Hvad det er – og hvordan du lever i det.</li>
+    </ul>
+    <p style="font-size: 0.9rem;">Scroll eller brug topmenuen 🌱</p>
+  </div>
+</div>
 </body>
 </html>
