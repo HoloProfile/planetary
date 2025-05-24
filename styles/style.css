@@ -314,6 +314,31 @@ o<head>
   display: block;
   margin: 0 auto;
 }
+.quick-guide {
+  background-color: #eef7ee;
+  padding: 2rem;
+  margin: 4rem auto;
+  border-radius: 10px;
+  max-width: 800px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  text-align: left;
+}
+
+.quick-guide h2 {
+  color: #3d5c3d;
+  margin-bottom: 1rem;
+}
+
+.quick-guide ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.quick-guide li {
+  margin-bottom: 0.7rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
 .floating-guide {
   position: fixed;
   bottom: 20px;
