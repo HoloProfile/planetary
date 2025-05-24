@@ -230,14 +230,8 @@
     document.getElementById("navOverlay").style.display = "none";
   }
 </script>
-<script>
-  function toggleGuide() {
-    const box = document.getElementById("guideBox");
-    box.style.display = box.style.display === "block" ? "none" : "block";
-  }
-</script>
       <div class="floating-guide">
-  <img src="billeder/ikon.png" alt="Guide ikon" class="floating-icon" onclick="toggleGuideBox()">
+  <img src="styles/icon-192.png" alt="Guide ikon" class="floating-icon" onclick="toggleGuideBox()">
   <div id="guideBox" class="guide-box">
     <h3>Guide til siden</h3>
     <p>Er du ny her? Så tag en hurtig tur rundt:</p>
@@ -251,5 +245,18 @@
     <p style="font-size: 0.9rem;">Scroll eller brug topmenuen 🌱</p>
   </div>
 </div>
+      <script>
+  function toggleGuideBox() {
+    const box = document.getElementById("guideBox");
+    box.style.display = (box.style.display === "block") ? "none" : "block";
+  }
+          window.addEventListener('click', function(e) {
+  const box = document.getElementById("guideBox");
+  const icon = document.querySelector(".floating-icon");
+  if (!box.contains(e.target) && !icon.contains(e.target)) {
+    box.style.display = "none";
+  }
+});
+</script>
 </body>
 </html>
