@@ -421,6 +421,27 @@ o<head>
   color: #2c3e50;
   line-height: 1.6;
 }
+@media (max-width: 767px) {
+  body, .intro-start, .planet-life-image, .transition-section, .idea, .quick-guide {
+    text-align: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 
+  .planet-life-image img {
+    width: 90%;
+    max-width: 90vw;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .idea {
+    max-width: 100%;
+  }
+
+  h1, h2, h3, p, li {
+    text-align: center !important;
+  }
+}
 </style>
 </head>
