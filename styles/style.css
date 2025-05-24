@@ -18,11 +18,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+ padding: 0.5rem 1rem;
     background-color: #d5e6d5;
     position: relative;
     z-index: 3;
   }
+.navbar a {
+  font-size: 1rem; /* evt. mindre skrift */
+  padding: 0.5rem 0.75rem;
+}
 
   .logo {
     font-size: 1.5rem;
