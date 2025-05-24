@@ -343,45 +343,49 @@ o<head>
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 999;
+  z-index: 99;
 }
 
-.floating-guide button {
-  background-color: #3d5c3d;
-  color: white;
-  border: none;
-  border-radius: 50%;
+.floating-icon {
   width: 48px;
   height: 48px;
-  font-size: 1.5rem;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+.floating-icon:hover {
+  transform: scale(1.1);
 }
 
 .guide-box {
   display: none;
-  background-color: #f4f8f4;
-  padding: 1rem;
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  width: 300px;
+  background-color: #e5f2e5;
   border-radius: 10px;
-  margin-top: 0.5rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  width: 220px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.guide-box h3 {
+  margin-top: 0;
+  color: #3d5c3d;
 }
 
 .guide-box ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.guide-box li {
-  margin: 0.5rem 0;
+  padding-left: 1rem;
 }
 
 .guide-box a {
   color: #2c3e50;
   text-decoration: none;
-  font-size: 1rem;
+}
+
+.guide-box a:hover {
+  text-decoration: underline;
 }
   .transition-section {
   background-color: #f4f8f4;
