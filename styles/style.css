@@ -180,6 +180,7 @@ o<head>
   margin-bottom: 2rem;
 }
 
+
 .ideas {
   display: flex;
   flex-direction: column;
@@ -313,6 +314,18 @@ o<head>
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   display: block;
   margin: 0 auto;
+}
+  @media (max-width: 767px) {
+  .intro-start,
+  .planet-life-image,
+  .transition-section,
+  .idea {
+    text-align: center;
+  }
+
+  .planet-life-image img {
+    max-width: 90%;
+  }
 }
 .quick-guide {
   background-color: #eef7ee;
