@@ -1,262 +1,147 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-    <link rel="manifest" href="manifest.json">
-    <link rel="icon" href="styles/icon-192.png" type="image/png">
-    <meta name="theme-color" content="#f8f9f4">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f9f4">
   <title>Planetarisk Liv</title>
-<link rel="stylesheet" href="styles/style.css">
-  <style>
-    body {
-      font-family: Georgia, serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f8f9f4;
-      color: #2c3e50;
-    }
 
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem;
-      background-color: #d5e6d5;
-      position: relative;
-      z-index: 3;
-    }
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="styles/icon-192.png" type="image/png">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
 
-    .logo {
-      font-size: 1.5rem;
-    }
-
-    .burger {
-      font-size: 2rem;
-      cursor: pointer;
-      user-select: none;
-      z-index: 4;
-      display: block;
-    }
-
-    .nav-overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100vh;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.3);
-      z-index: 2;
-    }
-
-    .nav-links {
-      list-style: none;
-      padding: 2rem 1rem;
-      margin: 0;
-      flex-direction: column;
-      background-color: #fff;
-      position: fixed;
-      top: 0;
-      right: -250px;
-      width: 250px;
-      height: 100vh;
-      transition: right 0.3s ease;
-      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-      z-index: 3;
-      display: none;
-    }
-
-    .nav-links.open {
-      display: flex;
-      right: 0;
-    }
-
-    .nav-links li {
-      margin: 1rem 0;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: #2c3e50;
-      font-weight: bold;
-      font-size: 1.2rem;
-    }
-
-    /* Desktop: vis links i topbar og skjul burger */
-    @media (min-width: 768px) {
-      .burger {
-        display: none;
-      }
-
-      .nav-overlay {
-        display: none !important;
-      }
-
-      .nav-links {
-        position: static;
-        display: flex !important;
-        flex-direction: row;
-        height: auto;
-        width: auto;
-        background: none;
-        box-shadow: none;
-        padding: 0;
-      }
-
-      .nav-links li {
-        margin: 0 1rem;
-      }
-    }
-.desktop-text {
-  display: none;
-}
-
-.mobile-text {
-  display: inline;
-}
-
-@media (min-width: 768px) {
-  .desktop-text {
-    display: inline;
-  }
-
-  .mobile-text {
-    display: none;
-  }
-}
-  </style>
 <body>
+  <div id="navOverlay" class="nav-overlay" onclick="closeMenu()"></div>
 
-<div id="navOverlay" class="nav-overlay" onclick="closeMenu()"></div>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        🌍 <span class="desktop-text">Velkommen, til et liv under de planetære grænser</span>
+        <span class="mobile-text">Det planetære liv</span>
+      </div>
+      <div class="burger" onclick="toggleMenu()">☰</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" onclick="toggleMenu()">Start</a></li>
+        <li><a href="100ideer.html">100 idéer</a></li>
+        <li><a href="viden.html" onclick="toggleMenu()">Viden</a></li>
+        <li><a href="#projekter" onclick="toggleMenu()">Projekter</a></li>
+        <li><a href="historie.html" onclick="toggleMenu()">Om og Historien</a></li>
+        <li><a href="#kontakt" onclick="toggleMenu()">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<header>
-  <nav class="navbar">
-    <div class="logo">
-  🌍 <span class="desktop-text">Velkommen, til et liv under de planetære grænser</span>
-  <span class="mobile-text">Det planetære liv</span>
-</div>
-    <div class="burger" onclick="toggleMenu()">☰</div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html" onclick="toggleMenu()">Start</a></li>
-      <li><a href="100ideer.html">100 idéer</a></li>
-      <li><a href="viden.html" onclick="toggleMenu()">Viden</a></li>
-      <li><a href="#projekter" onclick="toggleMenu()">Projekter</a></li>
-      <li><a href="historie.html" onclick="toggleMenu()">Om og Historien</a></li>
-      <li><a href="#kontakt" onclick="toggleMenu()">Kontakt</a></li>
-    </ul>
-  </nav>
-</header>
-<section class="hero-section">
-  <h1>Et planetært liv:<br>simpelt, stærkt og bæredygtigt</h1>
-  <p style="margin-top: 2rem; font-style: italic; font-size: 1rem; color: #f0f0f0;">
-  Scroll ned og opdag hvordan vi lever under de planetære grænser – med håb, handling og havregrød 🌱
-  <p>Vi viser dig hvordan!</p>
-</p>
+  <section class="hero-section">
+    <h1>Et planetært liv:<br>simpelt, stærkt og bæredygtigt</h1>
+    <p class="hero-sub">Scroll ned og opdag hvordan vi lever under de planetære grænser – med håb, handling og havregrød 🌱</p>
+    <p>Vi viser dig hvordan!</p>
+  </section>
+
+  <section class="transition-section">
+    <h2>🌿 Hvordan er et planetarisk liv i praksis?</h2>
+    <p>Vi elsker ikke bare at tale om det planetære liv – vi lever det. Hver dag. Med børn, planter, rester og vilde idéer.</p>
+    <p>Her får du et lille glimt, inden vi dykker videre ned i idéer og viden.</p>
+    <p>Men hey – du kan altid bruge den lille flyvende knap i hjørnet, hvis du vil springe introen over og hoppe direkte til det gode! 😉</p>
+  </section>
+
+  <section class="planet-life-image">
+    <h2>🍾 Ide: Hjemmebrygget planet-trylledrik 🍾</h2>
+    <p>Det startede som en gåtur i det grønne – og endte som grønne dråber af vildskab og velsmag.</p>
+    <img src="/billeder/billede.png" alt="Et glimt af et planetarisk liv – hjemmelavet snaps fra havens urter">
+  </section>
+
+  <main>
+    <section id="start" class="intro-start">
+      <h2>Stærkt du holder ved, og er her stadig <br>🌸</h2>
+      <p>Lad os starte din rejse mod et bæredygtigt planetært liv.<br>Her er to gode ideer til at begynde med:</p>
+
+      <div class="ideas">
+        <div class="idea">
+          <h3>1. Jagten på madspild</h3>
+          <p>Start med at redde mad – brug apps som TooGoodToGo, tjek supermarkedets "sidste salgsdato"-reol, og vær kreativ med dine rester. Hver bid tæller 🌾</p>
+        </div>
+        <div class="idea">
+          <h3>2. En snackfri uge</h3>
+          <p>Prøv én uge uden snacks i poser, plastik eller engangsemballage. Bag selv, lav grøntsagsstænger eller frugt. Det føles vildt godt – og er sundt for både dig og planeten 🥕</p>
+        </div>
+      </div>
+
+      <div class="more-ideas-box">
+        <p>🍃 Klar på flere idéer? 🍃</p>
+        <a href="100ideer.html" class="start-button">Se vores 100 idéer</a>
+      </div>
     </section>
-    
-<section class="transition-section">
-  <h2>🌿 Hvordan er et planetarisk liv i praksis?</h2>
-  <p>Vi elsker ikke bare at tale om det planetære liv – vi lever det. Hver dag. Med børn, planter, rester og vilde idéer.</p>
-  <p>Her får du et lille glimt, inden vi dykker videre ned i idéer og viden.</p>
-  <p>Men hey – du kan altid bruge den lille flyvende knap i hjørnet, hvis du vil springe introen over og hoppe direkte til det gode! 😉</p>
-</section>
 
-    <div class="planet-life-image">
-         <h2>🍾 Ide: Hjemmebrygget planet-trylledrik 🍾</h2>
-         <p>Det startede som en gåtur i det grønne – og endte som grønne dråber af vildskab og velsmag.  
-  Her eksperimenteres der med husets helt egen forårssnaps – baseret på brændenælde, skvalderkål og kærlighed.</p>
-<div class="planet-life-image">
-  <img src="/billeder/billede.png" alt="Et glimt af et planetarisk liv – hjemmelavet snaps fra havens urter">
-</div>
-    
-<main>
-<section id="start" class="intro-start">
-  <h2>Stærkt du holder ved, og er her stadig <br>🌸</h2>
-  <p>Lad os starte din rejse mod et bæredygtigt planetært liv.<br>
-     Her er to gode ideer til at begynde med:</p>
+    <section class="about-us">
+      <h2>Hvem er vi?</h2>
+      <p>Vi er en familie – to voksne og to små børn – der lever under de planetære grænser.<br>
+      Vi bor i en landsby uden for Vejle, omgivet af høns, hunde, planter og højt humør.</p>
+      <p>Det gode liv handler ikke om mere – men om nærvær, respekt og en meningsfuld hverdag.</p>
+      <p>Her deler vi det, vi selv ville ønske, vi havde vidst – ærligt, kærligt og i øjenhøjde.</p>
+      <a href="historie.html" class="start-button">Læs vores historie</a>
+    </section>
 
-<div class="ideas-container">
-    <div class="idea">
-      <h3>1. Jagten på madspild</h3>
-      <p>Start med at redde mad – brug apps som TooGoodToGo, tjek supermarkedets "sidste salgsdato"-reol, og vær kreativ med dine rester. Hver bid tæller 🌾</p>
-    </div>
-    <div class="idea">
-      <h3>2. En snackfri uge</h3>
-      <p>Prøv én uge uden snacks i poser, plastik eller engangsemballage. Bag selv, lav grøntsagsstænger eller frugt. Det føles vildt godt – og er sundt for både dig og planeten 🥕</p>
-    </div>
- </div>
-<div class="more-ideas-box">
-  <p>🍃 Klar på flere idéer? 🍃</p>
-  <a href="100ideer.html" class="start-button">Se vores 100 idéer</a>
-</div>
-  <section class="about-us">
-  <h2>Hvem er vi?</h2>
-  <p>Vi er en familie – to voksne og to små børn – der lever under de planetære grænser. <br> Vi bor i en landsby uden for Vejle, omgivet af høns, hunde, planter og højt humør. <br>  
-  For os handler det gode liv ikke om mere, men om nærvær, respekt og en meningsfuld hverdag. Her deler vi alt det, vi selv ville ønske, vi havde vidst – ærligt, kærligt og i øjenhøjde.</p>
-  <p> Vil du læse mere om vores rejse mod et planetært liv?</p>
-  <p>Fra en helt almindelig dansk hverdag – med overforbrug og fart på – til et liv under de planetære grænser.</p>
-  <a href="historie.html" class="start-button">Tryk her og læs vores historie</a>
-  </div>
-   <section id="contact">
-    <h2>Hvordan gør man?</h2>
-    <p>Vi viser dig vejen trin for trin – skriv endelig til os hvis du vil vide mere!</p>
-    <a href="mailto:planetariskliv@pm.me" class="start-button">Kontakt os</a>
-     </div>
-</section>
-<section class="quick-guide">
-  <h2>Guide til siden</h2>
-  <p>Er du ny her? Så tag en hurtig tur rundt:</p>
-  <ul>
-    <li><strong>Start:</strong> To nemme idéer – kom i gang i dag!</li>
-    <li><strong>100 idéer:</strong> Vores komplette liste – opdelt i niveauer.</li>
-    <li><strong>Hvem er vi?</strong> Mød familien bag siden.</li>
-    <li><strong>Vores historie:</strong> Fra hverdag til bæredygtigt eksperiment.</li>
-    <li><strong>Det sikre råderum:</strong> Hvad det er – og hvordan du lever i det.</li>
-  </ul>
-  <p>Scroll ned eller brug menuen i toppen.</p>
-</section>
+    <section id="contact">
+      <h2>Hvordan gør man?</h2>
+      <p>Vi viser dig vejen trin for trin – skriv endelig til os hvis du vil vide mere!</p>
+      <a href="mailto:planetariskliv@pm.me" class="start-button">Kontakt os</a>
+    </section>
+
+    <section class="quick-guide">
+      <h2>Guide til siden</h2>
+      <ul>
+        <li><strong>Start:</strong> To nemme idéer – kom i gang i dag!</li>
+        <li><strong>100 idéer:</strong> Vores komplette liste – opdelt i niveauer.</li>
+        <li><strong>Hvem er vi?</strong> Mød familien bag siden.</li>
+        <li><strong>Vores historie:</strong> Fra hverdag til bæredygtigt eksperiment.</li>
+        <li><strong>Det sikre råderum:</strong> Hvad det er – og hvordan du lever i det.</li>
+      </ul>
+      <p>Scroll ned eller brug menuen i toppen.</p>
+    </section>
   </main>
-<script>
-  function toggleMenu() {
-    const nav = document.getElementById("navLinks");
-    const overlay = document.getElementById("navOverlay");
-    nav.classList.toggle("open");
-    overlay.style.display = nav.classList.contains("open") ? "block" : "none";
-  }
 
-  function closeMenu() {
-    document.getElementById("navLinks").classList.remove("open");
-    document.getElementById("navOverlay").style.display = "none";
-  }
-</script>
-      <div class="floating-guide">
-  <img src="styles/icon-192.png" alt="Guide ikon" class="floating-icon" onclick="toggleGuideBox()">
-  <div id="guideBox" class="guide-box">
-    <h3>Guide til siden</h3>
-    <p>Er du ny her? Så tag en hurtig tur rundt:</p>
-    <ul>
-      <li><strong><a href="#start">Start:</a></strong> To nemme idéer – kom i gang i dag!</li>
-      <li><strong><a href="100ideer.html">100 idéer:</a></strong> Vores komplette liste – opdelt i niveauer.</li>
-      <li><strong><a href="#om">Hvem er vi?</a></strong> Mød familien bag siden.</li>
-      <li><strong><a href="historie.html">Vores historie:</a></strong> Fra hverdag til bæredygtigt eksperiment.</li>
-      <li><strong><a href="viden.html">Det sikre råderum:</a></strong> Hvad det er – og hvordan du lever i det.</li>
-    </ul>
-    <p style="font-size: 0.9rem;">Scroll eller brug topmenuen 🌱</p>
+  <div class="floating-guide">
+    <img src="styles/icon-192.png" alt="Guide ikon" class="floating-icon" onclick="toggleGuideBox()">
+    <div id="guideBox" class="guide-box">
+      <h3>Guide til siden</h3>
+      <ul>
+        <li><a href="#start">Start</a></li>
+        <li><a href="100ideer.html">100 idéer</a></li>
+        <li><a href="#om">Hvem er vi?</a></li>
+        <li><a href="historie.html">Vores historie</a></li>
+        <li><a href="viden.html">Det sikre råderum</a></li>
+      </ul>
+      <p style="font-size: 0.9rem;">Scroll eller brug topmenuen 🌱</p>
+    </div>
   </div>
-</div>
-      <script>
-  function toggleGuideBox() {
-    const box = document.getElementById("guideBox");
-    box.style.display = (box.style.display === "block") ? "none" : "block";
-  }
-          window.addEventListener('click', function(e) {
-  const box = document.getElementById("guideBox");
-  const icon = document.querySelector(".floating-icon");
-  if (!box.contains(e.target) && !icon.contains(e.target)) {
-    box.style.display = "none";
-  }
-});
-</script>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      const overlay = document.getElementById("navOverlay");
+      nav.classList.toggle("open");
+      overlay.style.display = nav.classList.contains("open") ? "block" : "none";
+    }
+
+    function closeMenu() {
+      document.getElementById("navLinks").classList.remove("open");
+      document.getElementById("navOverlay").style.display = "none";
+    }
+
+    function toggleGuideBox() {
+      const box = document.getElementById("guideBox");
+      box.style.display = box.style.display === "block" ? "none" : "block";
+    }
+
+    window.addEventListener('click', function(e) {
+      const box = document.getElementById("guideBox");
+      const icon = document.querySelector(".floating-icon");
+      if (!box.contains(e.target) && !icon.contains(e.target)) {
+        box.style.display = "none";
+      }
+    });
+  </script>
 </body>
 </html>
+
