@@ -7,12 +7,12 @@
   "theme_color": "#f8f9f4",
  "icons": [
     {
-      "src": "/styles/icon-192.png",
+      "src": "/billeder/planetarisk_liv_icon_192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/styles/icon-512.png",
+      "src": "/billeder/planetarisk_liv_icon_512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
