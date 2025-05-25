@@ -54,7 +54,7 @@
 /* ==== Poppins ==== */
 /* Light (300) */
 @font-face {
-  font-family: 'Montserrat';
+  font-family: 'Poppins';
   font-weight: 300;
   font-style: normal;
   src: url('styles/fonts/Poppins-Light.woff2') format('woff2');
@@ -62,7 +62,7 @@
 }
 /* Medium (350) */
 @font-face {
-  font-family: 'Montserrat';
+  font-family: 'Poppins';
   font-weight: 350;
   font-style: normal;
   src: url('styles/fonts/Poppins-Medium.woff2') format('woff2');
@@ -70,7 +70,7 @@
 }
 /* Regular (400) */
 @font-face {
-  font-family: 'Montserrat';
+  font-family: 'Poppins';
   font-weight: 400;
   font-style: normal;
   src: url('styles/fonts/Poppins-Regular.woff2') format('woff2');
@@ -78,7 +78,7 @@
 }
 /* SemiBold (600) */
 @font-face {
-  font-family: 'Montserrat';
+  font-family: 'Poppins';
   font-weight: 600;
   font-style: normal;
   src: url('styles/fonts/Poppins-SemiBold.woff2') format('woff2');
@@ -86,7 +86,7 @@
 }
 /* Bold (700) */
 @font-face {
-  font-family: 'Montserrat';
+  font-family: 'Poppins';
   font-weight: 700;
   font-style: normal;
   src: url('styles/fonts/Poppins-Bold.woff2') format('woff2');
