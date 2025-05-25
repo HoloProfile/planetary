@@ -109,8 +109,8 @@ em, i {
   font-style: italic; /* Merriweather-Skraa */
 }
 h1, h2, h3 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;   /* Montserrat Ace Bold */
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600; /* bruger Poppins SemiBold til overskrifter */
 }
 
 /* --------------------------------------------------------------------------  
