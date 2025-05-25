@@ -4,44 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Planetært Liv</title>
-  <link rel="stylesheet" href="styles/style.css">
+  <link rel="manifest" href="manifest.json">
   <link rel="icon" href="styles/icon-192.png" type="image/png">
+  <meta name="theme-color" content="#f8f9f4">
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
+  <!-- Overlay til mobil-menu -->
+  <div id="navOverlay" class="nav-overlay" onclick="closeMenu()"></div>
   <!-- Navigationsmenu -->
-   <nav class="navbar">
-  <div class="logo">🌍 Planetært Liv</div>
-  <div class="burger" onclick="toggleMenu()">☰</div>
-  <ul class="nav-links" id="navLinks">
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        🌍 
+        <span class="desktop-text">Velkommen, til et liv under de planetære grænser</span>
+        <span class="mobile-text">Det planetære liv</span>
+      </div>
+      <div class="burger" onclick="toggleMenu()">☰</div>
+      <ul class="nav-links" id="navLinks">
         <li><a href="index.html" onclick="toggleMenu()">Start</a></li>
         <li><a href="100ideer.html" onclick="toggleMenu()">100 idéer</a></li>
-        <li><a href="historie.html" onclick="toggleMenu()">Historien</a></li>
         <li><a href="viden.html" onclick="toggleMenu()">Viden</a></li>
-        <li><a href="blog.html" onclick="toggleMenu()">Blog</a></li>
+        <li><a href="historie.html" onclick="toggleMenu()">Historie</a></li>
         <li><a href="faq.html" onclick="toggleMenu()">FAQ</a></li>
-        <li><a href="samarbejde.html" onclick="toggleMenu()">Samarbejde</a></li>
-        <li><a href="galleri.html" onclick="toggleMenu()">Galleri</a></li>
+        <li><a href="gæstebog.html" onclick="toggleMenu()">Gæstebog</a></li>
       </ul>
     </nav>
-    <div class="nav-overlay" id="navOverlay" onclick="closeMenu()"></div>
-
+  </header>
+  
   <!-- Hero -->
   <section class="hero-section">
     <h1>🌱 Et planetarisk liv – simpelt, stærkt og bæredygtigt</h1>
-    <p>Scroll ned og opdag hvordan vi lever under de planetære grænser – med håb, handling og havregrød.</p>
+    <p>Scroll ned og opdag hvordan vi lever under de planetære grænser – med håb, handling og havregrød.🌱</p>
   </section>
-
-  <!-- Indhold -->
-  <main class="content">
-    <section class="intro-start">
-      <h2>Velkommen</h2>
-      <p>Små skridt, stor forskel 🌱</p>
-      <p>Her begynder din grønne rejse – tag et kig rundt 🌍</p>
-    </section>
- 
- <!-- ... DIT ØVRIGE INDHOLD HER ... -->
-   </main>
-  <!-- Flyvende guide -->
+  
+ <!-- Flyvende guide -->
   <div class="floating-guide">
   <img src="styles/icon-192.png" alt="Guide ikon" class="floating-icon" onclick="toggleGuideBox()">
   <div id="guideBox" class="guide-box">
@@ -56,6 +53,34 @@
     </ul>
   </div>
 </div>
+
+  <!-- Intro -->
+  <main class="content">
+    <section class="intro-start">
+      <h2>Velkommen</h2>
+      <p>Små skridt, stor forskel 🌱</p>
+      <p>Her begynder din grønne rejse – tag et kig rundt 🌍</p>
+    </section>
+ <section class="transition-section">
+    <h2>🌿 Hvordan er et planetarisk liv i praksis?</h2>
+    <p>Vi elsker ikke bare at tale om det planetære liv – vi lever det. Hver dag. Med børn, planter, rester og vilde idéer.</p>
+    <p>Her får du et lille glimt, inden vi dykker videre ned i idéer og viden.</p>
+    <p>Brug den lille flyvende ven, hvis du vil springe introen over 😉</p>
+  </section>
+  
+    
+ <!-- ... DIT ØVRIGE INDHOLD HER ... -->
+    
+<!-- Om os -->
+    <section class="about-us">
+      <h2>Hvem er vi?</h2>
+      <p>Vi er en familie – to voksne og to små børn – der lever under de planetære grænser i en landsby nær Vejle.</p>
+      <p>Vi deler erfaringer, håb og konkrete råd til et meningsfuldt, bæredygtigt liv.</p>
+      <a href="historie.html" class="start-button">Læs vores historie</a>
+    </section>
+  </main>
+ 
+
 <!-- Footer -->
 <footer class="footer">
   <p>&copy; 2025 Planetarisk Liv – skabt med kærlighed og kompost 💚</p>
