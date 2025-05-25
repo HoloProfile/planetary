@@ -45,14 +45,12 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #d5e6d5;
-  padding: 0.75rem 1.5rem;
+  padding: 0.5rem 1rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   border-radius: 0.5rem;
   position: relative;
   z-index: 3;
   /* Begrænset og centreret */
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 /* Logo */
