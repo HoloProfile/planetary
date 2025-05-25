@@ -51,13 +51,21 @@
   font-display: swap;
 }
 
-/* ==== Montserrat Ace ==== */
+/* ==== Poppins ==== */
 /* Light (300) */
 @font-face {
   font-family: 'Montserrat';
   font-weight: 300;
   font-style: normal;
-  src: url('styles/fonts/Overskrift-Let.woff2') format('woff2');
+  src: url('styles/fonts/Poppins-Light.woff2') format('woff2');
+  font-display: swap;
+}
+/* Medium (350) */
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 350;
+  font-style: normal;
+  src: url('styles/fonts/Poppins-Medium.woff2') format('woff2');
   font-display: swap;
 }
 /* Regular (400) */
@@ -65,7 +73,7 @@
   font-family: 'Montserrat';
   font-weight: 400;
   font-style: normal;
-  src: url('styles/fonts/Overskrift-Normal.woff2') format('woff2');
+  src: url('styles/fonts/Poppins-Regular.woff2') format('woff2');
   font-display: swap;
 }
 /* SemiBold (600) */
@@ -73,7 +81,7 @@
   font-family: 'Montserrat';
   font-weight: 600;
   font-style: normal;
-  src: url('styles/fonts/Overskrift-SemiFed.woff2') format('woff2');
+  src: url('styles/fonts/Poppins-SemiBold.woff2') format('woff2');
   font-display: swap;
 }
 /* Bold (700) */
@@ -81,7 +89,7 @@
   font-family: 'Montserrat';
   font-weight: 700;
   font-style: normal;
-  src: url('styles/fonts/Overskrift-Bold.woff2') format('woff2');
+  src: url('styles/fonts/Poppins-Bold.woff2') format('woff2');
   font-display: swap;
 }
 
