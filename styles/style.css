@@ -131,7 +131,7 @@ h1, h2, h3 {
   align-items: center;
   background-color: #d5e6d5;
   padding: 0.5rem 1rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   border-radius: 0.5rem;
   position: relative;
   z-index: 3;
