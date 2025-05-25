@@ -169,7 +169,35 @@ h1, h2, h3 {
   .desktop-text { display: inline; }
   .mobile-text { display: none; }
 }
+/* --------------------------------------------------------------------------
+   3.1) Navbar Shadow & Rounded Links
+   -------------------------------------------------------------------------- */
+.navbar {
+  /* Gør din eksisterende skygge lidt større og blødere */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
 
+.nav-links a {
+  /* Skift til Poppins for lidt mere runding i snittet */
+  font-family: 'Poppins', sans-serif;
+  /* Let text-shadow for en blød kant på bogstaverne */
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  /* Giv linkene en baggrunds-pille og bløde hjørner */
+  background: rgba(255,255,255,0.2);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  transition: 
+    background 0.2s ease-in-out,
+    color 0.2s ease-in-out,
+    text-shadow 0.2s ease-in-out;
+}
+
+.nav-links a:hover {
+  /* Højt lys under hover for kontrast */
+  background: rgba(255,255,255,0.35);
+  color: #3d5c3d;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
 /* --------------------------------------------------------------------------  
    4) Breakpoints: Mobil vs. Desktop
    -------------------------------------------------------------------------- */
