@@ -1,46 +1,52 @@
+<!-- ==========================================================================  
+   index.html Template  
+   Planetært Liv - Ensartet struktur med kommentarer  
+   ========================================================================== -->
 <!DOCTYPE html>
 <html lang="da">
 <head>
+  <!-- ------------------------------------------------------------------------  
+     1) Metadata & PWA  
+     ------------------------------------------------------------------------ -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Planetært Liv</title>
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="billeder/planetarisk_liv_icon_circular.png" type="image/png">
   <meta name="theme-color" content="#f8f9f4">
- <!-- Preload af fonts (med crossorigin) -->
-  <link rel="preload" href="styles/fonts/Tekst-Normal.woff2"
-        as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="styles/fonts/Tekst-Fed.woff2"
-        as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="styles/fonts/Tekst-Skraa.woff2"
-        as="font" type="font/woff2" crossorigin="anonymous">
 
-  <link rel="preload" href="styles/fonts/Poppins-Light.woff2"
-        as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="styles/fonts/Poppins-Regular.woff2"
-        as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="styles/fonts/Poppins-Bold.woff2"
-        as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="styles/fonts/Poppins-Medium.woff2"
-        as="font" type="font/woff2" crossorigin="anonymous">
- <link rel="preload" href="styles/fonts/Poppins-Semibold.woff2"
-        as="font" type="font/woff2" crossorigin="anonymous">
+  <!-- ------------------------------------------------------------------------  
+     2) Font Preload (self-hosted)  
+     ------------------------------------------------------------------------ -->
+  <link rel="preload" href="styles/fonts/Tekst-Normal.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Tekst-Fed.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Tekst-Skraa.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   
-  <!-- Så dine egne styles, efter preload -->
+  <!-- ------------------------------------------------------------------------  
+     3) Stylesheet  
+     ------------------------------------------------------------------------ -->
   <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-  <!-- Overlay til mobil-menu -->
+  <!-- ------------------------------------------------------------------------  
+     4) Mobile Nav Overlay  
+     ------------------------------------------------------------------------ -->
   <div id="navOverlay" class="nav-overlay" onclick="closeMenu()"></div>
-  <!-- Navigationsmenu -->
+
+  <!-- ------------------------------------------------------------------------  
+     5) Header & Navbar  
+     ------------------------------------------------------------------------ -->
   <header>
     <nav class="navbar">
       <div class="logo">
-        🌍 
-        <span class="desktop-text">Velkommen, til et liv under de planetære grænser</span>
+        🌍 <span class="desktop-text">Velkommen, til et liv under de planetære grænser</span>
         <span class="mobile-text">Det planetære liv</span>
       </div>
-      <div class="burger" onclick="toggleMenu()">☰</div>
+      <button class="burger" onclick="toggleMenu()">☰</button>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html" onclick="toggleMenu()">Start</a></li>
         <li><a href="100ideer.html" onclick="toggleMenu()">100 idéer</a></li>
@@ -51,92 +57,95 @@
       </ul>
     </nav>
   </header>
-  
-  <!-- Hero -->
+
+  <!-- ------------------------------------------------------------------------  
+     6) Hero Section  
+     ------------------------------------------------------------------------ -->
   <section class="hero-section">
-    <h1> Planetarisk liv <br>🌍🌱<br> simpelt, værdifult og bæredygtigt</h1>
-
-    
-    <p>Scroll ned og opdag hvordan vi lever under de planetære grænser <br> med håb, handling og havregrød</p>
+    <h1>Planetarisk liv<br>🌍🌱<br>simpelt, værdifult og bæredygtigt</h1>
+    <p>Scroll ned og opdag hvordan vi lever under de planetære grænser<br> med håb, handling og havregrød</p>
   </section>
-  
- <!-- Flyvende guide -->
-  <div class="floating-guide">
-  <img src="billeder/planetarisk_liv_icon_circular.png" alt="Guide ikon" class="floating-icon" onclick="toggleGuideBox()">
-  <div id="guideBox" class="guide-box">
-    <h3>🌍 Guide til siden</h3>
-    <p>Brug menuen eller hop hurtigt til:</p>
-    <ul>
-      <li><a href="index.html">🏠 Start</a></li>
-      <li><a href="100ideer.html">🌿 100 idéer</a></li>
-      <li><a href="viden.html">📘 Det sikre råderum</a></li>
-      <li><a href="historie.html">📖 Historie</a></li>
-      <li><a href="faq.html">❓ FAQ</a></li>
-    </ul>
-  </div>
-</div>
 
-  <!-- Intro -->
+  <!-- ------------------------------------------------------------------------  
+     7) Flyvende Guide  
+     ------------------------------------------------------------------------ -->
+  <div class="floating-guide">
+    <img src="billeder/planetarisk_liv_icon_circular.png" alt="Guide ikon" class="floating-icon" onclick="toggleGuideBox()">
+    <div id="guideBox" class="guide-box">
+      <h3>🌍 Guide til siden</h3>
+      <ul>
+        <li><a href="index.html">🏠 Start</a></li>
+        <li><a href="100ideer.html">🌿 100 idéer</a></li>
+        <li><a href="viden.html">📘 Det sikre råderum</a></li>
+        <li><a href="historie.html">📖 Historie</a></li>
+        <li><a href="faq.html">❓ FAQ</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ------------------------------------------------------------------------  
+     8) Main Content Sections  
+     ------------------------------------------------------------------------ -->
   <main class="content">
+    <!-- Intro Section -->
     <section class="intro-start">
       <h2>Velkommen</h2>
       <p>Små skridt, stor forskel 🌱</p>
-      <p>Her begynder din grønne rejse – tag et kig rundt - noget med den lille ven i hjørnet, hvad er hvor osv. osv. </p>
-        <p>Brug den lille flyvende ven, hvis du vil springe introen over 😉</p>
+      <p>Her begynder din grønne rejse – tag et kig rundt</p>
+      <p>Brug den lille flyvende ven, hvis du vil springe introen over 😉</p>
     </section>
-    <!-- Om os -->
+    
+    <!-- About Us Section -->
     <section class="about-us">
       <h2>Hvem er vi?</h2>
       <p>Vi er en familie – to voksne og to små børn – der lever under de planetære grænser i en landsby nær Vejle.</p>
-      <p>Vi deler erfaringer, håb og konkrete råd til et meningsfuldt, bæredygtigt liv.</p>
       <a href="historie.html" class="start-button">Læs vores historie</a>
     </section>
- <section class="transition-section">
-    <h2>🌿 Hvordan er et planetarisk liv i praksis?</h2>
-    <p>Vi elsker ikke bare at tale om det planetære liv – vi lever det. Hver dag. Med børn, planter, rester og vilde idéer.</p>
-    <p>Her får du et lille glimt, inden vi dykker videre ned i idéer og viden.</p>
-   <a href="viden.html" class="start-button">Læs mere her</a>
-  </section>
-  
     
- <!-- ... DIT ØVRIGE INDHOLD HER ... -->
-    
+    <!-- Transition Section -->
+    <section class="transition-section">
+      <h2>🌿 Hvordan er et planetarisk liv i praksis?</h2>
+      <p>Vi elsker ikke bare at tale om det planetære liv – vi lever det hver dag, med børn, planter, rester og vilde idéer.</p>
+      <a href="viden.html" class="start-button">Læs mere her</a>
+    </section>
 
+    <!-- ... Flere sektioner følger samme struktur ... -->
   </main>
- 
 
-<!-- Footer -->
-<footer class="footer">
-  <p>&copy; 2025 Planetarisk Liv – skabt med kærlighed og kompost 💚</p>
-  <a href="privatliv.html" class="btn-terms">Vilkår & Betingelser</a>
-</footer>
+  <!-- ------------------------------------------------------------------------  
+     9) Footer  
+     ------------------------------------------------------------------------ -->
+  <footer class="footer">
+    <p>&copy; 2025 Planetarisk Liv – skabt med kærlighed og kompost 💚</p>
+    <a href="privatliv.html" class="btn-terms">Vilkår & Betingelser</a>
+  </footer>
 
-  <!-- Scripts -->
-<script>
-function toggleMenu() {
-  const nav = document.getElementById("navLinks");
-  const overlay = document.getElementById("navOverlay");
-  nav.classList.toggle("open");
-  overlay.style.display = nav.classList.contains("open") ? "block" : "none";
-}
-
-function closeMenu() {
-  document.getElementById("navLinks").classList.remove("open");
-  document.getElementById("navOverlay").style.display = "none";
-}
-
-function toggleGuideBox() {
-  const box = document.getElementById("guideBox");
-  box.style.display = (box.style.display === "block") ? "none" : "block";
-}
-window.addEventListener('click', function(e) {
-  const box = document.getElementById("guideBox");
-  const icon = document.querySelector(".floating-icon");
-  if (!box.contains(e.target) && !icon.contains(e.target)) {
-    box.style.display = "none";
-  }
-});
-</script>
-
+  <!-- ------------------------------------------------------------------------  
+     10) Scripts  
+     ------------------------------------------------------------------------ -->
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      const overlay = document.getElementById("navOverlay");
+      nav.classList.toggle("open");
+      overlay.style.display = nav.classList.contains("open") ? "block" : "none";
+    }
+    function closeMenu() {
+      document.getElementById("navLinks").classList.remove("open");
+      document.getElementById("navOverlay").style.display = "none";
+    }
+    function toggleGuideBox() {
+      const box = document.getElementById("guideBox");
+      box.style.display = (box.style.display === "block") ? "none" : "block";
+    }
+    window.addEventListener('click', function(e) {
+      const box = document.getElementById("guideBox");
+      const icon = document.querySelector(".floating-icon");
+      if (!box.contains(e.target) && !icon.contains(e.target)) {
+        box.style.display = "none";
+      }
+    });
+  </script>
 </body>
 </html>
+
