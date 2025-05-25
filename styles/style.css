@@ -1,44 +1,26 @@
 /* ==========================================================================  
-   styles/style.css
-   Grundlæggende styling med modular opbygning og kommentarer
+   styles/style.css (rettet)  
+   Grundlæggende styling med modular opbygning og kommentarer  
    ========================================================================== */
 
-/* --------------------------------------------------------------------------  
-   1) Base Reset & Typography
-   - Nulstil margin og padding
-   - Box-sizing for alle elementer
-   - Glidende scroll
-   - Basis font, baggrund og tekstfarve
-   -------------------------------------------------------------------------- */
-html {
-  scroll-behavior: smooth;
-}
-*, *::before, *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  font-family: Georgia, serif;
-  line-height: 1.6;
-  background-color: #f8f9f4;
-  color: #2c3e50;
-}
+/* ==========================================================================  
+   0) Font-faces (før alt andet)  
+   ========================================================================== */
 /* ==== Merriweather ==== */
-/* Normal (400) */
+/* Light (300 normal) */
+@font-face {
+  font-family: 'Merriweather';
+  font-weight: 300;
+  font-style: normal;
+  src: url('styles/fonts/Tekst-Let.woff2') format('woff2');
+  font-display: swap;
+}
+/* Regular (400) */
 @font-face {
   font-family: 'Merriweather';
   font-weight: 400;
   font-style: normal;
   src: url('styles/fonts/Tekst-Normal.woff2') format('woff2');
-  font-display: swap;
-}
-/* Bold (700) */
-@font-face {
-  font-family: 'Merriweather';
-  font-weight: 700;
-  font-style: normal;
-  src: url('styles/fonts/Tekst-Fed.woff2') format('woff2');
   font-display: swap;
 }
 /* Italic (400 italic) */
@@ -49,15 +31,14 @@ body {
   src: url('styles/fonts/Tekst-Skraa.woff2') format('woff2');
   font-display: swap;
 }
-/* Let (300) */
+/* Bold (700) */
 @font-face {
   font-family: 'Merriweather';
-  font-weight: 300;
-  font-style: italic;
-  src: url('styles/fonts/Tekst-Let.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  src: url('styles/fonts/Tekst-Fed.woff2') format('woff2');
   font-display: swap;
 }
-
 
 /* ==== Montserrat Ace ==== */
 /* Light (300) */
@@ -93,18 +74,39 @@ body {
   font-display: swap;
 }
 
-/* ==== Anvendelse ==== */
+/* ==========================================================================  
+   1) Base Reset & Typography
+   ========================================================================== */
+html {
+  scroll-behavior: smooth;
+}
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   font-family: 'Merriweather', serif;
+  font-weight: 400;
   line-height: 1.6;
+  background-color: #f8f9f4;
+  color: #2c3e50;
+}
+
+/* ==== Anvendelse af fonte ==== */
+strong, b {
+  font-weight: 700; /* Merriweather-Bold */
+}
+em, i {
+  font-style: italic; /* Merriweather-Skraa */
 }
 h1, h2, h3 {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
+  font-weight: 700;   /* Montserrat Ace Bold */
 }
+
 /* --------------------------------------------------------------------------  
    2) Container Utility
-   - Centrerer og begrænser bredde
    -------------------------------------------------------------------------- */
 .container {
   width: 90%;
@@ -114,8 +116,6 @@ h1, h2, h3 {
 
 /* --------------------------------------------------------------------------  
    3) Navbar
-   - Fleksibel desktop-layout med max-width
-   - Mobil-dropdown via klasse .open
    -------------------------------------------------------------------------- */
 .navbar {
   display: flex;
@@ -127,22 +127,16 @@ h1, h2, h3 {
   border-radius: 0.5rem;
   position: relative;
   z-index: 3;
-  /* Begrænset og centreret */
 }
-
-/* Logo */
 .logo {
   font-size: 1.5rem;
   font-weight: 600;
 }
-
-/* Menu-links (desktop) */
 .nav-links {
   list-style: none;
   display: flex;
   gap: 1.5rem;
 }
-.nav-links li {}
 .nav-links a {
   text-decoration: none;
   color: #2c3e50;
@@ -153,8 +147,6 @@ h1, h2, h3 {
 .nav-links a:hover {
   color: #3d5c3d;
 }
-
-/* Burger-ikon (gemt på desktop) */
 .burger {
   display: none;
   font-size: 2rem;
@@ -163,8 +155,6 @@ h1, h2, h3 {
   cursor: pointer;
   z-index: 4;
 }
-
-/* Tekst for mobil vs. desktop */
 .desktop-text { display: none; }
 .mobile-text { display: inline; }
 @media (min-width: 768px) {
@@ -174,10 +164,7 @@ h1, h2, h3 {
 
 /* --------------------------------------------------------------------------  
    4) Breakpoints: Mobil vs. Desktop
-   - Mobil (<768px): dropdown-menu, burger-ikon synligt
-   - Desktop (>=768px): inline-menu, burger-ikon skjult
    -------------------------------------------------------------------------- */
-/* Mobil */
 @media (max-width: 768px) {
   .navbar {
     padding: 0.5rem 1rem;
@@ -215,8 +202,6 @@ h1, h2, h3 {
     right: 0;
   }
 }
-
-/* Desktop */
 @media (min-width: 769px) {
   .burger { display: none; }
   .nav-overlay { display: none !important; }
@@ -236,7 +221,7 @@ h1, h2, h3 {
 }
 
 /* --------------------------------------------------------------------------  
-   5) Hero Section (genbrug fra dit design)
+   5) Hero Section
    -------------------------------------------------------------------------- */
 .hero-section {
   background: url('HEADER7.png') no-repeat center center;
@@ -310,10 +295,9 @@ h1, h2, h3 {
   font-size: 0.9rem;
   margin-top: 4rem;
 }
-/* Grøn knap til vilkår & betingelser */
 .btn-terms {
   display: inline-block;
-  background-color: #3d5c3d; /* dyb grøn */
+  background-color: #3d5c3d;
   color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
@@ -322,8 +306,7 @@ h1, h2, h3 {
   transition: background-color 0.2s;
   margin-top: 1rem;
 }
-
 .btn-terms:hover {
-  background-color: #35503a; /* lidt mørkere ved hover */
+  background-color: #35503a;
 }
 
