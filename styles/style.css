@@ -259,6 +259,14 @@ h1, h2, h3 {
 /* --------------------------------------------------------------------------  
    5) Hero Section
    -------------------------------------------------------------------------- */
+/* billede-ikon forsiden */
+.inline-img {
+  display: inline-block;       /* behandler billedet som tekst-element */
+  vertical-align: middle;      /* justerer midt på linjen */
+  max-width: 70px;            /* begrænser størrelsen efter behov */
+  margin: 0 0.5rem;            /* lidt luft omkring billedet */
+}
+/* billede-ikon forsiden */
 .hero-section {
   background: url('HEADER7.png') no-repeat center center;
   background-size: cover;
