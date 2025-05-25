@@ -13,7 +13,7 @@
     background-color: #f8f9f4;
     color: #2c3e50;
   }
-
+@media (min-width:769px) { .navbar { max-width:1200px; } })
   .navbar {
     display: flex;
     justify-content: space-between;
