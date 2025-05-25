@@ -233,4 +233,20 @@ body {
   font-size: 0.9rem;
   margin-top: 4rem;
 }
+/* Grøn knap til vilkår & betingelser */
+.btn-terms {
+  display: inline-block;
+  background-color: #3d5c3d; /* dyb grøn */
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s;
+  margin-top: 1rem;
+}
+
+.btn-terms:hover {
+  background-color: #35503a; /* lidt mørkere ved hover */
+}
 
