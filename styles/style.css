@@ -3,17 +3,6 @@
    Grundlæggende styling med modular opbygning og kommentarer  
    ========================================================================== */
 
-/* ========================================================================
-   🎨 Color Playground: CSS-variables for tema-farver
-   ======================================================================== */
-:root {
-  --primary: #3d5c3d;
-  --secondary: #d5e6d5;
-}
-.header, .navbar { background: var(--primary); }
-.button, .btn-terms { background: var(--secondary); }
-/* … tilpas flere selectors efter behov … */
-
 /* ==========================================================================  
    0) Font-faces (før alt andet)  
    ========================================================================== */
