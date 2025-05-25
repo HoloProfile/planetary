@@ -24,7 +24,84 @@ body {
   background-color: #f8f9f4;
   color: #2c3e50;
 }
+/* ==== Merriweather ==== */
+/* Normal (400) */
+@font-face {
+  font-family: 'Merriweather';
+  font-weight: 400;
+  font-style: normal;
+  src: url('styles/fonts/Tekst-Normal.woff2') format('woff2');
+  font-display: swap;
+}
+/* Bold (700) */
+@font-face {
+  font-family: 'Merriweather';
+  font-weight: 700;
+  font-style: normal;
+  src: url('styles/fonts/Tekst-Fed.woff2') format('woff2');
+  font-display: swap;
+}
+/* Italic (400 italic) */
+@font-face {
+  font-family: 'Merriweather';
+  font-weight: 400;
+  font-style: italic;
+  src: url('styles/fonts/Tekst-Skraa.woff2') format('woff2');
+  font-display: swap;
+}
+/* Let (300) */
+@font-face {
+  font-family: 'Merriweather';
+  font-weight: 300;
+  font-style: italic;
+  src: url('styles/fonts/Tekst-Let.woff2') format('woff2');
+  font-display: swap;
+}
 
+
+/* ==== Montserrat Ace ==== */
+/* Light (300) */
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 300;
+  font-style: normal;
+  src: url('styles/fonts/Overskrift-Let.woff2') format('woff2');
+  font-display: swap;
+}
+/* Regular (400) */
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-style: normal;
+  src: url('styles/fonts/Overskrift-Normal.woff2') format('woff2');
+  font-display: swap;
+}
+/* SemiBold (600) */
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-style: normal;
+  src: url('styles/fonts/Overskrift-SemiFed.woff2') format('woff2');
+  font-display: swap;
+}
+/* Bold (700) */
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-style: normal;
+  src: url('styles/fonts/Overskrift-Bold.woff2') format('woff2');
+  font-display: swap;
+}
+
+/* ==== Anvendelse ==== */
+body {
+  font-family: 'Merriweather', serif;
+  line-height: 1.6;
+}
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
 /* --------------------------------------------------------------------------  
    2) Container Utility
    - Centrerer og begrænser bredde
