@@ -103,6 +103,17 @@
 <footer class="footer">
   <p>&copy; 2025 Planetarisk Liv – skabt med kærlighed og kompost 💚</p>
   <a href="privatliv.html" class="btn-terms">Vilkår & Betingelser</a>
+  <!-- Farvepanel -->
+<section class="color-playground">
+  <h2>🎨 Farve-Playground</h2>
+  <label>Primærfarve: 
+    <input type="color" id="pick1" value="#3d5c3d">
+  </label>
+  <label>Sekundærfarve: 
+    <input type="color" id="pick2" value="#d5e6d5">
+  </label>
+</section>
+
 </footer>
 
   <!-- Scripts -->
@@ -130,6 +141,15 @@ window.addEventListener('click', function(e) {
     box.style.display = "none";
   }
 });
+  // ======================================================================
+  // 🎨 Farve-Playground: Real-time CSS-variable tweak
+  // ======================================================================
+  document.getElementById('pick1').addEventListener('input', e =>
+    document.documentElement.style.setProperty('--primary', e.target.value)
+  );
+  document.getElementById('pick2').addEventListener('input', e =>
+    document.documentElement.style.setProperty('--secondary', e.target.value)
+  );
 </script>
 
 </body>
