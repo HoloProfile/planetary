@@ -509,7 +509,7 @@ opacity: 0;
   margin: 2rem auto;                      /* centreret og luft omkring */
   border-radius: 1rem;                    /* blÃ¸de hjÃ¸rner */
   overflow: hidden;                       /* sÃ¸rger for sidekant-animation */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);  /* subtil dybde */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);  /* subtil dybde */
   background: #fff;                       /* hvid baggrund */
 }
 
@@ -563,6 +563,7 @@ opacity: 0;
   margin-top: 1rem;
 }
 
+
 /* ------------------------------------------------------------------------
    8.1) Nested Idea Details (individuelle idÃ©er)
    ------------------------------------------------------------------------ */
@@ -580,7 +581,7 @@ opacity: 0;
   transition: color 0.2s;
 }
 .idea-header::after {
-  content: 'â–¶';
+  content: '▼';
   position: absolute;
   right: 0;
   transition: transform 0.3s;
