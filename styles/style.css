@@ -658,3 +658,30 @@ opacity: 0;
   max-height: 500px;
 }
 
+
+TEST:
+/* Gaia-visuelle elementer */
+
+.divider {
+  height: 2px;
+  width: 50%;
+  background: #3d5c3d;
+  margin: 2rem auto;
+  border-radius: 1rem;
+}
+
+.spacer {
+  height: 2rem;
+}
+
+.spacer-lg {
+  height: 4rem;
+}
+
+.spiral {
+  width: 48px;
+  height: 48px;
+  background: url('billeder/planetarisk_liv_icon_64x64.png') no-repeat center center;
+  background-size: contain;
+  margin: 1rem auto;
+}
