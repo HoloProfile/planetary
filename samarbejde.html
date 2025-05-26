@@ -1,29 +1,120 @@
+<!-- ==========================================================================  
+   samarbejde.html  
+   Planetært Liv – Samarbejd med os  
+   ========================================================================== -->
 <!DOCTYPE html>
 <html lang="da">
 <head>
+  <!-- 1) Metadata & Stylesheet -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Samarbejde</title>
+  <title>Samarbejd med os – Planetært Liv</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="billeder/planetarisk_liv_icon_circular.png" type="image/png">
+  <meta name="theme-color" content="#f8f9f4">
+  <!-- Font Preload -->
+  <link rel="preload" href="styles/fonts/Tekst-Normal.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <!-- (øvrige preload-links) -->
   <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-  <nav class="navbar">
-    <div class="logo">🌍 Planetært Liv</div>
-    <div class="burger">☰</div>
-  </nav>
+  <!-- 2) Nav Overlay & Header -->
+  <div id="navOverlay" class="nav-overlay" onclick="closeMenu()"></div>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        🌍 <span class="desktop-text">Planetært Liv – Samarbejd med os</span>
+        <span class="mobile-text">Samarbejde</span>
+      </div>
+      <button class="burger" onclick="toggleMenu()">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" onclick="toggleMenu()">Start</a></li>
+        <li><a href="historie.html" onclick="toggleMenu()">Historie</a></li>
+        <li><a href="viden.html" onclick="toggleMenu()">Viden</a></li>
+        <li><a href="100ideer.html" onclick="toggleMenu()">100 idéer</a></li>
+        <li><a href="ressourcer.html" onclick="toggleMenu()">Ressourcer</a></li>
+        <li><a href="om.html" onclick="toggleMenu()">Om</a></li>
+        <li><a href="samarbejde.html" onclick="toggleMenu()">Samarbejde</a></li>
+        <li><a href="faq.html" onclick="toggleMenu()">FAQ</a></li>
+        <li><a href="galleri.html" onclick="toggleMenu()">Galleri</a></li>
+        <li><a href="gæstebog.html" onclick="toggleMenu()">Gæstebog</a></li>
+        <li><a href="kontakt.html" onclick="toggleMenu()">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <section class="content" style="padding: 2rem;">
+  <!-- 3) Hero Section -->
+  <section class="hero-section">
     <h1>Samarbejd med os</h1>
-    <p>Vil du være med? Uanset om du er journalist, underviser, forsker eller bare nysgerrig – så hører vi gerne fra dig.</p>
-
-    <p>Vi kan tilbyde:</p>
-    <ul>
-      <li>📸 Interviews & artikler</li>
-      <li>🎤 Foredrag og samtaler</li>
-      <li>🧠 Sparring om grøn livsstil, børneliv og hverdagsændringer</li>
-    </ul>
-
-    <p>📩 <strong>Mail os på:</strong> <a href="mailto:planetarianway@proton.me">planetarianway@proton.me</a></p>
+    <p>Journalister, undervisere, forskere eller nysgerrige – vi vil gerne høre fra dig!</p>
   </section>
+
+  <!-- 4) Flyvende Guide -->
+  <div class="floating-guide">
+    <img src="billeder/planetarisk_liv_icon_circular.png" alt="Guide ikon" class="floating-icon" onclick="toggleGuideBox()">
+    <div id="guideBox" class="guide-box">
+      <h3>🌍 Guide til siden</h3>
+      <ul>
+        <li><a href="index.html">🏠 Start</a></li>
+        <li><a href="historie.html">📖 Historie</a></li>
+        <li><a href="viden.html">📘 Viden</a></li>
+        <li><a href="100ideer.html">🌿 100 idéer</a></li>
+        <li><a href="ressourcer.html">📚 Ressourcer</a></li>
+        <li><a href="om.html">📜 Om</a></li>
+        <li><a href="samarbejde.html">🤝 Samarbejde</a></li>
+        <li><a href="faq.html">❓ FAQ</a></li>
+        <li><a href="galleri.html">🖼️ Galleri</a></li>
+        <li><a href="gæstebog.html">✍️ Gæstebog</a></li>
+        <li><a href="kontakt.html">✉️ Kontakt</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 5) Main Content -->
+  <main class="content">
+    <section class="text-box">
+      <h2>Vi kan tilbyde:</h2>
+      <ul class="idea-list">
+        <li>📸 Interviews & artikler</li>
+        <li>🎤 Foredrag og samtaler</li>
+        <li>🧠 Sparring om grøn livsstil, børneliv og hverdagsændringer</li>
+      </ul>
+    </section>
+    <section class="text-box">
+      <h2>Kontakt</h2>
+      <p>📩 <strong>Mail os:</strong> <a href="mailto:planetarianway@proton.me">planetarianway@proton.me</a></p>
+    </section>
+  </main>
+
+  <!-- 6) Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Planetært Liv – Samarbejd med os 💚</p>
+    <a href="privatliv.html" class="btn-terms">Vilkår & Betingelser</a>
+  </footer>
+
+  <!-- 7) Scripts -->
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      const overlay = document.getElementById("navOverlay");
+      nav.classList.toggle("open");
+      overlay.style.display = nav.classList.contains("open") ? "block" : "none";
+    }
+    function closeMenu() {
+      document.getElementById("navLinks").classList.remove("open");
+      document.getElementById("navOverlay").style.display = "none";
+    }
+    function toggleGuideBox() {
+      const box = document.getElementById("guideBox");
+      box.style.display = (box.style.display === "block") ? "none" : "block";
+    }
+    window.addEventListener('click', function(e) {
+      const box = document.getElementById("guideBox");
+      const icon = document.querySelector(".floating-icon");
+      if (!box.contains(e.target) && !icon.contains(e.target)) {
+        box.style.display = "none";
+      }
+    });
+  </script>
 </body>
 </html>
