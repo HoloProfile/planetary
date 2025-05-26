@@ -23,6 +23,17 @@ const interval = setInterval(() => {
     }
   });
 
+icon.addEventListener("mouseenter", () => {
+    if (window.innerWidth >= 768) {
+      box.style.display = "block";
+      setTimeout(() => {
+        box.style.opacity = 1;
+        box.style.transform = "translateY(0)";
+      }, 10);
+    }
+  });
+
+  
   if (showMenuBtn) {
     showMenuBtn.addEventListener("click", () => {
       document.getElementById('gaiaIntro').style.display = 'none';
