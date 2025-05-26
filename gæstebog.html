@@ -1,71 +1,123 @@
+<!-- ==========================================================================  
+   gæstebog.html  
+   Planetært Liv – Gæstebog  
+   ========================================================================== -->
 <!DOCTYPE html>
 <html lang="da">
 <head>
+  <!-- 1) Metadata & PWA -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Planetarisk Gæstebog</title>
+  <title>Gæstebog – Planetarisk Liv</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="billeder/planetarisk_liv_icon_circular.png" type="image/png">
   <meta name="theme-color" content="#f8f9f4">
-  <style>
-    body {
-      font-family: Georgia, serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f8f9f4;
-      color: #2c3e50;
-    }
 
-    header, footer {
-      background-color: #d5e6d5;
-      padding: 1rem;
-      text-align: center;
-    }
+  <!-- 2) Font Preload -->
+  <link rel="preload" href="styles/fonts/Tekst-Normal.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Tekst-Fed.woff2"    as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Tekst-Skraa.woff2"  as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Light.woff2"  as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Bold.woff2"  as="font" type="font/woff2" crossorigin="anonymous">
 
-    h1, h2 {
-      color: #2c3e50;
-    }
-
-    section {
-      padding: 2rem;
-      background-color: #eef5e0;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    iframe {
-      width: 100%;
-      border: none;
-    }
-
-    footer p {
-      font-size: 0.9rem;
-      color: #555;
-      margin: 0;
-    }
-  </style>
+  <!-- 3) Stylesheet -->
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
+  <!-- 4) Mobile Nav Overlay -->
+  <div id="navOverlay" class="nav-overlay" onclick="closeMenu()"></div>
 
+  <!-- 5) Header & Navbar -->
   <header>
+    <nav class="navbar">
+      <div class="logo">
+        🌍 <span class="desktop-text">Planetært Liv – Gæstebogen</span>
+             <span class="mobile-text">Gæstebogen</span>
+      </div>
+      <button class="burger" onclick="toggleMenu()">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" onclick="toggleMenu()">Start</a></li>
+        <li><a href="100ideer.html" onclick="toggleMenu()">100 idéer</a></li>
+        <li><a href="viden.html" onclick="toggleMenu()">Viden</a></li>
+        <li><a href="historie.html" onclick="toggleMenu()">Historie</a></li>
+        <li><a href="faq.html" onclick="toggleMenu()">FAQ</a></li>
+        <li><a href="gæstebog.html" onclick="toggleMenu()">Gæstebog</a></li>
+      </ul>
+    </nav>
+  </header>
+<!-- 6) Hero Section -->
+  <section class="hero-section">
     <h1>Planetarisk Gæstebog</h1>
     <p>Et sted for hjertevarme hilsner og grønne drømme 🌱</p>
-  </header>
-
-  <section id="gaestebog">
-    <h2>Del din hilsen 💚</h2>
-    <p>Del dine tanker, drømme og planetvenlige idéer med fællesskabet. Din hilsen vises automatisk, når den er sendt.</p>
-
-    <iframe data-tally-src="https://tally.so/r/nWdyjJ" loading="lazy" height="500" title="Gæstebog"></iframe>
-    <script>
-      var d = document, s = d.createElement("script");
-      s.src = "https://tally.so/widgets/embed.js";
-      s.onload = function () { Tally.loadEmbeds(); };
-      d.body.appendChild(s);
-    </script>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Planetarisk Liv – Gæstebog med kærlighed og kompost ❤️</p>
+  <!-- 7) Flyvende Guide -->
+  <div class="floating-guide">
+    <img src="billeder/planetarisk_liv_icon_circular.png" alt="Guide ikon" class="floating-icon" onclick="toggleGuideBox()">
+    <div id="guideBox" class="guide-box">
+      <h3>🌍 Guide til siden</h3>
+      <ul>
+        <li><a href="index.html">🏠 Start</a></li>
+        <li><a href="100ideer.html">🌿 100 idéer</a></li>
+        <li><a href="viden.html">📘 Viden</a></li>
+        <li><a href="historie.html">📖 Historie</a></li>
+        <li><a href="faq.html">❓ FAQ</a></li>
+        <li><a href="galleri.html">📸 Galleri</a></li>
+        <li><a href="gæstebog.html">✍️ Gæstebog</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 8) Main Content -->
+  <main class="content">
+    <section class="content-box">
+      <h2>Del din hilsen 💚</h2>
+      <p>Del dine tanker, drømme og planetvenlige idéer med fællesskabet. Din hilsen vises automatisk, når den er sendt.</p>
+      <!-- Tally embed -->
+      <div class="embed-container">
+        <iframe data-tally-src="https://tally.so/r/nWdyjJ" loading="lazy" height="500" title="Gæstebog"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <!-- 9) Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Planetarisk Liv – Gæstebog med kærlighed og kompost 💚</p>
+    <a href="privatliv.html" class="btn-terms">Vilkår & Betingelser</a>
   </footer>
 
+  <!-- 10) Scripts -->
+  <script>
+    // Menu toggle
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      const overlay = document.getElementById("navOverlay");
+      nav.classList.toggle("open");
+      overlay.style.display = nav.classList.contains("open") ? "block" : "none";
+    }
+    function closeMenu() {
+      document.getElementById("navLinks").classList.remove("open");
+      document.getElementById("navOverlay").style.display = "none";
+    }
+    // Flyvende guide
+    function toggleGuideBox() {
+      const box = document.getElementById("guideBox");
+      box.style.display = (box.style.display === "block") ? "none" : "block";
+    }
+    window.addEventListener('click', function(e) {
+      const box = document.getElementById("guideBox");
+      const icon = document.querySelector(".floating-icon");
+      if (!box.contains(e.target) && !icon.contains(e.target)) {
+        box.style.display = "none";
+      }
+    });
+    // Init Tally
+    var d = document, s = d.createElement("script");
+    s.src = "https://tally.so/widgets/embed.js";
+    s.onload = function () { Tally.loadEmbeds(); };
+    d.body.appendChild(s);
+  </script>
 </body>
 </html>
