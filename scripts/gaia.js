@@ -32,14 +32,33 @@ icon.addEventListener("mouseenter", () => {
       }, 10);
     }
   });
+icon.addEventListener("mouseleave", () => {
+    if (window.innerWidth >= 768) {
+      box.style.opacity = 0;
+      box.style.transform = "translateY(10px)";
+      setTimeout(() => {
+        box.style.display = "none";
+      }, 300);
+    }
+  });
 
-  
   if (showMenuBtn) {
     showMenuBtn.addEventListener("click", () => {
       document.getElementById('gaiaIntro').style.display = 'none';
-      document.getElementById('gaiaMenu').style.display = 'block';
+      document.getElementById('gaiaMenuStart').style.display = 'block';
     });
   }
+
+  // Toggle undermenuer i Gaia
+  document.querySelectorAll('.gaia-toggle').forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const target = document.getElementById(toggle.dataset.target);
+      if (target) {
+        target.style.display = target.style.display === 'block' ? 'none' : 'block';
+      }
+    });
+  });
+
 
   if (greeting) {
     const path = window.location.pathname;
