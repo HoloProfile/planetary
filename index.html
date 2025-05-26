@@ -108,10 +108,13 @@
   <!-- ------------------------------------------------------------------------  
      7) Flyvende Guide  
      ------------------------------------------------------------------------ -->
-  <div class="floating-guide">
-    <img src="billeder/planetarisk_liv_icon_circular.png" alt="Guide ikon" class="floating-icon" onclick="toggleGuideBox()">
-    <div id="guideBox" class="guide-box">
-      <h3>🌍 Guide til siden</h3>
+ <!-- Gaia – flyvende spireven -->
+<div class="floating-guide">
+  <img src="billeder/planetarisk_liv_icon_circular.png" class="floating-icon" onclick="toggleGuide()" />
+  <div class="guide-box" id="guideBox">
+    <h3>🌱 Hej, jeg er Gaia!</h3>
+    <p>Din helt egen spireven her på siden 🌍  
+    Klik rundt, så hjælper jeg dig med at finde vej.</p>
   <ul>
         <li><a href="index.html">🏠 Hjem til forsiden</a></li>
         <li><a href="historie.html">📖 Vores rejse - kort fortalt</a></li>
@@ -125,8 +128,10 @@
         <li><a href="gæstebog.html">✍️ Gæstebog og Hilsner – Kom med dine egne ideer og en lille hilsen</a></li>
         <li><a href="kontakt.html">✉️ Kontakt – Vi svarer med hjertet</a></li>
       </ul>
-    </div>
+     <button class="guide-audio" onclick="document.getElementById('gaiaAudio').play()">🎧 Hør os fortælle</button>
+    <audio id="gaiaAudio" src="media/gaia-lyd.mp3"></audio>
   </div>
+</div>
 
   <!-- ------------------------------------------------------------------------  
      8) Main Content Sections  
