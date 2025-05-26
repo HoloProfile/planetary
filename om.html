@@ -1,27 +1,138 @@
+<!-- ==========================================================================  
+   om.html  
+   Planetært Liv – Hvem er vi?  
+   ========================================================================== -->
 <!DOCTYPE html>
 <html lang="da">
 <head>
+  <!-- 1) Metadata & Stylesheet -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hvem er vi?</title>
+  <title>Hvem er vi? – Planetært Liv</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="billeder/planetarisk_liv_icon_circular.png" type="image/png">
+  <meta name="theme-color" content="#f8f9f4">
+  <!-- Font Preload -->
+  <link rel="preload" href="styles/fonts/Tekst-Normal.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Tekst-Fed.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Tekst-Skraa.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  
+  <!-- (øvrige preload-links) -->
   <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-  <nav class="navbar">
-    <div class="logo">🌍 Planetært Liv</div>
-    <div class="burger">☰</div>
-  </nav>
+  <!--  Nav Overlay & Header -->
+  <div id="navOverlay" class="nav-overlay" onclick="closeMenu()"></div>
 
-  <section class="content" style="padding: 2rem;">
+  <!-- ------------------------------------------------------------------------  
+      Header & Navbar  
+     ------------------------------------------------------------------------ -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        🌍 <span class="desktop-text">Velkommen, til et liv under de planetære grænser</span>
+        <span class="mobile-text">Det planetære liv</span>
+      </div>
+      <button class="burger" onclick="toggleMenu()">☰</button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" onclick="toggleMenu()">Start</a></li>
+         <li><a href="historie.html" onclick="toggleMenu()">Historie</a></li>
+          <li><a href="viden.html" onclick="toggleMenu()">Viden</a></li>
+        <li><a href="100ideer.html" onclick="toggleMenu()">100 idéer</a></li>
+        <li><a href="ressourcer.html" onclick="toggleMenu()">Ressourcer</a></li>
+        <li><a href="om.html" onclick="toggleMenu()">Om</a></li>
+         <li><a href="samarbejde.html" onclick="toggleMenu()">Samarbejde</a></li>
+        <li><a href="faq.html" onclick="toggleMenu()">FAQ</a></li>
+        <li><a href="galleri.html" onclick="toggleMenu()">Galleri</a></li>
+        <li><a href="gæstebog.html" onclick="toggleMenu()">Gæstebog</a></li>
+        <li><a href="kontakt.html" onclick="toggleMenu()">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 3) Hero Section -->
+  <section class="hero-section">
     <h1>Hvem er vi?</h1>
-    <p>Vi er Rasmus, Heidi, Ea og Atlas – en lille familie i et lille hus, med store drømme.</p>
-    <p>Vi bor i et andelshus i Ny Højen med hunde, høns og en have fyldt med liv. Vores rejse handler om at leve enkelt, men rigt – under de planetære grænser og i dyb forbindelse med naturen, hinanden og fællesskabet omkring os.</p>
-    <p>Projektet <strong>Planetært Liv</strong> er ikke perfekt. Det er ærligt, nysgerrigt og fyldt med små skridt. Vi vil vise, at det ikke kræver et off-grid liv på en øde ø at gøre en forskel – men et spørgsmål om valg, værdier og vilje.</p>
-    <p>Vi håber, du vil følge med – og måske endda blive inspireret til at tage dit eget skridt.</p>
-    <p><em>Velkommen hjem. Velkommen til jorden.</em></p>
+    <p>En familie, en rejse, et fællesskab under de planetære grænser.</p>
   </section>
+
+  <!-- 4) Flyvende Guide -->
+  <div class="floating-guide">
+    <img src="billeder/planetarisk_liv_icon_circular.png" alt="Guide ikon" class="floating-icon" onclick="toggleGuideBox()">
+    <div id="guideBox" class="guide-box">
+      <h3>🌍 Guide til siden</h3>
+      <ul>
+        <li><a href="index.html">🏠 Start</a></li>
+        <li><a href="historie.html">📖 Historie</a></li>
+        <li><a href="viden.html">📘 Viden</a></li>
+        <li><a href="100ideer.html">🌿 100 idéer</a></li>
+        <li><a href="ressourcer.html">📚 Ressourcer</a></li>
+        <li><a href="om.html">📜 Om</a></li>
+        <li><a href="samarbejde.html">🤝 Samarbejde</a></li>
+        <li><a href="faq.html">❓ FAQ</a></li>
+        <li><a href="galleri.html">🖼️ Galleri</a></li>
+        <li><a href="gæstebog.html">✍️ Gæstebog</a></li>
+        <li><a href="kontakt.html">✉️ Kontakt</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 5) Main Content: About Us -->
+  <main class="content">
+    <section class="text-box">
+      <h2>Vores Familie</h2>
+      <p>Vi er <strong>Rasmus</strong>, <strong>Heidi</strong>, <strong>Ea</strong> og <strong>Atlas</strong> – en lille familie i et bæredygtigt andelshus i Ny Højen med høns, gårdhunde og en have i fuldt flor.</p>
+    </section>
+    <section class="text-box">
+      <h2>Vores Rejse</h2>
+      <p>Projektet <strong>Planetært Liv</strong> handler om at leve enkelt, men rigt – under de planetære grænser og i dyb forbindelse med natur, hinanden og fællesskabet.</p>
+      <p>Fra bil-salg til bæredygtige vaner: Hver beslutning, et skridt nærmere et liv i balance.</p>
+    </section>
+    <section class="text-box">
+      <h2>Vores Vision</h2>
+      <p>Vi viser, at det ikke kræver off-grid-tilværelse at gøre en forskel – men modet til at vælge bæredygtighed, nysgerrighed til at eksperimentere og viljen til at dele vores erfaringer.</p>
+      <p><em>Velkommen hjem. Velkommen til jorden.</em></p>
+    </section>
+  </main>
+
+  <!-- 6) Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Planetært Liv – En rejse skabt med kærlighed og kompost 💚</p>
+    <a href="privatliv.html" class="btn-terms">Vilkår & Betingelser</a>
+  </footer>
+
+  <!-- 7) Scripts: menu & guide -->
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      const overlay = document.getElementById("navOverlay");
+      nav.classList.toggle("open");
+      overlay.style.display = nav.classList.contains("open") ? "block" : "none";
+    }
+    function closeMenu() {
+      document.getElementById("navLinks").classList.remove("open");
+      document.getElementById("navOverlay").style.display = "none";
+    }
+    function toggleGuideBox() {
+      const box = document.getElementById("guideBox");
+      box.style.display = (box.style.display === "block") ? "none" : "block";
+    }
+    window.addEventListener('click', function(e) {
+      const box = document.getElementById("guideBox");
+      const icon = document.querySelector(".floating-icon");
+      if (!box.contains(e.target) && !icon.contains(e.target)) {
+        box.style.display = "none";
+      }
+    });
+  </script>
 </body>
 </html>
+
 
 
 
