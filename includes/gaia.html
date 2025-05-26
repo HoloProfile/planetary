@@ -37,7 +37,26 @@
       <li><a href="ressourcer.html">📚 Anbefalinger</a></li>
     </ul>
   </div>
-
+   <div class="accordion">
+        <button class="accordion-header">🌍 Planetært Liv</button>
+        <div class="accordion-content">
+          <p><a href="historie.html">🗺️ Vores rejse<</p>
+	<p><a href="om.html">👨‍👩‍👦‍👦 Om os<</p>
+	<p><a href="faq.html">⁉️ Spørgsmål og svar<</p>
+        </div>
+      </div>
+      <div class="accordion">
+        <button class="accordion-header">Er det ikke dyrt?</button>
+        <div class="accordion-content">
+          <p>Nej – faktisk sparer vi penge, fordi vi køber mindre og genbruger mere.</p>
+        </div>
+      </div>
+      <div class="accordion">
+        <button class="accordion-header">Er børnene med på det?</button>
+        <div class="accordion-content">
+          <p>Ja, de lærer undervejs og elsker naturen, dyr og jord under neglene.</p>
+        </div>
+      </div>
   <button class="guide-audio gaia-toggle" data-target="gaiaMenuGør">🌿 Gør en forskel</button>
   <div id="gaiaMenuGør" class="gaia-section" style="display: none;">
     <ul>
@@ -65,4 +84,11 @@
   </div>
 </div>
 
-
+// Accordion FAQ
+    document.querySelectorAll('.accordion-header').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('open');
+        const content = btn.nextElementSibling;
+        content.classList.toggle('open');
+      });
+    });
