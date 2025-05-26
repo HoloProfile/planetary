@@ -434,7 +434,7 @@ opacity: 0;
   padding: 1rem;
   text-align: center; /* ✅ centrér al tekst */
   font-weight: 500;   /* ✅ lidt federe end normal */
-  font-size: 1rem;
+  font-size: 0.9rem;
   animation: fadeInGuide 0.3s ease-out;
   border: 1px solid #bcd9bc;
   font-family: 'Poppins', sans-serif;
