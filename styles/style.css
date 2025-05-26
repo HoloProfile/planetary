@@ -406,7 +406,7 @@ h1, h2, h3 {
 .floating-icon {
   width: 60px;
   height: 60px;
-  cursor: help;
+  cursor: cursor: pointer;
   transition: transform 0.3s ease;
   animation: floaty 4s ease-in-out infinite;
 }
@@ -421,6 +421,9 @@ h1, h2, h3 {
 /* Talebobbel-stil */
 .guide-box {
   display: none;
+opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
   position: absolute;
   bottom: 70px;
   right: 0;
