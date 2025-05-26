@@ -1,63 +1,121 @@
+<!-- ==========================================================================  
+   viden.html  
+   Planetært Liv – Det sikre råderum  
+   ========================================================================== -->
 <!DOCTYPE html>
 <html lang="da">
 <head>
+  <!-- 1) Metadata & Stylesheet -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Det sikre råderum</title>
-  <style>
-    body {
-      font-family: Georgia, serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f8f9f4;
-      color: #2c3e50;
-    }
-
-    .section {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-
-    .section h1 {
-      font-size: 2.2rem;
-      color: #3d5c3d;
-      margin-bottom: 1rem;
-    }
-
-    .section p {
-      font-size: 1.1rem;
-      line-height: 1.7;
-      margin-bottom: 2rem;
-    }
-
-    .section img {
-      max-width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-  </style>
+  <title>Det sikre råderum – Planetært Liv</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="billeder/planetarisk_liv_icon_circular.png" type="image/png">
+  <meta name="theme-color" content="#f8f9f4">
+  <!-- Font Preload -->
+ <link rel="preload" href="styles/fonts/Tekst-Normal.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Tekst-Fed.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Tekst-Skraa.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
+  <!-- 2) Nav Overlay & Header -->
+  <div id="navOverlay" class="nav-overlay" onclick="closeMenu()"></div>
+   <header>
+    <nav class="navbar">
+      <div class="logo">
+        🌍 <span class="desktop-text">Velkommen, til et liv under de planetære grænser</span>
+        <span class="mobile-text">Det planetære liv</span>
+      </div>
+      <button class="burger" onclick="toggleMenu()">☰</button>
+ <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" onclick="toggleMenu()">Start</a></li>
+         <li><a href="historie.html" onclick="toggleMenu()">Historie</a></li>
+          <li><a href="viden.html" onclick="toggleMenu()">Viden</a></li>
+        <li><a href="100ideer.html" onclick="toggleMenu()">100 idéer</a></li>
+        <li><a href="ressourcer.html" onclick="toggleMenu()">Ressourcer</a></li>
+        <li><a href="om.html" onclick="toggleMenu()">Om</a></li>
+         <li><a href="samarbejde.html" onclick="toggleMenu()">Samarbejde</a></li>
+        <li><a href="faq.html" onclick="toggleMenu()">FAQ</a></li>
+        <li><a href="galleri.html" onclick="toggleMenu()">Galleri</a></li>
+        <li><a href="gæstebog.html" onclick="toggleMenu()">Gæstebog</a></li>
+        <li><a href="kontakt.html" onclick="toggleMenu()">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <section class="section">
+  <!-- 3) Hero Section -->
+  <section class="hero-section">
     <h1>Det sikre råderum</h1>
-    <p>
-      De planetære grænser er naturens egne sikkerhedslinjer. Går vi ud over dem, 
-      risikerer vi at ødelægge grundlaget for liv, som vi kender det. Men det betyder ikke,
-      at vi skal give afkald på livsglæde, håb og fællesskab – tværtimod.
-    </p>
-    <p>
-      I det sikre råderum er der plads til både mennesker og natur. Her handler det om balance:
-      Hvor meget kan vi tillade os – uden at skubbe kloden over sine grænser?
-    </p>
-    <img src="styles/HEADER_SikreRåderum.png" alt="Infografik over det sikre råderum">
-    <p>
-      Når vi lever inden for rammerne, får vi ikke kun et mere bæredygtigt samfund –
-      vi får også et liv med mere mening, mindre stress og en dybere forbindelse til hinanden og naturen.
-    </p>
+    <p>Forstå de planetære grænser og find balance mellem livsglæde og bæredygtighed.</p>
   </section>
 
+  <!-- 4) Flyvende Guide -->
+  <div class="floating-guide">
+    <img src="billeder/planetarisk_liv_icon_circular.png" alt="Guide ikon" class="floating-icon" onclick="toggleGuideBox()">
+    <div id="guideBox" class="guide-box">
+      <h3>🌍 Guide til siden</h3>
+      <ul>
+        <li><a href="index.html">🏠 Start</a></li>
+        <li><a href="historie.html">📖 Historie</a></li>
+        <li><a href="viden.html">📘 Viden</a></li>
+        <li><a href="100ideer.html">🌿 100 idéer</a></li>
+        <li><a href="ressourcer.html">📚 Ressourcer</a></li>
+        <li><a href="om.html">📜 Om</a></li>
+        <li><a href="samarbejde.html">🤝 Samarbejde</a></li>
+        <li><a href="faq.html">❓ FAQ</a></li>
+        <li><a href="galleri.html">🖼️ Galleri</a></li>
+        <li><a href="gæstebog.html">✍️ Gæstebog</a></li>
+        <li><a href="kontakt.html">✉️ Kontakt</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 5) Main Content -->
+  <main class="content">
+    <section class="text-box">
+      <p>De planetære grænser er naturens egne sikkerhedslinjer. Går vi ud over dem, risikerer vi at ødelægge grundlaget for liv, som vi kender det. Men det betyder ikke, at vi skal give afkald på livsglæde, håb og fællesskab – tværtimod.</p>
+      <p>I det sikre råderum er der plads til både mennesker og natur. Her handler det om balance: Hvor meget kan vi tillade os – uden at skubbe kloden over sine grænser?</p>
+    </section>
+    <section class="content-box">
+      <img src="styles/HEADER_SikreRåderum.png" alt="Infografik over det sikre råderum">
+      <p>Når vi lever inden for rammerne, får vi ikke kun et mere bæredygtigt samfund – vi får også et liv med mere mening, mindre stress og en dybere forbindelse til hinanden og naturen.</p>
+    </section>
+  </main>
+
+  <!-- 6) Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Planetært Liv – Viden med kærlighed og kompost 💚</p>
+    <a href="privatliv.html" class="btn-terms">Vilkår & Betingelser</a>
+  </footer>
+
+  <!-- 7) Scripts: menu & guide -->
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      const overlay = document.getElementById("navOverlay");
+      nav.classList.toggle("open");
+      overlay.style.display = nav.classList.contains("open") ? "block" : "none";
+    }
+    function closeMenu() {
+      document.getElementById("navLinks").classList.remove("open");
+      document.getElementById("navOverlay").style.display = "none";
+    }
+    function toggleGuideBox() {
+      const box = document.getElementById("guideBox");
+      box.style.display = (box.style.display === "block") ? "none" : "block";
+    }
+    window.addEventListener('click', function(e) {
+      const box = document.getElementById("guideBox");
+      const icon = document.querySelector(".floating-icon");
+      if (!box.contains(e.target) && !icon.contains(e.target)) {
+        box.style.display = "none";
+      }
+    });
+  </script>
 </body>
 </html>
