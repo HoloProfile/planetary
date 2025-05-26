@@ -432,12 +432,15 @@ opacity: 0;
   border-radius: 16px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   padding: 1rem;
+  text-align: center; /* ✅ centrér al tekst */
+  font-weight: 500;   /* ✅ lidt federe end normal */
   font-size: 1rem;
   animation: fadeInGuide 0.3s ease-out;
   border: 1px solid #bcd9bc;
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
   color: #2c3e50;
+}
 }
 @keyframes fadeInGuide {
   from { opacity: 0; transform: translateY(10px); }
@@ -454,9 +457,10 @@ opacity: 0;
 .guide-box ul {
   list-style: none;
   padding-left: 0;
+  margin: 0 auto;
 }
 .guide-box li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem 0;
   display: flex;
   align-items: flex-start;
   gap: 0.5rem;
@@ -467,9 +471,11 @@ opacity: 0;
   line-height: 1.2;
 }
 .guide-box a {
-  color: #2c3e50;
+   display: inline-block;
+  margin: 0.25rem 0;
   text-decoration: none;
-  transition: color 0.2s;
+  color: #2c3e50;
+  transition: color 0.2s ease;
 }
 .guide-box a:hover {
   color: #3d5c3d;
