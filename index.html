@@ -110,8 +110,9 @@
      ------------------------------------------------------------------------ -->
  <!-- Gaia – flyvende spireven -->
 <div class="floating-guide">
-  <img src="billeder/planetarisk_liv_icon_circular.png" class="floating-icon" onclick="toggleGuide()" />
-  <div class="guide-box" id="guideBox">
+  <img src="images/gaia-icon.png" alt="Gaia spireven" class="floating-icon" 
+       onclick="toggleGuide()" onmouseenter="showGuide()" />
+  <div class="guide-box" id="guideBox" onclick="event.stopPropagation()">
     <h3>🌱 Hej, jeg er Gaia!</h3>
     <p>Din helt egen spireven her på siden 🌍  
     Klik rundt, så hjælper jeg dig med at finde vej.</p>
@@ -196,10 +197,25 @@
     function closeMenu() {
       document.getElementById("navLinks").classList.remove("open");
       document.getElementById("navOverlay").style.display = "none";
+  <script>
+  const guideBox = document.getElementById("guideBox");
+
+  function toggleGuide() {
+    guideBox.style.display = (guideBox.style.display === "block") ? "none" : "block";
+  }
+
+  function showGuide() {
+    if (window.innerWidth >= 768) { // kun hover-effekt på desktop
+      guideBox.style.display = "block";
     }
-    function toggleGuideBox() {
-      const box = document.getElementById("guideBox");
-      box.style.display = (box.style.display === "block") ? "none" : "block";
+  }
+
+  // Luk hvis man klikker udenfor (kun på desktop)
+  document.addEventListener("click", function (event) {
+    if (!event.target.closest(".floating-guide") && window.innerWidth >= 768) {
+      guideBox.style.display = "none";
+    }
+  });
     }
     window.addEventListener('click', function(e) {
       const box = document.getElementById("guideBox");
