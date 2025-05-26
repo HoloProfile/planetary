@@ -381,7 +381,7 @@ h1, h2, h3 {
    ======================================================================== */
 
 .forside-main {
-  background: url('billeder/grøn_bund.png') no-repeat center top;
+  background: url('billeder/gron_bund.png') no-repeat center top;
   background-size: cover;
    background-attachment: fixed; /* valgfri: giver parallax-effekt */
   padding: 3rem 1rem;
