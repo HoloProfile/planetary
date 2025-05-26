@@ -249,6 +249,27 @@
         box.style.display = "none";
       }
     });
+      // ======================================================================
+  // Accordion funktion (nyt: toggler både header & content)
+  // ======================================================================
+  document.querySelectorAll('.accordion-header').forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Toggle open på selve header-knappen (rotér pil)
+      btn.classList.toggle('open');
+      // Toggle open på indholdet lige efter header
+      const content = btn.nextElementSibling;
+      content.classList.toggle('open');
+    });
+  });
+
+  // Nested Idea-details
+  document.querySelectorAll('.idea-header').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('open');              // roterer pilen på idé-niveau
+      const details = btn.nextElementSibling;
+      details.classList.toggle('open');          // viser/skjuler detaljerne
+    });
+  });
   </script>
 </body>
 </html>
