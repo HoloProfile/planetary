@@ -552,7 +552,7 @@ opacity: 0;
   overflow: hidden;
   transition: max-height 0.5s ease;
   background: #f8f9f4;
-   padding: 1rem;
+   padding: 0.75rem 1rem;
   text-align: center; /* ✅ centrering */
   font-weight: 500; /* ✅ lidt federe tekst */
   box-shadow: inset 0 2px 8px rgba(0,0,0,0.05); /* ✅ subtil skygge */
@@ -573,7 +573,7 @@ opacity: 0;
 }
 /* NÃ¥r boksen er Ã¥ben */
 .accordion-content.open {
-  max-height: 2000px; /* stort nok til alle idÃ©er */
+  max-height: 3000px; /* stort nok til alle idÃ©er */
 }
 
 .accordion-header.open::after {
