@@ -1,10 +1,10 @@
 /* ==========================================================================  
    styles/style.css (rettet)  
-   Grundlæggende styling med modular opbygning og kommentarer  
+   GrundlÃ¦ggende styling med modular opbygning og kommentarer  
    ========================================================================== */
 
 /* ==========================================================================  
-   0) Font-faces (før alt andet)  
+   0) Font-faces (fÃ¸r alt andet)  
    ========================================================================== */
 /* ==== Merriweather ==== */
 /* Light (300 normal) */
@@ -173,16 +173,16 @@ h1, h2, h3 {
    3.1) Navbar Shadow & Rounded Links
    -------------------------------------------------------------------------- */
 .navbar {
-  /* Gør din eksisterende skygge lidt større og blødere */
+  /* GÃ¸r din eksisterende skygge lidt stÃ¸rre og blÃ¸dere */
   box-shadow: 0 6px 16px rgba(0,0,0,0.1);
 }
 
 .nav-links a {
   /* Skift til Poppins for lidt mere runding i snittet */
   font-family: 'Poppins', sans-serif;
-  /* Let text-shadow for en blød kant på bogstaverne */
+  /* Let text-shadow for en blÃ¸d kant pÃ¥ bogstaverne */
   text-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  /* Giv linkene en baggrunds-pille og bløde hjørner */
+  /* Giv linkene en baggrunds-pille og blÃ¸de hjÃ¸rner */
   background: rgba(255,255,255,0.2);
   border-radius: 0.5rem;
   padding: 0.5rem 0.75rem;
@@ -193,13 +193,13 @@ h1, h2, h3 {
 }
 
 .nav-links a:hover {
-  /* Højt lys under hover for kontrast */
+  /* HÃ¸jt lys under hover for kontrast */
   background: rgba(255,255,255,0.35);
   color: #3d5c3d;
   text-shadow: 0 1px 4px rgba(0,0,0,0.3);
 }
 /* --------------------------------------------------------------------------  
-   3.2) Dropdowns i navigation – flydende og med planetære farver
+   3.2) Dropdowns i navigation â€“ flydende og med planetÃ¦re farver
    -------------------------------------------------------------------------- */
 .dropdown {
   position: relative;
@@ -326,8 +326,8 @@ h1, h2, h3 {
 /* billede-ikon forsiden */
 .inline-img {
   display: inline-block;       /* behandler billedet som tekst-element */
-  vertical-align: middle;      /* justerer midt på linjen */
-  max-width: 70px;            /* begrænser størrelsen efter behov */
+  vertical-align: middle;      /* justerer midt pÃ¥ linjen */
+  max-width: 70px;            /* begrÃ¦nser stÃ¸rrelsen efter behov */
   margin: 0 0.5rem;            /* lidt luft omkring billedet */
 }
 /* billede-ikon forsiden */
@@ -357,7 +357,7 @@ h1, h2, h3 {
 .hero-section a {
   position: relative;
   z-index: 2;
-  /* Subpixel-antialiasing på WebKit */
+  /* Subpixel-antialiasing pÃ¥ WebKit */
   -webkit-font-smoothing: subpixel-antialiased;
   /* Let text-shadow for kontrast mod baggrund */
   text-shadow: 0 1px 2px rgba(0,0,0,0.4);
@@ -377,12 +377,12 @@ h1, h2, h3 {
 /* ========================================================================
    6) Text-Box Cards: automatisk baggrund, skygge & centreret tekst
    ======================================================================== */
-.content > section { /* …bokseffekten… */ 
+.content > section { /* â€¦bokseffektenâ€¦ */ 
   background-color: #ffffff;              /* Hvid eller meget lys nuance */
   padding: 2rem;                          /* Luft omkring teksten */
   margin: 2rem auto;                      /* Centrerer horisontalt */
-  max-width: 800px;                       /* Begrænser bredden */
-  border-radius: 1rem;                    /* Bløde hjørner */
+  max-width: 800px;                       /* BegrÃ¦nser bredden */
+  border-radius: 1rem;                    /* BlÃ¸de hjÃ¸rner */
   box-shadow: 0 8px 20px rgba(0,0,0,0.5);  /* skygge */
   background-color: #f0f5f0;
   text-align: center;                     /* Centrerer al tekst */
@@ -395,7 +395,7 @@ h1, h2, h3 {
   }
 }
 /* --------------------------------------------------------------------------  
-   7) Floating Guide & Footer (Gaia – den flyvende spireven) 🌱
+   7) Floating Guide & Footer (Gaia â€“ den flyvende spireven) ðŸŒ±
    -------------------------------------------------------------------------- */
 .floating-guide {
   position: fixed;
@@ -462,7 +462,7 @@ opacity: 0;
   gap: 0.5rem;
 }
 .guide-box li::before {
-  content: '🔸';
+  content: 'ðŸ”¸';
   font-size: 0.9rem;
   line-height: 1.2;
 }
@@ -502,18 +502,18 @@ opacity: 0;
 }
 
 /* --------------------------------------------------------------------------
-   8) Accordion Sections – centreret, afrundet og interaktivt
+   8) Accordion Sections â€“ centreret, afrundet og interaktivt
    -------------------------------------------------------------------------- */
 .accordion {
   max-width: 800px;
   margin: 2rem auto;                      /* centreret og luft omkring */
-  border-radius: 1rem;                    /* bløde hjørner */
-  overflow: hidden;                       /* sørger for sidekant-animation */
+  border-radius: 1rem;                    /* blÃ¸de hjÃ¸rner */
+  overflow: hidden;                       /* sÃ¸rger for sidekant-animation */
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);  /* subtil dybde */
   background: #fff;                       /* hvid baggrund */
 }
 
-/* Selve knappen til at åbne boksen */
+/* Selve knappen til at Ã¥bne boksen */
 .accordion-header {
   width: 100%;
   padding: 1rem 1.5rem;
@@ -528,28 +528,28 @@ opacity: 0;
   position: relative;
   transition: background 0.3s;
 }
-/* Pil-ikonet til højre */
+/* Pil-ikonet til hÃ¸jre */
 .accordion-header::after {
-  content: '▼';
+  content: 'â–¼';
   position: absolute;
   right: 1.5rem;
   transition: transform 0.3s;
 }
-/* Roter pil på åben */
+/* Roter pil pÃ¥ Ã¥ben */
 .accordion-header.open::after {
   transform: rotate(-180deg);
 }
 
-/* Indholdet af boksen – skjult indtil aktiv */
+/* Indholdet af boksen â€“ skjult indtil aktiv */
 .accordion-content {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s ease;
   background: #f8f9f4;
 }
-/* Når boksen er åben */
+/* NÃ¥r boksen er Ã¥ben */
 .accordion-content.open {
-  max-height: 2000px; /* stort nok til alle idéer */
+  max-height: 2000px; /* stort nok til alle idÃ©er */
 }
 
 .accordion-header.open::after {
@@ -564,7 +564,7 @@ opacity: 0;
 }
 
 /* ------------------------------------------------------------------------
-   8.1) Nested Idea Details (individuelle idéer)
+   8.1) Nested Idea Details (individuelle idÃ©er)
    ------------------------------------------------------------------------ */
 .idea-header {
   width: 100%;
@@ -580,7 +580,7 @@ opacity: 0;
   transition: color 0.2s;
 }
 .idea-header::after {
-  content: '▶';
+  content: 'â–¶';
   position: absolute;
   right: 0;
   transition: transform 0.3s;
