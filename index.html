@@ -187,44 +187,47 @@
   <!-- ------------------------------------------------------------------------  
      10) Scripts  
      ------------------------------------------------------------------------ -->
-  <script>
-    function toggleMenu() {
-      const nav = document.getElementById("navLinks");
-      const overlay = document.getElementById("navOverlay");
-      nav.classList.toggle("open");
-      overlay.style.display = nav.classList.contains("open") ? "block" : "none";
-    }
-    function closeMenu() {
-      document.getElementById("navLinks").classList.remove("open");
-      document.getElementById("navOverlay").style.display = "none";
-  <script>
-  const guideBox = document.getElementById("guideBox");
-
-  function toggleGuide() {
-    guideBox.style.display = (guideBox.style.display === "block") ? "none" : "block";
+<script>
+  // Mobilmenu
+  function toggleMenu() {
+    const nav = document.getElementById("navLinks");
+    const overlay = document.getElementById("navOverlay");
+    nav.classList.toggle("open");
+    overlay.style.display = nav.classList.contains("open") ? "block" : "none";
   }
 
-  function showGuide() {
-    if (window.innerWidth >= 768) { // kun hover-effekt på desktop
-      guideBox.style.display = "block";
-    }
+  function closeMenu() {
+    document.getElementById("navLinks").classList.remove("open");
+    document.getElementById("navOverlay").style.display = "none";
   }
 
-  // Luk hvis man klikker udenfor (kun på desktop)
-  document.addEventListener("click", function (event) {
-    if (!event.target.closest(".floating-guide") && window.innerWidth >= 768) {
-      guideBox.style.display = "none";
-    }
-  });
-    }
-    window.addEventListener('click', function(e) {
-      const box = document.getElementById("guideBox");
-      const icon = document.querySelector(".floating-icon");
-      if (!box.contains(e.target) && !icon.contains(e.target)) {
-        box.style.display = "none";
+  // Gaia
+  document.addEventListener("DOMContentLoaded", function () {
+    const guideBox = document.getElementById("guideBox");
+    const guideIcon = document.querySelector(".floating-icon");
+
+    if (!guideBox || !guideIcon) return;
+
+    // Klik åbner/lukker
+    guideIcon.addEventListener("click", () => {
+      guideBox.style.display = (guideBox.style.display === "block") ? "none" : "block";
+    });
+
+    // Hover viser på desktop
+    guideIcon.addEventListener("mouseenter", () => {
+      if (window.innerWidth >= 768) {
+        guideBox.style.display = "block";
       }
     });
-  </script>
+
+    // Klik udenfor lukker (kun desktop)
+    document.addEventListener("click", function (event) {
+      if (!event.target.closest(".floating-guide") && window.innerWidth >= 768) {
+        guideBox.style.display = "none";
+      }
+    });
+  });
+</script>
 </body>
 </html>
 
