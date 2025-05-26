@@ -657,6 +657,29 @@ opacity: 0;
 .idea-details.open {
   max-height: 500px;
 }
+/* ========================================
+   9. Links i indhold – planetære knapper 🌿
+   ======================================== */
+a.button-link {
+  background: #e5f2e5;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #2c3e50;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+a.button-link:hover {
+  background: #d1e8d1;
+  color: #1f2f1f;
+  transform: translateY(-2px);
+}
+
+
 
 /* Gaia-visuelle elementer */
 
