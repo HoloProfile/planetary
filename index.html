@@ -40,28 +40,56 @@
   <!-- ------------------------------------------------------------------------  
      5) Header & Navbar  
      ------------------------------------------------------------------------ -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">
-        🌍 <span class="desktop-text">Velkommen, til et liv under de planetære grænser</span>
-        <span class="mobile-text">Det planetære liv</span>
-      </div>
-      <button class="burger" onclick="toggleMenu()">☰</button>
-<ul class="nav-links" id="navLinks">
-        <li><a href="index.html" onclick="toggleMenu()">Hjem</a></li>
-         <li><a href="historie.html" onclick="toggleMenu()">Vores rejse</a></li>
-          <li><a href="viden.html" onclick="toggleMenu()">Bliv Klog</a></li>
-        <li><a href="100ideer.html" onclick="toggleMenu()">100 idéer</a></li>
-        <li><a href="ressourcer.html" onclick="toggleMenu()">Vi anbefaler</a></li>
-        <li><a href="om.html" onclick="toggleMenu()">Om os</a></li>
-         <li><a href="samarbejde.html" onclick="toggleMenu()">Samarbejde</a></li>
-        <li><a href="faq.html" onclick="toggleMenu()">Spørgsmål</a></li>
-        <li><a href="galleri.html" onclick="toggleMenu()">Galleri</a></li>
-        <li><a href="gæstebog.html" onclick="toggleMenu()">Gæstebog</a></li>
-        <li><a href="kontakt.html" onclick="toggleMenu()">Kontakt</a></li>
-      </ul>
-    </nav>
-  </header>
+ <header>
+  <nav class="navbar">
+    <div class="logo">
+      🌍 <span class="desktop-text">Velkommen, til et liv under de planetære grænser</span>
+      <span class="mobile-text">Det planetære liv</span>
+    </div>
+    <button class="burger" onclick="toggleMenu()">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li class="dropdown">
+        <a href="#" class="dropbtn" onclick="event.preventDefault()">Planetært Liv</a>
+        <div class="dropdown-content">
+          <a href="index.html" onclick="toggleMenu()">Hjem</a>
+          <a href="historie.html" onclick="toggleMenu()">Vores rejse</a>
+          <a href="om.html" onclick="toggleMenu()">Om os</a>
+          <a href="manifest.html" onclick="toggleMenu()">Manifest</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn" onclick="event.preventDefault()">Bliv Klog</a>
+        <div class="dropdown-content">
+          <a href="viden.html" onclick="toggleMenu()">Viden</a>
+          <a href="faq.html" onclick="toggleMenu()">Spørgsmål</a>
+          <a href="ressourcer.html" onclick="toggleMenu()">Ressourcer</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn" onclick="event.preventDefault()">Gør en forskel</a>
+        <div class="dropdown-content">
+          <a href="100ideer.html" onclick="toggleMenu()">100 idéer</a>
+          <a href="samarbejde.html" onclick="toggleMenu()">Samarbejde</a>
+          <a href="vi-anbefaler.html" onclick="toggleMenu()">Vi anbefaler</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn" onclick="event.preventDefault()">Se med</a>
+        <div class="dropdown-content">
+          <a href="galleri.html" onclick="toggleMenu()">Galleri</a>
+          <a href="blog.html" onclick="toggleMenu()">Blog</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn" onclick="event.preventDefault()">Kontakt os</a>
+        <div class="dropdown-content">
+          <a href="gæstebog.html" onclick="toggleMenu()">Gæstebog</a>
+          <a href="kontakt.html" onclick="toggleMenu()">Kontakt</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>
 
   <!-- ------------------------------------------------------------------------  
      6) Hero Section  
