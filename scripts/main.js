@@ -13,3 +13,12 @@ function closeMenu() {
   document.getElementById("navLinks").classList.remove("open");
   document.getElementById("navOverlay").style.display = "none";
 }
+
+// === Foldbarmenu (også Gaia)===
+document.querySelectorAll('.accordion-header').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.classList.toggle('open');
+    const content = btn.nextElementSibling;
+    content.classList.toggle('open');
+  });
+});
