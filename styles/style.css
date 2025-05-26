@@ -530,7 +530,7 @@ opacity: 0;
 }
 /* Pil-ikonet til hÃ¸jre */
 .accordion-header::after {
-  content: '⬇';
+  content: '🡇';
   position: absolute;
   right: 1.5rem;
   transition: transform 0.3s;
