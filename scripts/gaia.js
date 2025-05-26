@@ -1,45 +1,50 @@
+// scripts/gaia.js
+
 document.addEventListener("DOMContentLoaded", function () {
-  const box = document.getElementById('guideBox');
-  const icon = document.querySelector('.floating-icon');
-  const greeting = document.getElementById('gaiaGreeting');
+  // Tjek jævnligt om Gaia er på siden – og vent til hun er klar
+  const checkInterval = setInterval(() => {
+    const box = document.getElementById('guideBox');
+    const icon = document.querySelector('.floating-icon');
+    const greeting = document.getElementById('gaiaGreeting');
+    const showMenuBtn = document.querySelector("button[onclick='showGaiaMenu()']");
 
-  if (!box || !icon) return;
+    if (box && icon) {
+      clearInterval(checkInterval); // Stop når vi har fundet Gaia
 
-  icon.addEventListener("click", () => {
-    const isOpen = box.style.display === "block";
-    if (isOpen) {
-      box.style.opacity = 0;
-      box.style.transform = "translateY(10px)";
-      setTimeout(() => box.style.display = "none", 300);
-    } else {
-      box.style.display = "block";
-      setTimeout(() => {
-        box.style.opacity = 1;
-        box.style.transform = "translateY(0)";
-      }, 10);
+      icon.addEventListener("click", () => {
+        const isOpen = box.style.display === "block";
+        if (isOpen) {
+          box.style.opacity = 0;
+          box.style.transform = "translateY(10px)";
+          setTimeout(() => box.style.display = "none", 300);
+        } else {
+          box.style.display = "block";
+          setTimeout(() => {
+            box.style.opacity = 1;
+            box.style.transform = "translateY(0)";
+          }, 10);
+        }
+      });
+
+      if (showMenuBtn) {
+        showMenuBtn.addEventListener("click", () => {
+          document.getElementById('gaiaIntro').style.display = 'none';
+          document.getElementById('gaiaMenu').style.display = 'block';
+        });
+      }
+
+      if (greeting) {
+        const path = window.location.pathname;
+        if (path.includes('viden.html')) {
+          greeting.innerHTML = "Vil du lære mere om planetens grænser?";
+        } else if (path.includes('100ideer.html')) {
+          greeting.innerHTML = "Skal vi finde en idé sammen?";
+        } else if (path.includes('kontakt.html')) {
+          greeting.innerHTML = "Du kan altid skrive, hvis du vil spørge eller dele noget.";
+        } else if (!path.includes('index.html')) {
+          greeting.innerHTML = "Klik herunder, hvis du vil se min menu.";
+        }
+      }
     }
-  });
-
-  // Vis menu
-  const showMenuBtn = document.querySelector("button[onclick='showGaiaMenu()']");
-  if (showMenuBtn) {
-    showMenuBtn.addEventListener("click", () => {
-      document.getElementById('gaiaIntro').style.display = 'none';
-      document.getElementById('gaiaMenu').style.display = 'block';
-    });
-  }
-
-  // Dynamisk hilsen
-  if (greeting) {
-    const path = window.location.pathname;
-    if (path.includes('viden.html')) {
-      greeting.innerHTML = "Vil du lære mere om planetens grænser?";
-    } else if (path.includes('100ideer.html')) {
-      greeting.innerHTML = "Skal vi finde en idé sammen?";
-    } else if (path.includes('kontakt.html')) {
-      greeting.innerHTML = "Du kan altid skrive, hvis du vil spørge eller dele noget.";
-    } else if (!path.includes('index.html')) {
-      greeting.innerHTML = "Klik herunder, hvis du vil se min menu.";
-    }
-  }
+  }, 100); // Tjek hvert 100ms
 });
