@@ -96,18 +96,20 @@
             mainScript.src = 'scripts/main.js';
             document.body.appendChild(mainScript);
 
-           const gaiaScript = document.createElement('script');
-gaiaScript.src = 'scripts/gaia.js';
-gaiaScript.onload = function () {
-  if (typeof initGaia === 'function') initGaia();
-};
-document.body.appendChild(gaiaScript);
-
+            const gaiaScript = document.createElement('script');
+            gaiaScript.src = 'scripts/gaia.js';
+            gaiaScript.onload = function () {
+              if (typeof initGaia === 'function') initGaia(); // ← 🔥 denne linje er vigtig!
+            };
+            document.body.appendChild(gaiaScript);
+          }
+        });
     });
   }
 
   includeHTML();
 </script>
+
 
 </body>
 </html>
