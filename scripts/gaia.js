@@ -32,15 +32,7 @@ icon.addEventListener("mouseenter", () => {
       }, 10);
     }
   });
-icon.addEventListener("mouseleave", () => {
-    if (window.innerWidth >= 768) {
-      box.style.opacity = 0;
-      box.style.transform = "translateY(10px)";
-      setTimeout(() => {
-        box.style.display = "none";
-      }, 300);
-    }
-  });
+
 
   if (showMenuBtn) {
     showMenuBtn.addEventListener("click", () => {
