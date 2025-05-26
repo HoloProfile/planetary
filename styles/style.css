@@ -679,7 +679,7 @@ opacity: 0;
 .spiral {
   width: 48px;
   height: 48px;
-  background: url('billeder/planetarisk_liv_icon_64x64.png') no-repeat center center;
-  background-size: contain;
-  margin: 1rem auto;
+ background: red; /* testfarve */
+  border: 1px solid black;
+  display: block;
 }
