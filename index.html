@@ -1,13 +1,6 @@
-<!-- ==========================================================================  
-   index.html Template  
-   Planetært Liv - Ensartet struktur med kommentarer  
-   ========================================================================== -->
 <!DOCTYPE html>
 <html lang="da">
 <head>
-  <!-- ------------------------------------------------------------------------  
-     1) Metadata & PWA  
-     ------------------------------------------------------------------------ -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Planetært Liv</title>
@@ -15,9 +8,6 @@
   <link rel="icon" href="billeder/planetarisk_liv_icon_circular.png" type="image/png">
   <meta name="theme-color" content="#f8f9f4">
 
-  <!-- ------------------------------------------------------------------------  
-     2) Font Preload (self-hosted)  
-     ------------------------------------------------------------------------ -->
   <link rel="preload" href="styles/fonts/Tekst-Normal.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="styles/fonts/Tekst-Fed.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="styles/fonts/Tekst-Skraa.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -25,209 +15,84 @@
   <link rel="preload" href="styles/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="styles/fonts/Poppins-Semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="styles/fonts/Poppins-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  
-  <!-- ------------------------------------------------------------------------  
-     3) Stylesheet  
-     ------------------------------------------------------------------------ -->
+
   <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-  <!-- ------------------------------------------------------------------------  
-     4) Mobile Nav Overlay  
-     ------------------------------------------------------------------------ -->
+  <!-- Overlay til mobilmenu -->
   <div id="navOverlay" class="nav-overlay" onclick="closeMenu()"></div>
 
-  <!-- ------------------------------------------------------------------------  
-     5) Header & Navbar  
-     ------------------------------------------------------------------------ -->
- <header>
-  <nav class="navbar">
-    <div class="logo">
-      🌍 <span class="desktop-text">Velkommen, til et liv under de planetære grænser</span>
-      <span class="mobile-text">Det planetære liv</span>
-    </div>
-    <button class="burger" onclick="toggleMenu()">☰</button>
-    <ul class="nav-links" id="navLinks">
-      <li class="dropdown">
-        <a href="#" class="dropbtn" onclick="event.preventDefault()">Planetært Liv</a>
-        <div class="dropdown-content">
-          <a href="index.html" onclick="toggleMenu()">Hjem</a>
-          <a href="historie.html" onclick="toggleMenu()">Vores rejse</a>
-          <a href="om.html" onclick="toggleMenu()">Om os</a>
-          <a href="manifest.html" onclick="toggleMenu()">Manifest</a>
-        </div>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropbtn" onclick="event.preventDefault()">Bliv Klog</a>
-        <div class="dropdown-content">
-          <a href="viden.html" onclick="toggleMenu()">Viden</a>
-          <a href="faq.html" onclick="toggleMenu()">Spørgsmål</a>
-          <a href="ressourcer.html" onclick="toggleMenu()">Ressourcer</a>
-        </div>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropbtn" onclick="event.preventDefault()">Gør en forskel</a>
-        <div class="dropdown-content">
-          <a href="100ideer.html" onclick="toggleMenu()">100 idéer</a>
-          <a href="samarbejde.html" onclick="toggleMenu()">Samarbejde</a>
-          <a href="vi-anbefaler.html" onclick="toggleMenu()">Vi anbefaler</a>
-        </div>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropbtn" onclick="event.preventDefault()">Se med</a>
-        <div class="dropdown-content">
-          <a href="galleri.html" onclick="toggleMenu()">Galleri</a>
-          <a href="blog.html" onclick="toggleMenu()">Blog</a>
-        </div>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropbtn" onclick="event.preventDefault()">Kontakt os</a>
-        <div class="dropdown-content">
-          <a href="gæstebog.html" onclick="toggleMenu()">Gæstebog</a>
-          <a href="kontakt.html" onclick="toggleMenu()">Kontakt</a>
-        </div>
-      </li>
-    </ul>
-  </nav>
-</header>
+  <!-- Header / Navbar -->
+  <div w3-include-html="includes/header.html"></div>
 
-  <!-- ------------------------------------------------------------------------  
-     6) Hero Section  
-     ------------------------------------------------------------------------ -->
+  <!-- Hero -->
   <section class="hero-section">
-    <h1>Planetarisk liv<br> 
-    <img 
-    src="billeder/planetarisk_liv_icon_192x192.png" 
-    alt="ikon" 
-    class="inline-img" 
-   ><br> 
-   simpelt, værdifult og bæredygtigt</h1>
+    <h1>Planetarisk liv<br>
+      <img src="billeder/planetarisk_liv_icon_192x192.png" alt="ikon" class="inline-img"><br>
+      simpelt, værdifuldt og bæredygtigt
+    </h1>
     <p>Scroll ned og opdag hvordan vi lever under de planetære grænser<br> med håb, handling og havregrød</p>
   </section>
 
-  <!-- ------------------------------------------------------------------------  
-     7) Flyvende Guide  
-     ------------------------------------------------------------------------ -->
- <!-- Gaia – flyvende spireven -->
-<div class="floating-guide">
-  <img src="billeder/planetarisk_liv_icon_circular.png" alt="Gaia spireven" class="floating-icon" 
-       onclick="toggleGuide()" onmouseenter="showGuide()" />
-  <div class="guide-box" id="guideBox" onclick="event.stopPropagation()">
-    <h3>🌱 Hej, jeg er Gaia!</h3>
-    <p>Din helt egen spireven her på siden 🌍  
-    Klik rundt, så hjælper jeg dig med at finde vej.</p>
-  <ul>
-        <li><a href="index.html">🏠 Hjem til forsiden</a></li>
-        <li><a href="historie.html">📖 Vores rejse - kort fortalt</a></li>
-        <li><a href="viden.html">📘 Bliv klog – Viden om kloden og os selv</a></li>
-        <li><a href="100ideer.html">🌿 100 idéer – Små skridt mod en bedre verden</a></li>
-        <li><a href="ressourcer.html">📚 Vores Anbefalinger – Bøger, videoer og værktøjer vi elsker</a></li>
-        <li><a href="om.html">📜 Om os - Ja hvem er egentlig familien bag?</a></li>
-        <li><a href="samarbejde.html">🤝 Samarbejde - Skal vi finde på noget sammen?</a></li>
-        <li><a href="faq.html">❓ Ofte stillede spørgsmål – og ærlige svar</a></li>
-        <li><a href="galleri.html">🖼️ Galleri – Glimt fra et planetært liv</a></li>
-        <li><a href="gæstebog.html">✍️ Gæstebog og Hilsner – Kom med dine egne ideer og en lille hilsen</a></li>
-        <li><a href="kontakt.html">✉️ Kontakt – Vi svarer med hjertet</a></li>
-      </ul>
-     <button class="guide-audio" onclick="document.getElementById('gaiaAudio').play()">🎧 Hør os fortælle</button>
-    <audio id="gaiaAudio" src="lyd/test.m4a"></audio>
-  </div>
-</div>
+  <!-- Gaia-guide -->
+  <div w3-include-html="includes/gaia.html"></div>
 
-  <!-- ------------------------------------------------------------------------  
-     8) Main Content Sections  
-     ------------------------------------------------------------------------ -->
+  <!-- Indhold -->
   <main class="content">
-    <!-- Intro Section -->
     <section class="intro-start">
       <h2>Velkommen</h2>
       <p>Små skridt, stor forskel 🌱</p>
       <p>Her begynder din grønne rejse – tag et kig rundt</p>
       <p>Brug den lille flyvende ven, hvis du vil springe introen over 😉</p>
     </section>
-    
-    <!-- About Us Section -->
+
     <section class="about-us">
       <h2>Hvem er vi?</h2>
       <p>Vi er en familie – to voksne og to små børn – der lever under de planetære grænser i en landsby nær Vejle.</p>
       <a href="historie.html" class="start-button">Læs vores historie</a>
     </section>
-    
-    <!-- Transition Section -->
+
     <section class="transition-section">
       <h2>🌿 Hvordan er et planetarisk liv i praksis?</h2>
       <p>Vi elsker ikke bare at tale om det planetære liv – vi lever det hver dag, med børn, planter, rester og vilde idéer.</p>
       <a href="viden.html" class="start-button">Læs mere her</a>
     </section>
 
-    <!-- ... Flere sektioner følger samme struktur ... -->
-       <section class="content" style="padding: 2rem;">
-    <h1>Vores Manifest</h1>
-    <p>Vi tror på, at fremtiden begynder i det små:</p>
-
-    <ul>
-      <li>🌍 Jorden har grænser – vi lever bedst indenfor dem</li>
-      <li>🧡 Fællesskab er vigtigere end forbrug</li>
-      <li>🔧 Reparation før udskiftning</li>
-      <li>📱 Digital frihed og open source er vejen frem</li>
-      <li>🌾 Naturen er ikke noget, vi ejer – men noget, vi er en del af</li>
-    </ul>
-
-    <p>Vi lever ikke perfekt. Men vi gør os umage. Og vi tror på, at det smitter.</p>
+    <section class="content" style="padding: 2rem;">
+      <h1>Vores Manifest</h1>
+      <p>Vi tror på, at fremtiden begynder i det små:</p>
+      <ul>
+        <li>🌍 Jorden har grænser – vi lever bedst indenfor dem</li>
+        <li>🧡 Fællesskab er vigtigere end forbrug</li>
+        <li>🔧 Reparation før udskiftning</li>
+        <li>📱 Digital frihed og open source er vejen frem</li>
+        <li>🌾 Naturen er ikke noget, vi ejer – men noget, vi er en del af</li>
+      </ul>
+      <p>Vi lever ikke perfekt. Men vi gør os umage. Og vi tror på, at det smitter.</p>
+    </section>
   </main>
 
-  <!-- ------------------------------------------------------------------------  
-     9) Footer  
-     ------------------------------------------------------------------------ -->
-  <footer class="footer">
-    <p>&copy; 2025 Planetarisk Liv – skabt med kærlighed og kompost 💚</p>
-    <a href="privatliv.html" class="btn-terms">Vilkår & Betingelser</a>
-  </footer>
+  <!-- Footer -->
+  <div w3-include-html="includes/footer.html"></div>
 
-  <!-- ------------------------------------------------------------------------  
-     10) Scripts  
-     ------------------------------------------------------------------------ -->
-<script>
-  // Mobilmenu
-  function toggleMenu() {
-    const nav = document.getElementById("navLinks");
-    const overlay = document.getElementById("navOverlay");
-    nav.classList.toggle("open");
-    overlay.style.display = nav.classList.contains("open") ? "block" : "none";
-  }
-
-  function closeMenu() {
-    document.getElementById("navLinks").classList.remove("open");
-    document.getElementById("navOverlay").style.display = "none";
-  }
-
-  // Gaia
-  document.addEventListener("DOMContentLoaded", function () {
-    const guideBox = document.getElementById("guideBox");
-    const guideIcon = document.querySelector(".floating-icon");
-
-    if (!guideBox || !guideIcon) return;
-
-    // Klik åbner/lukker
-    guideIcon.addEventListener("click", () => {
-      guideBox.style.display = (guideBox.style.display === "block") ? "none" : "block";
-    });
-
-    // Hover viser på desktop
-    guideIcon.addEventListener("mouseenter", () => {
-      if (window.innerWidth >= 768) {
-        guideBox.style.display = "block";
-      }
-    });
-
-    // Klik udenfor lukker (kun desktop)
-    document.addEventListener("click", function (event) {
-      if (!event.target.closest(".floating-guide") && window.innerWidth >= 768) {
-        guideBox.style.display = "none";
-      }
-    });
-  });
-</script>
+  <!-- Scripts -->
+  <script src="scripts/main.js"></script>
+  <script>
+    // Loader includes
+    function includeHTML() {
+      const elements = document.querySelectorAll('[w3-include-html]');
+      elements.forEach(el => {
+        const file = el.getAttribute("w3-include-html");
+        fetch(file)
+          .then(response => response.text())
+          .then(data => {
+            el.innerHTML = data;
+            el.removeAttribute("w3-include-html");
+            includeHTML(); // for nested
+          });
+      });
+    }
+    includeHTML();
+  </script>
 </body>
 </html>
-
