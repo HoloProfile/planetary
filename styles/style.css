@@ -573,7 +573,7 @@ opacity: 0;
 }
 /* NÃ¥r boksen er Ã¥ben */
 .accordion-content.open {
-  max-height: 3000px; /* stort nok til alle idÃ©er */
+  max-height: 4000px; /* stort nok til alle idÃ©er */
 }
 
 .accordion-header.open::after {
