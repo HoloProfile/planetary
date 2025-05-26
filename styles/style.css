@@ -375,6 +375,17 @@ h1, h2, h3 {
   margin-bottom: 2rem;
 }
 /* ========================================================================
+   5.5) Main - Sektioner
+   ======================================================================== */
+
+.forside-main {
+  background: url('billeder/grøn_bund.png') no-repeat center top;
+  background-size: cover;
+  padding: 3rem 1rem;
+}
+
+
+/* ========================================================================
    6) Text-Box Cards: automatisk baggrund, skygge & centreret tekst
    ======================================================================== */
 .content > section { /* â€¦bokseffektenâ€¦ */ 
