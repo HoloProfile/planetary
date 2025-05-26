@@ -393,7 +393,7 @@ h1, h2, h3 {
    6) Text-Box Cards: automatisk baggrund, skygge & centreret tekst
    ======================================================================== */
 .content > section { /* â€¦bokseffektenâ€¦ */ 
-  background-color: #ffffff;              /* Hvid eller meget lys nuance */
+  background-color: rgba(255, 255, 255, 0.6);              /* Hvid eller meget lys nuance */
   padding: 2rem;                          /* Luft omkring teksten */
   margin: 2rem auto;                      /* Centrerer horisontalt */
   max-width: 800px;                       /* BegrÃ¦nser bredden */
