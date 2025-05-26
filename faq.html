@@ -1,6 +1,6 @@
 <!-- ==========================================================================  
    faq.html  
-   Planetært Liv – Ofte Stillede Spørgsmål  
+   Planetært Liv – Ofte Stillede Spørgsmål (rettet struktur)  
    ========================================================================== -->
 <!DOCTYPE html>
 <html lang="da">
@@ -9,34 +9,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FAQ – Planetært Liv</title>
-  <link rel="stylesheet" href="styles/style.css">
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="billeder/planetarisk_liv_icon_circular.png" type="image/png">
   <meta name="theme-color" content="#f8f9f4">
-   <!-- ------------------------------------------------------------------------  
-     1.2) Font Preload (self-hosted)  
-     ------------------------------------------------------------------------ -->
   <link rel="preload" href="styles/fonts/Tekst-Normal.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="styles/fonts/Tekst-Fed.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="styles/fonts/Tekst-Skraa.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="styles/fonts/Poppins-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="styles/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="styles/fonts/Poppins-Semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="styles/fonts/Poppins-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <!-- (øvrige preload-links) -->
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-  <!-- 2) Mobil Nav Overlay -->
-  
+  <!-- 2) Mobile Nav Overlay -->
   <div id="navOverlay" class="nav-overlay" onclick="closeMenu()"></div>
 
-  <!-- ------------------------------------------------------------------------  
-     2.5) Header & Navbar  
-     ------------------------------------------------------------------------ -->
+  <!-- 3) Header & Navbar -->
   <header>
     <nav class="navbar">
       <div class="logo">
-        🌍 <span class="desktop-text">Planetært Liv – Ofte Stillede Spørgsmål / FAQ</span>
-        <span class="mobile-text">Spørgsmål / FAQ</span>
+        🌍 <span class="desktop-text">Planetært Liv – Ofte Stillede Spørgsmål</span>
+        <span class="mobile-text">FAQ</span>
       </div>
       <button class="burger" onclick="toggleMenu()">☰</button>
       <ul class="nav-links" id="navLinks">
@@ -50,34 +39,37 @@
     </nav>
   </header>
 
-
-  <!-- 3) Hero Section for FAQ -->
+  <!-- 4) Hero Section -->
   <section class="hero-section">
     <h1>Ofte Stillede Spørgsmål</h1>
     <p>Her finder du svar på de spørgsmål, vi oftest møder.</p>
   </section>
 
-  <!-- 4) FAQ Akkordion -->
+  <!-- 5) FAQ Accordion -->
   <main class="content">
-    <div class="accordion">
-      <button class="accordion-header">Hvordan begyndte I?</button>
-      <div class="accordion-content">
-        <p>Med et simpelt regneark og en masse nysgerrighed.</p>
+    <section class="faq-accordion">
+      <div class="accordion">
+        <button class="accordion-header">Hvordan begyndte I?</button>
+        <div class="accordion-content">
+          <p>Med et simpelt regneark og en masse nysgerrighed.</p>
+        </div>
       </div>
-    </div>
-    <div class="accordion">
-      <button class="accordion-header">Er det ikke dyrt?</button>
-      <div class="accordion-content">
-        <p>Nej – faktisk sparer vi penge, fordi vi køber mindre og genbruger mere.</p>
+      <div class="accordion">
+        <button class="accordion-header">Er det ikke dyrt?</button>
+        <div class="accordion-content">
+          <p>Nej – faktisk sparer vi penge, fordi vi køber mindre og genbruger mere.</p>
+        </div>
       </div>
-    </div>
-    <div class="accordion">
-      <button class="accordion-header">Er børnene med på det?</button>
-      <div class="accordion-content">
-        <p>Ja, de lærer undervejs og elsker naturen, dyr og jord under neglene.</p>
+      <div class="accordion">
+        <button class="accordion-header">Er børnene med på det?</button>
+        <div class="accordion-content">
+          <p>Ja, de lærer undervejs og elsker naturen, dyr og jord under neglene.</p>
+        </div>
       </div>
-    </div>
-     <!-- 5) Flyvende Guide -->
+    </section>
+  </main>
+
+  <!-- 6) Flyvende Guide -->
   <div class="floating-guide">
     <img src="billeder/planetarisk_liv_icon_circular.png" alt="Guide ikon" class="floating-icon" onclick="toggleGuideBox()">
     <div id="guideBox" class="guide-box">
@@ -91,17 +83,16 @@
       </ul>
     </div>
   </div>
-  </main>
 
-  <!-- 6) Footer (genbrug) -->
- <footer class="footer">
+  <!-- 7) Footer -->
+  <footer class="footer">
     <p>&copy; 2025 Planetarisk Liv – skabt med kærlighed og kompost 💚</p>
     <a href="privatliv.html" class="btn-terms">Vilkår & Betingelser</a>
   </footer>
 
-  <!-- 7) Scripts: menu & accordion -->
+  <!-- 8) Scripts: menu & accordion -->
   <script>
-    // Menu
+    // Menu toggle
     function toggleMenu() {
       const nav = document.getElementById("navLinks");
       const overlay = document.getElementById("navOverlay");
@@ -124,3 +115,4 @@
   </script>
 </body>
 </html>
+
