@@ -1,15 +1,12 @@
-// scripts/gaia.js
-
-function initGaia() {
+const interval = setInterval(() => {
   const box = document.getElementById('guideBox');
   const icon = document.querySelector('.floating-icon');
   const greeting = document.getElementById('gaiaGreeting');
   const showMenuBtn = document.querySelector("button[onclick='showGaiaMenu()']");
 
-  if (!box || !icon) {
-    console.warn("Gaia ikke fundet i DOM endnu");
-    return;
-  }
+  if (!box || !icon) return;
+
+  clearInterval(interval);
 
   icon.addEventListener("click", () => {
     const isOpen = box.style.display === "block";
@@ -45,4 +42,4 @@ function initGaia() {
       greeting.innerHTML = "Klik herunder, hvis du vil se min menu.";
     }
   }
-}
+}, 200);
