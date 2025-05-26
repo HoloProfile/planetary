@@ -112,7 +112,9 @@ h1, h2, h3 {
   font-family: 'Poppins', sans-serif;
   font-weight: 600; /* bruger Poppins SemiBold til overskrifter */
 }
-
+.skråt {
+  font-style: italic;
+}
 /* --------------------------------------------------------------------------  
    2) Container Utility
    -------------------------------------------------------------------------- */
