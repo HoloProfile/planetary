@@ -437,6 +437,9 @@ h1, h2, h3 {
   max-height: 2000px; /* stort nok til alle idéer */
 }
 
+.accordion-header.open::after {
+  transform: rotate(-180deg);
+}
 /* Liste-styling indeni */
 .accordion-content .idea-list {
   padding: 1rem 1.5rem;
