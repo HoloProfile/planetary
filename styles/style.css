@@ -386,4 +386,99 @@ h1, h2, h3 {
 .btn-terms:hover {
   background-color: #35503a;
 }
+/* --------------------------------------------------------------------------
+   8) Accordion Sections – centreret, afrundet og interaktivt
+   -------------------------------------------------------------------------- */
+.accordion {
+  max-width: 800px;
+  margin: 2rem auto;                      /* centreret og luft omkring */
+  border-radius: 1rem;                    /* bløde hjørner */
+  overflow: hidden;                       /* sørger for sidekant-animation */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);  /* subtil dybde */
+  background: #fff;                       /* hvid baggrund */
+}
+
+/* Selve knappen til at åbne boksen */
+.accordion-header {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-align: left;
+  background: var(--secondary);
+  color: var(--text-color);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s;
+}
+/* Pil-ikonet til højre */
+.accordion-header::after {
+  content: '▼';
+  position: absolute;
+  right: 1.5rem;
+  transition: transform 0.3s;
+}
+/* Roter pil på åben */
+.accordion-header.open::after {
+  transform: rotate(-180deg);
+}
+
+/* Indholdet af boksen – skjult indtil aktiv */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  background: #f8f9f4;
+}
+/* Når boksen er åben */
+.accordion-content.open {
+  max-height: 2000px; /* stort nok til alle idéer */
+}
+
+/* Liste-styling indeni */
+.accordion-content .idea-list {
+  padding: 1rem 1.5rem;
+}
+.accordion-content .idea-item + .idea-item {
+  margin-top: 1rem;
+}
+
+/* ------------------------------------------------------------------------
+   8.1) Nested Idea Details (individuelle idéer)
+   ------------------------------------------------------------------------ */
+.idea-header {
+  width: 100%;
+  background: none;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: left;
+  padding: .5rem 0;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s;
+}
+.idea-header::after {
+  content: '▶';
+  position: absolute;
+  right: 0;
+  transition: transform 0.3s;
+}
+.idea-header.open::after {
+  transform: rotate(90deg);
+}
+
+.idea-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding-left: 1rem;
+  color: #555;
+}
+.idea-details.open {
+  max-height: 500px;
+}
 
