@@ -91,7 +91,7 @@
           pending--;
 
           if (pending === 0) {
-            // 💡 Nu er alle includes færdige – load scripts
+            // === Når alle includes er indsat, så loader vi scripts ===
             const mainScript = document.createElement('script');
             mainScript.src = 'scripts/main.js';
             document.body.appendChild(mainScript);
@@ -106,5 +106,6 @@
 
   includeHTML();
 </script>
+
 </body>
 </html>
