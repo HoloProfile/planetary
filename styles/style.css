@@ -395,7 +395,7 @@ h1, h2, h3 {
   }
 }
 /* --------------------------------------------------------------------------  
-   7) Floating Guide & Footer
+   7) Floating Guide & Footer (Gaia – den flyvende spireven) 🌱
    -------------------------------------------------------------------------- */
 .floating-guide {
   position: fixed;
@@ -404,30 +404,91 @@ h1, h2, h3 {
   z-index: 99;
 }
 .floating-icon {
-  width: 48px;
-  height: 48px;
-  cursor: pointer;
-  transition: transform 0.2s ease-in-out;
+  width: 60px;
+  height: 60px;
+  cursor: help;
+  transition: transform 0.3s ease;
+  animation: floaty 4s ease-in-out infinite;
 }
 .floating-icon:hover {
-  transform: scale(1.1);
+  transform: scale(1.1) rotate(3deg);
 }
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-5px); }
+}
+
+/* Talebobbel-stil */
 .guide-box {
   display: none;
   position: absolute;
-  bottom: 60px;
+  bottom: 70px;
   right: 0;
   width: 300px;
-  background-color: #e5f2e5;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  background: linear-gradient(135deg, #e5f2e5, #f4fbf2);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   padding: 1rem;
   font-size: 1rem;
+  animation: fadeInGuide 0.3s ease-out;
+  border: 1px solid #bcd9bc;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: #2c3e50;
 }
-.guide-box h3 { margin-top: 0; color: #3d5c3d; }
-.guide-box ul  { padding-left: 1rem; }
-.guide-box a  { color: #2c3e50; text-decoration: none; }
-.guide-box a:hover { text-decoration: underline; }
+@keyframes fadeInGuide {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.guide-box h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+.guide-box ul {
+  list-style: none;
+  padding-left: 0;
+}
+.guide-box li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.guide-box li::before {
+  content: '🔸';
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+.guide-box a {
+  color: #2c3e50;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.guide-box a:hover {
+  color: #3d5c3d;
+  text-decoration: underline;
+}
+
+/* Valgfri mini-knap til afspilning af lydklip */
+.guide-audio {
+  display: block;
+  margin: 0.5rem auto 0;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.9rem;
+  background-color: #cbe9c4;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.3s;
+}
+.guide-audio:hover {
+  background-color: #b7dcb0;
+}
 
 .footer {
   background-color: #d5e6d5;
@@ -436,20 +497,7 @@ h1, h2, h3 {
   font-size: 0.9rem;
   margin-top: 4rem;
 }
-.btn-terms {
-  display: inline-block;
-  background-color: #3d5c3d;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.2s;
-  margin-top: 1rem;
-}
-.btn-terms:hover {
-  background-color: #35503a;
-}
+
 /* --------------------------------------------------------------------------
    8) Accordion Sections – centreret, afrundet og interaktivt
    -------------------------------------------------------------------------- */
