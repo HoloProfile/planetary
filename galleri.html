@@ -1,28 +1,111 @@
-<!DOCTYPE html>
-<html lang="da">
+<!-- ==========================================================================  
+   galleri.html  
+   Planetært Liv – Galleri  
+   ========================================================================== -->
 <!DOCTYPE html>
 <html lang="da">
 <head>
+  <!-- 1) Metadata & Stylesheet -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Galleri</title>
+  <title>Galleri – Planetært Liv</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="billeder/planetarisk_liv_icon_circular.png" type="image/png">
+  <meta name="theme-color" content="#f8f9f4">
+
+  <!-- 2) Font Preload -->
+  <link rel="preload" href="styles/fonts/Tekst-Normal.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <!-- (øvrige preload-links) -->
   <link rel="stylesheet" href="styles/style.css">
 </head>
-<body>
-  <nav class="navbar">
-    <div class="logo">🌍 Planetært Liv</div>
-    <div class="burger">☰</div>
-  </nav>
-
-  <section class="content" style="padding: 2rem;">
+ <!-- 3) Nav Overlay & Header -->
+  <div id="navOverlay" class="nav-overlay" onclick="closeMenu()"></div>
+ <header>
+    <nav class="navbar">
+      <div class="logo">
+        🌍 <span class="desktop-text">Planetært Liv – 100 idéer</span>
+             <span class="mobile-text">100 idéer</span>
+      </div>
+      <button class="burger" onclick="toggleMenu()">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" onclick="toggleMenu()">Start</a></li>
+        <li><a href="100ideer.html" onclick="toggleMenu()">100 idéer</a></li>
+        <li><a href="viden.html" onclick="toggleMenu()">Viden</a></li>
+        <li><a href="historie.html" onclick="toggleMenu()">Historie</a></li>
+        <li><a href="faq.html" onclick="toggleMenu()">FAQ</a></li>
+        <li><a href="galleri.html" onclick="toggleMenu()">Galleri</a></li>
+        <li><a href="gæstebog.html" onclick="toggleMenu()">Gæstebog</a></li>
+      </ul>
+    </nav>
+   
+  <!-- 4) Hero Section for Galleri -->
+  <section class="hero-section">
     <h1>Vores Galleri</h1>
-    <p>Små glimt fra vores liv og vores projekter:</p>
-
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem;">
-      <img src="billeder/have.jpg" alt="Haven" style="width: 100%; border-radius: 1rem;">
-      <img src="billeder/koekken.jpg" alt="Udekøkken" style="width: 100%; border-radius: 1rem;">
-      <img src="billeder/boern.jpg" alt="Børn i regnvejr" style="width: 100%; border-radius: 1rem;">
-    </div>
+    <p>Små glimt fra vores liv og projekter</p>
   </section>
+   
+<!-- 5) Flyvende Guide -->
+  <div class="floating-guide">
+    <img src="billeder/planetarisk_liv_icon_circular.png" alt="Guide ikon" class="floating-icon" onclick="toggleGuideBox()">
+    <div id="guideBox" class="guide-box">
+      <h3>🌍 Guide til siden</h3>
+      <ul>
+        <li><a href="index.html">🏠 Start</a></li>
+        <li><a href="100ideer.html">🌿 100 idéer</a></li>
+        <li><a href="viden.html">📘 Viden</a></li>
+        <li><a href="historie.html">📖 Historie</a></li>
+        <li><a href="faq.html">❓ FAQ</a></li>
+        <li><a href="galleri.html">📸 Galleri</a></li>
+      </ul>
+    </div>
+  </div>
+
+   <!-- 6) Main Content: Boksede Sektioner -->
+  <main class="content">
+    <section class="gallery-box">
+      <h2>Vores Galleri</h2>
+      <p>Små glimt fra vores univers under de planetære grænser</p>
+      <div class="gallery-grid">
+        <img src="billeder/have.jpg" alt="Haven">
+        <img src="billeder/koekken.jpg" alt="Udekøkken">
+        <img src="billeder/boern.jpg" alt="Børn i regnvejr">
+      </div>
+    </section>
+  </main>
+   
+  <!-- 7) Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Planetært Liv – skabt med kærlighed og kompost 💚</p>
+    <a href="privatliv.html" class="btn-terms">Vilkår & Betingelser</a>
+  </footer>
+
+  <!-- 8) Scripts -->
+  <script>
+    // Menu
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      const overlay = document.getElementById("navOverlay");
+      nav.classList.toggle("open");
+      overlay.style.display = nav.classList.contains("open") ? "block" : "none";
+    }
+    function closeMenu() {
+      document.getElementById("navLinks").classList.remove("open");
+      document.getElementById("navOverlay").style.display = "none";
+    }
+
+    // Guide Box
+    function toggleGuideBox() {
+      const box = document.getElementById("guideBox");
+      box.style.display = (box.style.display === "block") ? "none" : "block";
+    }
+    window.addEventListener('click', function(e) {
+      const box = document.getElementById("guideBox");
+      const icon = document.querySelector(".floating-icon");
+      if (!box.contains(e.target) && !icon.contains(e.target)) {
+        box.style.display = "none";
+      }
+    });
+  </script>
 </body>
 </html>
+
