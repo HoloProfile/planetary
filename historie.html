@@ -1,234 +1,128 @@
+<!-- ==========================================================================  
+   historie.html  
+   Planetært Liv – Vores Historie  
+   ========================================================================== -->
 <!DOCTYPE html>
 <html lang="da">
 <head>
-  <style>
-  body {
-  background: url(.png') no-repeat center center fixed;
-  background-size: cover;
-  font-family: Georgia, serif;
-  margin: 0;
-  padding: 0;
-  color: #2c3e50;
-}
-      </style>
-  <head>
+  <!-- 1) Metadata & Stylesheet -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Planetært Liv</title>
-<link rel="stylesheet" href="styles/style.css">
-  <style>
-    body {
-      font-family: Georgia, serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f8f9f4;
-      color: #2c3e50;
-    }
+  <title>Historie – Planetært Liv</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="billeder/planetarisk_liv_icon_circular.png" type="image/png">
+  <meta name="theme-color" content="#f8f9f4">
+  <!-- Font preload -->
+  <link rel="preload" href="styles/fonts/Tekst-Normal.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Tekst-Fed.woff2"    as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Tekst-Skraa.woff2"  as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Light.woff2"  as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Bold.woff2"  as="font" type="font/woff2" crossorigin="anonymous">
 
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem;
-      background-color: #d5e6d5;
-      position: relative;
-      z-index: 3;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-    }
-
-    .burger {
-      font-size: 2rem;
-      cursor: pointer;
-      user-select: none;
-      z-index: 4;
-      display: block;
-    }
-
-    .nav-overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100vh;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.3);
-      z-index: 2;
-    }
-
-    .nav-links {
-      list-style: none;
-      padding: 2rem 1rem;
-      margin: 0;
-      flex-direction: column;
-      background-color: #fff;
-      position: fixed;
-      top: 0;
-      right: -250px;
-      width: 250px;
-      height: 100vh;
-      transition: right 0.3s ease;
-      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-      z-index: 3;
-      display: none;
-    }
-
-    .nav-links.open {
-      display: flex;
-      right: 0;
-    }
-
-    .nav-links li {
-      margin: 1rem 0;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: #2c3e50;
-      font-weight: bold;
-      font-size: 1.2rem;
-    }
-
-    /* Desktop: vis links i topbar og skjul burger */
-    @media (min-width: 768px) {
-      .burger {
-        display: none;
-      }
-
-      .nav-overlay {
-        display: none !important;
-      }
-
-      .nav-links {
-        position: static;
-        display: flex !important;
-        flex-direction: row;
-        height: auto;
-        width: auto;
-        background: none;
-        box-shadow: none;
-        padding: 0;
-      }
-
-      .nav-links li {
-        margin: 0 1rem;
-      }
-    }
-.desktop-text {
-  display: none;
-}
-
-.mobile-text {
-  display: inline;
-}
-
-@media (min-width: 768px) {
-  .desktop-text {
-    display: inline;
-  }
-
-  .mobile-text {
-    display: none;
-  }
-}
-  </style>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles/style.css">
+</head>
 <body>
+  <!-- 2) Mobile Nav Overlay -->
+  <div id="navOverlay" class="nav-overlay" onclick="closeMenu()"></div>
 
-<div id="navOverlay" class="nav-overlay" onclick="closeMenu()"></div>
+  <!-- 2.5) Header & Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        🌍 <span class="desktop-text">Planetært Liv – 100 idéer</span>
+             <span class="mobile-text">100 idéer</span>
+      </div>
+      <button class="burger" onclick="toggleMenu()">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" onclick="toggleMenu()">Start</a></li>
+        <li><a href="100ideer.html" onclick="toggleMenu()">100 idéer</a></li>
+        <li><a href="viden.html" onclick="toggleMenu()">Viden</a></li>
+        <li><a href="historie.html" onclick="toggleMenu()">Historie</a></li>
+        <li><a href="faq.html" onclick="toggleMenu()">FAQ</a></li>
+        <li><a href="gæstebog.html" onclick="toggleMenu()">Gæstebog</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- 3) Hero Section -->
+  <section class="hero-section">
+    <h1>Vores Historie</h1>
+    <p>Fra bil-salg til et helt planetært liv under de 9 grænser.</p>
+  </section>
 
-<header>
-  <nav class="navbar">
-    <div class="logo">
-  🌍 <span class="desktop-text">Velkommen, til et liv under de planetære grænser</span>
-  <span class="mobile-text">Det planetære liv</span>
-</div>
-    <div class="burger" onclick="toggleMenu()">☰</div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html" onclick="toggleMenu()">Start</a></li>
-      <li><a href="100ideer.html">100 idéer</a></li>
-      <li><a href="#viden" onclick="toggleMenu()">Viden</a></li>
-      <li><a href="#projekter" onclick="toggleMenu()">Projekter</a></li>
-      <li><a href="historie.html" onclick="toggleMenu()">Om og Historien</a></li>
-      <li><a href="#kontakt" onclick="toggleMenu()">Kontakt</a></li>
-    </ul>
-  </nav>
-</header>
+  <!-- 4) Flyvende Guide -->
+  <div class="floating-guide">
+    <img src="billeder/planetarisk_liv_icon_circular.png" alt="Guide ikon" class="floating-icon" onclick="toggleGuideBox()">
+    <div id="guideBox" class="guide-box">
+      <h3>🌍 Guide til siden</h3>
+      <ul>
+        <li><a href="index.html">🏠 Start</a></li>
+        <li><a href="100ideer.html">🌿 100 idéer</a></li>
+        <li><a href="viden.html">📘 Viden</a></li>
+        <li><a href="historie.html">📖 Historie</a></li>
+        <li><a href="faq.html">❓ FAQ</a></li>
+        <li><a href="galleri.html">📸 Galleri</a></li>
+        <li><a href="gæstebog.html">✍️ Gæstebog</a></li>
+      </ul>
+    </div>
+  </div>
 
+  <!-- 5) Main Content: Historie sektioner -->
+  <main class="content">
+    <section class="text-box">
+      <h2>Begyndelsen</h2>
+      <p><strong>Af Rasmus Sommerhave og familie</strong></p>
+      <p>Før vi for alvor begyndte at ændre vores livsstil, levede vi som mange andre. Vi sorterede affald, prøvede at undgå madspild, og der røg en pakke eller to fra Temu og Shein i ny og næ. Vi havde biler og skiftede dem oftere, end nødvendigt var – uden at tænke over energiforbrug eller grænser.</p>
+    </section>
+    <section class="text-box">
+      <h2>Vores Fiat Doblo</h2>
+      <p>I 2023 solgte vi vores gamle Fiat Doblo uden en ny plan – blot på fornemmelsen. Vi skiftede bilen ud med cykler, tog og delebil, hvilket krævede lidt logistik, men blev startskuddet til langsommere og mere forbundet liv.</p>
+    </section>
+    <section class="text-box">
+      <h2>Små Skridt, Stor Forandring</h2>
+      <p>I 2024 ændrede vi vaner: færre impulskøb, kødfri dage, høns i haven til æg og kompost, og deling af redskaber med naboer. Bogen <em>"Er mit liv bæredygtigt?"</em> af Morten Sommers åbnede vores øjne for planetens grænser.</p>
+    </section>
+    <section class="text-box">
+      <h2>Digital Detox & Nye Vaner</h2>
+      <p>Vi skruede ned for digitalt forbrug, flyttede til et mindre andelshus på 80m², genbrugte og renoverede med naturlige materialer. ChatGPT hjalp os med grøn sparring, og vi eksperimenterede med lokale AI-modeller for at skære på bits og bytes’ aftryk.</p>
+    </section>
+    <section class="text-box">
+      <h2>All-In i 2025</h2>
+      <p>Vi dokumenterede alt: mad, affald, transport og energiforbrug. Med logbog og børnesnak fik vi overblik. Vi skruede ned for opvarmning, genanvendte bleer, opsamlede regnvand, og gik online med <a href="https://planetært.dk">Planetært.dk</a> for at dele vores rejse.</p>
+    </section>
+  </main>
 
-<section class="hero-section">
-  <h1>Et planetært liv – simpelt, stærkt og bæredygtigt</h1>
-  <p>Her er vores historie fra salg af bil til vi ramte de 100%</p>
-</section>
+  <!-- 6) Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Planetarisk Liv – Vores Historie med kærlighed og kompost 💚</p>
+    <a href="privatliv.html" class="btn-terms">Vilkår & Betingelser</a>
+  </footer>
 
-<main>
-  <section id="intro">
-    <h2>Historien?</h2>
-<section id="planetarisk-ebog">
-  <section>
-  <h2>Vores historie og vejen til et liv under de planetære grænser</h2>
-  <p><strong>Af Rasmus Sommerhave og familie</strong></p>
-
-  <p>Før vi for alvor begyndte at ændre vores livsstil, levede vi som mange andre. Vi sorterede affald nogenlunde, prøvede at undgå madspild, og der røg en pakke eller to fra Temu og Shein i ny og næ. Vi har haft både 4x4 og mere fornuftige biler – og skiftede bil lidt oftere, end nødvendigt var. Det var ikke altid klart, hvad der måtte i den blå pose, og energiforbruget tænkte vi sjældent over.</p>
-
-  <p>Det var ikke perfekt. Men vi gjorde os umage. Og vigtigst af alt: vi begyndte at stille spørgsmål.</p>
-
-  <h3>Begyndelsen</h3>
-  <p>Vi havde altid gjort lidt: sorteret affald, genbrugt hvad vi kunne. Men i 2023 skete der noget nyt. Vi valgte at droppe bilen. Vores gamle Fiat Doblo – vores fristed på fire hjul – blev solgt. Ikke fordi vi havde en ny plan, men fordi vi kunne mærke, at noget trak i os. En ny retning.</p>
-
-  <p>Vi klarede os med cykler, tog og mulighed for at låne bil, når det var nødvendigt. Det krævede lidt logistik – især med afhentning af delebørn – men det blev begyndelsen på noget langsommere, enklere og mere forbundet.</p>
-
-  <h3>Små skridt, stor forandring</h3>
-  <p>I 2024 begyndte vi stille og roligt at ændre vaner: købe mindre, lave mere selv, undgå plastik, minimere madspild og tale om, hvad vi egentlig har brug for – og hvad vi kan undvære. Der kom en gnist. Ikke store armbevægelser – men glimt af noget ægte.</p>
-
-  <p>Vi skar ned på kød og indførte kødfri dage. Vi fik høns i haven – som både gav æg og fjernede madrester. Vi delte ting med naboer. Vi læste Morten O.A. Sommers bog <em>"Er mit liv bæredygtigt?"</em>, som åbnede vores øjne for, hvor langt over grænserne vi egentlig lå.</p>
-
-  <p>Den gennemsnitlige dansker ligger over 400% af de planetære grænser. Vi satte os et mål: under 200%.</p>
-
-  <h3>Et liv i balance</h3>
-  <p>Vi brugte genanvendelige bleer. Vaskede dem. Lufttørrede. Lærte tricks fra "gamle dage". Det tog tid – men det gav mening.</p>
-
-  <p>Vi stillede os selv spørgsmål: Har vi virkelig brug for det her? Kan vi lave det selv? Kan vi dele det?</p>
-
-  <p>Samtidig begyndte en drøm at spire: ønsket om fællesskab. Et sted med flere hænder, delte måltider og fælles ressourcer. Vi ledte. Overvejede at starte vores eget kollektiv. Men vi endte med at blive – og starte hvor vi var. Med åbne arme og en have der kunne rumme andre.</p>
-
-  <h3>Fra stort til småt – og mere end nok</h3>
-  <p>Vi flyttede fra 130 til 80 m². Et gammelt andelshus fra 1992, som vi selv renoverede. Med kalk- og lermaling, genbrugskøkken og brugt bad. Transport med GoMore, tog og el-ladcykel. Ét minde står særligt klart: Rasmus, et kæmpe spejl og en bus fra Jelling til Vejle. Klimakrigeren i fuld figur.</p>
-
-  <p>Vi dyrker mere selv, køber lokalt, planlægger ressourcer. Vi er ikke veganere eller vegetarer – vi er planetarer. Vi spiser kød, ost, fisk og drikker mælk – når det er madspild. For det er et CO2-nulsumsspil.</p>
-
-  <h3>Det digitale regnskab</h3>
-  <p>Vi brugte ChatGPT som grøn sparringspartner. Vi satte målet: under 150% inden for et år. For at begynde at handle inden for klodens råderum.</p>
-
-  <p>Og vi opdagede det digitale: Google, Amazon, Facebook – ud med det. Ind med open source, krypteret mail, decentralisering. For digitalt forbrug tæller også.</p>
-
-  <p>Rasmus begyndte at kode. Lavede en lokal AI-model. For også bits og bytes har klimaaftryk.</p>
-
-  <h3>Det store eksperiment</h3>
-  <p>I 2025 gik vi all-in. Alt blev registreret: mad, el, vand, affald, transport. Et nyt systematisk overblik. Ikke som afsavn – men som tilvalg.</p>
-
-  <p>Og der var sjove perioder: regnvand fra vaskemaskinen i bryggerset, omgangssyge og genanvendelige bleer… Vi skruede ned for varmen. Tænkte over strøm. Købte kaffe direkte fra bønder. Og begyndte at følge de 9 planetære grænser. Med logbog, børnesnak, vennedialog – og mere mening.</p>
-
-  <h3>Hjemmesiden Planetært.dk</h3>
-  <p>Midt i projektet blev det klart: det skulle deles. Hjemmesiden blev født. Læserbreve skrevet. Grafikker lavet. Målet: at inspirere, ikke prædike.</p>
-
-  <p>Vi lever stadig ikke perfekt. Men vi lever ærligt. Med vilje. Med nærvær. Og med kærlighed.</p>
-
-  <p>Vi har stadig ikke en perfekt plan. <br>Men vi har en vej.</p>
-</section>
-
-
-
-  
-</main>
-
-<script>
-  function toggleMenu() {
-    const nav = document.getElementById("navLinks");
-    nav.style.display = nav.style.display === "flex" ? "none" : "flex";
-  }
-</script>
-
+  <!-- 7) Scripts: menu & guide -->
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      const overlay = document.getElementById("navOverlay");
+      nav.classList.toggle("open");
+      overlay.style.display = nav.classList.contains("open") ? "block" : "none";
+    }
+    function closeMenu() {
+      document.getElementById("navLinks").classList.remove("open");
+      document.getElementById("navOverlay").style.display = "none";
+    }
+    function toggleGuideBox() {
+      const box = document.getElementById("guideBox");
+      box.style.display = (box.style.display === "block") ? "none" : "block";
+    }
+    window.addEventListener('click', function(e) {
+      const box = document.getElementById("guideBox");
+      const icon = document.querySelector(".floating-icon");
+      if (!box.contains(e.target) && !icon.contains(e.target)) {
+        box.style.display = "none";
+      }
+    });
+  </script>
 </body>
 </html>
