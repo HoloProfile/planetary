@@ -76,23 +76,35 @@
   <div w3-include-html="includes/footer.html"></div>
 
   <!-- Scripts -->
-  <script src="scripts/main.js"></script>
-  <script>
-    // Loader includes
-    function includeHTML() {
-      const elements = document.querySelectorAll('[w3-include-html]');
-      elements.forEach(el => {
-        const file = el.getAttribute("w3-include-html");
-        fetch(file)
-          .then(response => response.text())
-          .then(data => {
-            el.innerHTML = data;
-            el.removeAttribute("w3-include-html");
-            includeHTML(); // for nested
-          });
-      });
-    }
-    includeHTML();
-  </script>
+<script>
+  function includeHTML() {
+    const elements = document.querySelectorAll('[w3-include-html]');
+    let pending = elements.length;
+
+    elements.forEach(el => {
+      const file = el.getAttribute("w3-include-html");
+      fetch(file)
+        .then(response => response.text())
+        .then(data => {
+          el.innerHTML = data;
+          el.removeAttribute("w3-include-html");
+          pending--;
+
+          if (pending === 0) {
+            // 💡 Nu er alle includes færdige – load scripts
+            const mainScript = document.createElement('script');
+            mainScript.src = 'scripts/main.js';
+            document.body.appendChild(mainScript);
+
+            const gaiaScript = document.createElement('script');
+            gaiaScript.src = 'scripts/gaia.js';
+            document.body.appendChild(gaiaScript);
+          }
+        });
+    });
+  }
+
+  includeHTML();
+</script>
 </body>
 </html>
