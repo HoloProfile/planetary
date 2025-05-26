@@ -46,38 +46,4 @@
   </div>
 </div>
 
-<script>
-function toggleGaia() {
-  const box = document.getElementById('guideBox');
-  const isOpen = box.style.display === 'block';
-  if (isOpen) {
-    box.style.opacity = 0;
-    box.style.transform = 'translateY(10px)';
-    setTimeout(() => box.style.display = 'none', 300);
-  } else {
-    box.style.display = 'block';
-    setTimeout(() => {
-      box.style.opacity = 1;
-      box.style.transform = 'translateY(0)';
-    }, 10);
-  }
-}
 
-function showGaiaMenu() {
-  document.getElementById('gaiaIntro').style.display = 'none';
-  document.getElementById('gaiaMenu').style.display = 'block';
-}
-
-const path = window.location.pathname;
-const greeting = document.getElementById('gaiaGreeting');
-
-if (path.includes('viden.html')) {
-  greeting.innerHTML = "Vil du lære mere om planetens grænser?";
-} else if (path.includes('100ideer.html')) {
-  greeting.innerHTML = "Skal vi finde en idé sammen?";
-} else if (path.includes('kontakt.html')) {
-  greeting.innerHTML = "Du kan altid skrive, hvis du vil spørge eller dele noget.";
-} else if (!path.includes('index.html') && greeting) {
-  greeting.innerHTML = "Klik herunder, hvis du vil se min menu.";
-}
-</script>
