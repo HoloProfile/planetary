@@ -348,24 +348,38 @@ h1, h2, h3 {
 /* Specifikke baggrunde */
 .forside-bg {
   background: url('HEADER13.png') no-repeat center center;
+   background-size: cover;
+  background-color: #e9f0e4; 
 }
 .rejse-bg {
   background: url('billeder/Rejse.png') no-repeat center center;
+   background-size: cover;
+  background-color: #e9f0e4; 
 }
 .ideer-bg {
   background: url('billeder/ideer.png') no-repeat center center;
+   background-size: cover;
+  background-color: #e9f0e4; 
 }
 .viden-bg {
   background: url('billeder/viden.png') no-repeat center center;
+   background-size: cover;
+  background-color: #e9f0e4; 
 }
 .FAQ-bg {
   background: url('billeder/FAQ.png') no-repeat center center;
+   background-size: cover;
+  background-color: #e9f0e4; 
 }
 .Galleri-bg {
   background: url('billeder/Galleri.png') no-repeat center center;
+   background-size: cover;
+  background-color: #e9f0e4; 
 }
 .Kontakt-bg {
   background: url('billeder/Kontakt.png') no-repeat center center;
+   background-size: cover;
+  background-color: #e9f0e4; 
 }
 .hero-::after {
   content: "";
