@@ -79,5 +79,35 @@ function setupAccordion() {
       }
     });
   });
+// === dagens tip===
+document.addEventListener("DOMContentLoaded", function () {
+  const tips = [
+    "Gem dit kogevand – dine planter vil elske det!",
+    "Drop bilen - Tag cyklen – også selvom det regner 🚲",
+    "Brug den samme pose flere gange, evt. stof – plastik er last year's problem ♻️",
+    "Gå offline en time – og se hvad du finder ☀️",
+    "Lav aftensmad af resterne 🥦",
+    "Del din viden med en ven i dag 💬",
+    "Reparer noget, bare én ting 🔧",
+    "Genbrug et glas som opbevaring 🫙",
+    "Lad op med solens energi – også mentalt ☀️",
+     "Sluk lyset, når du går ud af rummet 💡",
+  "Spis rester – din fryser elsker dig ❄️",
+  "Tag cyklen, selv når det regner 🚲",
+  "Del dine ting med naboen 🤝",
+  "Drop kødet én dag om ugen 🌱",
+  "Brug stofpose – og se cool ud 😎",
+  "Tør tøj udenfor – frisk duft garanteret 🌬️",
+  "Plant krydderurter i vinduet 🌿",
+  "Gå tur uden telefon én gang om ugen 🚶‍♂️📵",
+  "Genbrug glas og giv dem nyt liv 🍶"
+  ];
+
+const tipElement = document.getElementById("gaiaTip");
+if (tipElement) {
+  const randomIndex = Math.floor(Math.random() * tips.length);
+tipElement.textContent = "🌿 Et lille planetært tip: " + tips[randomIndex];
+  }
+  
 }
 
