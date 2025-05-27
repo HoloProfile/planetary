@@ -60,6 +60,7 @@ icon.addEventListener("mouseenter", () => {
       greeting.innerHTML = "Skal vi finde en idé sammen?";
     } else if (path.includes('kontakt.html')) {
       greeting.innerHTML = "Du kan altid skrive, hvis du vil spørge eller dele noget.";
-    }
+    } else if (path.includes('historie.html')) {
+      greeting.innerHTML = "Har du læst eller lyttet til historien?" <br> "Håber du fandt det lærrigt";
   }
 }, 200);
