@@ -1,0 +1,104 @@
+<!-- ==========================================================================  
+   projekter.html  
+   Planetært Liv – Vores Projekter  
+   ========================================================================== -->
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <!-- 1) Metadata & Stylesheet -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projekter – Planetært Liv</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="billeder/planetarisk_liv_icon_circular.png" type="image/png">
+  <meta name="theme-color" content="#f8f9f4">
+  <!-- Font Preload -->
+ <link rel="preload" href="styles/fonts/Tekst-Normal.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Tekst-Fed.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Tekst-Skraa.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <!-- (øvrige preload-links) -->
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <!-- 2) Mobile Nav Overlay & Header -->
+  <div id="navOverlay" class="nav-overlay" onclick="closeMenu()"></div>
+  <div w3-include-html="includes/header.html"></div>
+
+  <!-- 3) Hero Section -->
+  <section class="hero-section">
+    <h1>Vores Projekter</h1>
+    <p>Handling frem for ord – her viser vi, hvad vi arbejder på.</p>
+  </section>
+
+  <!-- 4) Flyvende Guide -->
+ <div w3-include-html="includes/gaia.html"></div>
+
+  <!-- 5) Main Content: Projekter Sektioner -->
+  <main class="content">
+    <section class="text-box">
+      <h2>Artikel VAF</h2>
+      <p>VAF besøg...</p>
+    </section>
+    <section class="text-box">
+      <h2>TV2</h2>
+      <p>TV2 støtte med ...</p>
+    </section>
+    <section class="text-box">
+      <h2>Vejle Bib</h2>
+      <p>Arb. vejle bib.</p>
+    </section>
+    <section class="text-box">
+      <h2>Økolariet</h2>
+      <p>Projekt</p>
+    </section>
+    <section class="text-box">
+      <h2>🎶 Musik og håb</h2>
+      <p>bim bam bum.</p>
+    </section>
+  </main>
+
+  <!-- 6) Footer -->
+<!-- Footer -->
+  <div w3-include-html="includes/footer.html"></div>
+
+  <!-- Scripts -->
+<script>
+  function includeHTML() {
+    const elements = document.querySelectorAll('[w3-include-html]');
+    let pending = elements.length;
+
+    elements.forEach(el => {
+      const file = el.getAttribute("w3-include-html");
+      fetch(file)
+        .then(response => response.text())
+        .then(data => {
+          el.innerHTML = data;
+          el.removeAttribute("w3-include-html");
+          pending--;
+
+          if (pending === 0) {
+            // === Når alle includes er indsat, så loader vi scripts ===
+            const mainScript = document.createElement('script');
+            mainScript.src = 'scripts/main.js';
+            document.body.appendChild(mainScript);
+
+            const gaiaScript = document.createElement('script');
+            gaiaScript.src = 'scripts/gaia.js';
+            gaiaScript.onload = function () {
+              if (typeof initGaia === 'function') initGaia(); // ← 🔥 denne linje er vigtig!
+            };
+            document.body.appendChild(gaiaScript);
+          }
+        });
+    });
+  }
+
+  includeHTML();
+</script>
+</body>
+</html>
+
