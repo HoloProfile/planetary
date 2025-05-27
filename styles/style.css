@@ -12,7 +12,7 @@
   font-family: 'Merriweather';
   font-weight: 300;
   font-style: normal;
-  src: url('styles/fonts/Tekst-Let.woff2') format('woff2');
+  src: url('fonts/Tekst-Let.woff2') format('woff2');
   font-display: swap;
 }
 /* Regular (400) */
@@ -20,7 +20,7 @@
   font-family: 'Merriweather';
   font-weight: 400;
   font-style: normal;
-  src: url('styles/fonts/Tekst-Normal.woff2') format('woff2');
+  src: url('fonts/Tekst-Normal.woff2') format('woff2');
   font-display: swap;
 }
 /* Italic (400 italic) */
@@ -28,7 +28,7 @@
   font-family: 'Merriweather';
   font-weight: 400;
   font-style: italic;
-  src: url('styles/fonts/Tekst-Skraa.woff2') format('woff2');
+  src: url('fonts/Tekst-Skraa.woff2') format('woff2');
   font-display: swap;
 }
 /* Bold (700) */
@@ -36,7 +36,7 @@
   font-family: 'Merriweather';
   font-weight: 700;
   font-style: normal;
-  src: url('styles/fonts/Tekst-Fed.woff2') format('woff2');
+  src: url('fonts/Tekst-Fed.woff2') format('woff2');
   font-display: swap;
 }
 
@@ -46,7 +46,7 @@
   font-family: 'Poppins';
   font-weight: 300;
   font-style: normal;
-  src: url('styles/fonts/Poppins-Light.woff2') format('woff2');
+  src: url('fonts/Poppins-Light.woff2') format('woff2');
   font-display: swap;
 }
 /* Medium (350) */
@@ -54,7 +54,7 @@
   font-family: 'Poppins';
   font-weight: 350;
   font-style: normal;
-  src: url('styles/fonts/Poppins-Medium.woff2') format('woff2');
+  src: url('fonts/Poppins-Medium.woff2') format('woff2');
   font-display: swap;
 }
 /* Regular (400) */
@@ -62,7 +62,7 @@
   font-family: 'Poppins';
   font-weight: 400;
   font-style: normal;
-  src: url('styles/fonts/Poppins-Regular.woff2') format('woff2');
+  src: url('fonts/Poppins-Regular.woff2') format('woff2');
   font-display: swap;
 }
 /* SemiBold (600) */
@@ -70,7 +70,7 @@
   font-family: 'Poppins';
   font-weight: 600;
   font-style: normal;
-  src: url('styles/fonts/Poppins-SemiBold.woff2') format('woff2');
+  src: url('fonts/Poppins-SemiBold.woff2') format('woff2');
   font-display: swap;
 }
 /* Bold (700) */
@@ -78,7 +78,7 @@
   font-family: 'Poppins';
   font-weight: 700;
   font-style: normal;
-  src: url('styles/fonts/Poppins-Bold.woff2') format('woff2');
+  src: url('fonts/Poppins-Bold.woff2') format('woff2');
   font-display: swap;
 }
 
