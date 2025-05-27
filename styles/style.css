@@ -334,7 +334,6 @@ h1, h2, h3 {
 }
 /* billede-ikon forsiden */
 .hero-section {
-  background: url('HEADER13.png') no-repeat center center;
   background-size: cover;
   min-height: 60vh;
   padding: 6rem 2rem;
@@ -345,6 +344,28 @@ h1, h2, h3 {
   justify-content: center;
   align-items: center;
   position: relative;
+}
+/* Specifikke baggrunde */
+.forside-bg {
+  background: url('HEADER13.png') no-repeat center center;
+}
+.rejse-bg {
+  background: url('Rejse.png') no-repeat center center;
+}
+.ideer-bg {
+  background: url('ideer.png') no-repeat center center;
+}
+.viden-bg {
+  background: url('viden.png') no-repeat center center;
+}
+.FAQ-bg {
+  background: url('FAQ.png') no-repeat center center;
+}
+.Galleri-bg {
+  background: url('Galleri.png') no-repeat center center;
+}
+.Kontakt-bg {
+  background: url('Kontakt.png') no-repeat center center;
 }
 .hero-::after {
   content: "";
@@ -388,7 +409,7 @@ h1, h2, h3 {
   color: #2c3e50;
 }
 .historie-main.content {
-  background: url('HEADER1.png') no-repeat center top;
+  background: url('billeder/rejse2.png') no-repeat center top;
   background-size: cover;
   background-attachment: fixed;
   padding: 3rem 1rem;
@@ -396,6 +417,20 @@ h1, h2, h3 {
 }
 .omos-main.content {
   background: url('HEADER2.png') no-repeat center top;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 3rem 1rem;
+  color: #2c3e50;
+}
+.viden-main.content {
+  background: url('Viden.png') no-repeat center top;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 3rem 1rem;
+  color: #2c3e50;
+}
+.viden2-main.content {
+  background: url('Viden2.png') no-repeat center top;
   background-size: cover;
   background-attachment: fixed;
   padding: 3rem 1rem;
