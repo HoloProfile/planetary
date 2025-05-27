@@ -65,3 +65,15 @@ function initGaia() {
     }
   }, 200);
 }
+function setupAccordion() {
+  const headers = document.querySelectorAll(".accordion-header");
+  headers.forEach(header => {
+    header.addEventListener("click", () => {
+      header.classList.toggle("open");
+      const content = header.nextElementSibling;
+      if (content) {
+        content.classList.toggle("open");
+      }
+    });
+  });
+}
