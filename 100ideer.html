@@ -30,28 +30,7 @@
   <div id="navOverlay" class="nav-overlay" onclick="closeMenu()"></div>
 
   <!-- 5) Header & Navbar -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">
-        🌍 <span class="desktop-text">Planetært Liv – 100 idéer – Små skridt mod en bedre verden</span>
-             <span class="mobile-text">100 idéer i små skridt</span>
-      </div>
-      <button class="burger" onclick="toggleMenu()">☰</button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html" onclick="toggleMenu()">Hjem</a></li>
-         <li><a href="historie.html" onclick="toggleMenu()">Vores rejse</a></li>
-          <li><a href="viden.html" onclick="toggleMenu()">Bliv Klog</a></li>
-        <li><a href="100ideer.html" onclick="toggleMenu()">100 idéer</a></li>
-        <li><a href="ressourcer.html" onclick="toggleMenu()">Vi anbefaler</a></li>
-        <li><a href="om.html" onclick="toggleMenu()">Om os</a></li>
-         <li><a href="samarbejde.html" onclick="toggleMenu()">Samarbejde</a></li>
-        <li><a href="faq.html" onclick="toggleMenu()">Spørgsmål</a></li>
-        <li><a href="galleri.html" onclick="toggleMenu()">Galleri</a></li>
-        <li><a href="gæstebog.html" onclick="toggleMenu()">Gæstebog</a></li>
-        <li><a href="kontakt.html" onclick="toggleMenu()">Kontakt</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div w3-include-html="includes/header.html"></div>
 
   <!-- 6) Hero Section -->
   <section class="hero-section">
@@ -80,8 +59,10 @@
       </ul>
     </div>
   </div>
-
-  <!-- 8) Main Content Sections -->
+   
+ <div w3-include-html="includes/gaia.html"></div>
+  
+   <!-- 8) Main Content Sections -->
   <main class="content">
     <!-- 8.1) Ideer Box -->
     <div class="accordion">
@@ -231,55 +212,44 @@
   </main>
 
   <!-- 9) Footer -->
-  <footer class="footer">
-    <p>&copy; 2025 Planetarisk Liv – skabt med kærlighed og kompost 💚</p>
-    <a href="privatliv.html" class="btn-terms">Vilkår & Betingelser</a>
-  </footer>
+  <!-- Footer -->
+  <div w3-include-html="includes/footer.html"></div>
 
-  <!-- 10) Scripts -->
-  <script>
-    function toggleMenu() {
-      const nav = document.getElementById("navLinks");
-      const overlay = document.getElementById("navOverlay");
-      nav.classList.toggle("open");
-      overlay.style.display = nav.classList.contains("open") ? "block" : "none";
-    }
-    function closeMenu() {
-      document.getElementById("navLinks").classList.remove("open");
-      document.getElementById("navOverlay").style.display = "none";
-    }
-    function toggleGuideBox() {
-      const box = document.getElementById("guideBox");
-      box.style.display = (box.style.display === "block") ? "none" : "block";
-    }
-    window.addEventListener('click', function(e) {
-      const box = document.getElementById("guideBox");
-      const icon = document.querySelector(".floating-icon");
-      if (!box.contains(e.target) && !icon.contains(e.target)) {
-        box.style.display = "none";
-      }
-    });
-      // ======================================================================
-  // Accordion funktion (nyt: toggler både header & content)
-  // ======================================================================
-  document.querySelectorAll('.accordion-header').forEach(btn => {
-    btn.addEventListener('click', () => {
-      // Toggle open på selve header-knappen (rotér pil)
-      btn.classList.toggle('open');
-      // Toggle open på indholdet lige efter header
-      const content = btn.nextElementSibling;
-      content.classList.toggle('open');
-    });
-  });
+  <!-- Scripts -->
+<script>
+  function includeHTML() {
+    const elements = document.querySelectorAll('[w3-include-html]');
+    let pending = elements.length;
 
-  // Nested Idea-details
-  document.querySelectorAll('.idea-header').forEach(btn => {
-    btn.addEventListener('click', () => {
-      btn.classList.toggle('open');              // roterer pilen på idé-niveau
-      const details = btn.nextElementSibling;
-      details.classList.toggle('open');          // viser/skjuler detaljerne
+    elements.forEach(el => {
+      const file = el.getAttribute("w3-include-html");
+      fetch(file)
+        .then(response => response.text())
+        .then(data => {
+          el.innerHTML = data;
+          el.removeAttribute("w3-include-html");
+          pending--;
+
+          if (pending === 0) {
+            // === Når alle includes er indsat, så loader vi scripts ===
+            const mainScript = document.createElement('script');
+            mainScript.src = 'scripts/main.js';
+            document.body.appendChild(mainScript);
+
+            const gaiaScript = document.createElement('script');
+            gaiaScript.src = 'scripts/gaia.js';
+            gaiaScript.onload = function () {
+              if (typeof initGaia === 'function') initGaia(); // ← 🔥 denne linje er vigtig!
+            };
+            document.body.appendChild(gaiaScript);
+          }
+        });
     });
-  });
-  </script>
+  }
+
+  includeHTML();
+</script>
+
+
 </body>
 </html>
