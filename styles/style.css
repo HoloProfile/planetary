@@ -387,7 +387,13 @@ h1, h2, h3 {
   padding: 3rem 1rem;
   color: #2c3e50;
 }
-
+.historie-main.content {
+  background: url('HEADER1.png') no-repeat center top;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 3rem 1rem;
+  color: #2c3e50;
+}
 /* ========================================================================
    6) Text-Box Cards: automatisk baggrund, skygge & centreret tekst
    ======================================================================== */
