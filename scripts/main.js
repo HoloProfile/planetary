@@ -20,8 +20,7 @@ document.querySelectorAll('.accordion-header').forEach(btn => {
     btn.classList.toggle('open');
     const content = btn.nextElementSibling;
     content.classList.toggle('open');
-  });
-});
+}
 
 // === dagens tip===
 document.addEventListener("DOMContentLoaded", function () {
