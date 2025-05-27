@@ -4,15 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Blog</title>
+   <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="billeder/planetarisk_liv_icon_circular.png" type="image/png">
+  <meta name="theme-color" content="#f8f9f4">
+
+  <link rel="preload" href="styles/fonts/Tekst-Normal.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Tekst-Fed.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Tekst-Skraa.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  
   <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-  <nav class="navbar">
-    <div class="logo">🌍 Planetært Liv</div>
-    <div class="burger">☰</div>
-  </nav>
+<!-- Nav Overlay & Header -->
+  <div id="navOverlay" class="nav-overlay" onclick="closeMenu()"></div>
+ <div w3-include-html="includes/header.html"></div>
 
-  <section class="content" style="padding: 2rem;">
+  <section class="hero-section Galleri-bg">
+    <h1>Ressourcer vi elsker</h1>
+    <p>Bøger, videoer og værktøjer, vi selv bruger til et bæredygtigt liv.</p>
+  </section>
+
+  <!-- Flyvende Guide -->
+   <div w3-include-html="includes/gaia.html"></div>
+
+
+  <section class="galleri-main content" style="padding: 2rem;">
     <h1>Blog og tanker</h1>
     <article style="margin-bottom: 2rem;">
       <h2>🧺 22. maj – Vasketøj og værdier</h2>
@@ -24,5 +44,42 @@
       <p>Vi sov under stjernerne – uden strøm, men med grin og fuglesang. Det vil vi gøre igen!</p>
     </article>
   </section>
+<!-- Footer -->
+  <div w3-include-html="includes/footer.html"></div>
+
+  <!-- Scripts -->
+<script>
+  function includeHTML() {
+    const elements = document.querySelectorAll('[w3-include-html]');
+    let pending = elements.length;
+
+    elements.forEach(el => {
+      const file = el.getAttribute("w3-include-html");
+      fetch(file)
+        .then(response => response.text())
+        .then(data => {
+          el.innerHTML = data;
+          el.removeAttribute("w3-include-html");
+          pending--;
+
+          if (pending === 0) {
+            // === Når alle includes er indsat, så loader vi scripts ===
+            const mainScript = document.createElement('script');
+            mainScript.src = 'scripts/main.js';
+            document.body.appendChild(mainScript);
+
+            const gaiaScript = document.createElement('script');
+            gaiaScript.src = 'scripts/gaia.js';
+            gaiaScript.onload = function () {
+              if (typeof initGaia === 'function') initGaia(); // ← 🔥 denne linje er vigtig!
+            };
+            document.body.appendChild(gaiaScript);
+          }
+        });
+    });
+  }
+
+  includeHTML();
+</script>
 </body>
 </html>
