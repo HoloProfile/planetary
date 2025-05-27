@@ -14,33 +14,19 @@
   <meta name="theme-color" content="#f8f9f4">
 
   <!-- 2) Font Preload -->
-  <link rel="preload" href="styles/fonts/Tekst-Normal.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+ <link rel="preload" href="styles/fonts/Tekst-Normal.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Tekst-Fed.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Tekst-Skraa.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <!-- (øvrige preload-links) -->
   <link rel="stylesheet" href="styles/style.css">
 </head>
  <!-- 3) Nav Overlay & Header -->
   <div id="navOverlay" class="nav-overlay" onclick="closeMenu()"></div>
- <header>
-    <nav class="navbar">
-      <div class="logo">
-        🌍 <span class="desktop-text">Planetært Liv – Galleri – Glimt fra et planetært liv</span>
-             <span class="mobile-text">Billeder fra vores liv</span>
-      </div>
-      <button class="burger" onclick="toggleMenu()">☰</button>
-    <ul class="nav-links" id="navLinks">
-        <li><a href="index.html" onclick="toggleMenu()">Hjem</a></li>
-         <li><a href="historie.html" onclick="toggleMenu()">Vores rejse</a></li>
-          <li><a href="viden.html" onclick="toggleMenu()">Bliv Klog</a></li>
-        <li><a href="100ideer.html" onclick="toggleMenu()">100 idéer</a></li>
-        <li><a href="ressourcer.html" onclick="toggleMenu()">Vi anbefaler</a></li>
-        <li><a href="om.html" onclick="toggleMenu()">Om os</a></li>
-         <li><a href="samarbejde.html" onclick="toggleMenu()">Samarbejde</a></li>
-        <li><a href="faq.html" onclick="toggleMenu()">Spørgsmål</a></li>
-        <li><a href="galleri.html" onclick="toggleMenu()">Galleri</a></li>
-        <li><a href="gæstebog.html" onclick="toggleMenu()">Gæstebog</a></li>
-        <li><a href="kontakt.html" onclick="toggleMenu()">Kontakt</a></li>
-      </ul>
-    </nav>
+   <div w3-include-html="includes/header.html"></div>
    
   <!-- 4) Hero Section for Galleri -->
   <section class="hero-section">
@@ -49,27 +35,7 @@
   </section>
    
 <!-- 5) Flyvende Guide -->
-  <div class="floating-guide">
-    <img src="billeder/planetarisk_liv_icon_circular.png" alt="Guide ikon" class="floating-icon" onclick="toggleGuideBox()">
-    <div id="guideBox" class="guide-box">
-      <h3>🌍 Guide til siden</h3>
-     <ul>
-        <li><a href="index.html">🏠 Hjem til forsiden</a></li>
-        <li><a href="historie.html">📖 Vores rejse - kort fortalt</a></li>
-        <li><a href="viden.html">📘 Bliv klog – Viden om kloden og os selv</a></li>
-        <li><a href="100ideer.html">🌿 100 idéer – Små skridt mod en bedre verden</a></li>
-        <li><a href="ressourcer.html">📚 Vores Anbefalinger – Bøger, videoer og værktøjer vi elsker</a></li>
-        <li><a href="om.html">📜 Om os - Ja hvem er egentlig familien bag?</a></li>
-        <li><a href="samarbejde.html">🤝 Samarbejde - Skal vi finde på noget sammen?</a></li>
-        <li><a href="faq.html">❓ Ofte stillede spørgsmål – og ærlige svar</a></li>
-        <li><a href="galleri.html">🖼️ Galleri – Glimt fra et planetært liv</a></li>
-        <li><a href="gæstebog.html">✍️ Gæstebog og Hilsner – Kom med dine egne ideer og en lille hilsen</a></li>
-        <li><a href="kontakt.html">✉️ Kontakt – Vi svarer med hjertet</a></li>
-
-
-      </ul>
-    </div>
-  </div>
+  <div w3-include-html="includes/gaia.html"></div>
 
    <!-- 6) Main Content: Boksede Sektioner -->
   <main class="content">
@@ -77,46 +43,52 @@
       <h2>Vores Galleri</h2>
       <p>Små glimt fra vores univers under de planetære grænser</p>
       <div class="gallery-grid">
-        <img src="billeder/have.jpg" alt="Haven">
-        <img src="billeder/koekken.jpg" alt="Udekøkken">
-        <img src="billeder/boern.jpg" alt="Børn i regnvejr">
+        <img src="billeder/snaps.png" alt="Snaps">
+        <img src="billeder/billede.png" alt="Udekøkken">
+        <img src="billeder/PXL_20250507_175040961.jpg" alt="Børn i regnvejr">
       </div>
     </section>
   </main>
    
   <!-- 7) Footer -->
-  <footer class="footer">
-    <p>&copy; 2025 Planetært Liv – skabt med kærlighed og kompost 💚</p>
-    <a href="privatliv.html" class="btn-terms">Vilkår & Betingelser</a>
-  </footer>
+ <!-- Footer -->
+  <div w3-include-html="includes/footer.html"></div>
 
-  <!-- 8) Scripts -->
-  <script>
-    // Menu
-    function toggleMenu() {
-      const nav = document.getElementById("navLinks");
-      const overlay = document.getElementById("navOverlay");
-      nav.classList.toggle("open");
-      overlay.style.display = nav.classList.contains("open") ? "block" : "none";
-    }
-    function closeMenu() {
-      document.getElementById("navLinks").classList.remove("open");
-      document.getElementById("navOverlay").style.display = "none";
-    }
+  <!-- Scripts -->
+<script>
+  function includeHTML() {
+    const elements = document.querySelectorAll('[w3-include-html]');
+    let pending = elements.length;
 
-    // Guide Box
-    function toggleGuideBox() {
-      const box = document.getElementById("guideBox");
-      box.style.display = (box.style.display === "block") ? "none" : "block";
-    }
-    window.addEventListener('click', function(e) {
-      const box = document.getElementById("guideBox");
-      const icon = document.querySelector(".floating-icon");
-      if (!box.contains(e.target) && !icon.contains(e.target)) {
-        box.style.display = "none";
-      }
+    elements.forEach(el => {
+      const file = el.getAttribute("w3-include-html");
+      fetch(file)
+        .then(response => response.text())
+        .then(data => {
+          el.innerHTML = data;
+          el.removeAttribute("w3-include-html");
+          pending--;
+
+          if (pending === 0) {
+            // === Når alle includes er indsat, så loader vi scripts ===
+            const mainScript = document.createElement('script');
+            mainScript.src = 'scripts/main.js';
+            document.body.appendChild(mainScript);
+
+            const gaiaScript = document.createElement('script');
+            gaiaScript.src = 'scripts/gaia.js';
+            gaiaScript.onload = function () {
+              if (typeof initGaia === 'function') initGaia(); // ← 🔥 denne linje er vigtig!
+            };
+            document.body.appendChild(gaiaScript);
+          }
+        });
     });
-  </script>
+  }
+
+  includeHTML();
+</script>
+
 </body>
 </html>
 
