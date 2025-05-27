@@ -1,4 +1,3 @@
-
 function initGaia() {
   const interval = setInterval(() => {
     const box = document.getElementById('guideBox');
@@ -63,8 +62,12 @@ function initGaia() {
         greeting.innerHTML = "Har du læst eller lyttet til historien?<br>Håber du fandt det lærerigt.";
       }
     }
+
+    // 💡 HER kalder vi nu accordion-setup
+    setupAccordion();
   }, 200);
 }
+
 function setupAccordion() {
   const headers = document.querySelectorAll(".accordion-header");
   headers.forEach(header => {
@@ -77,3 +80,4 @@ function setupAccordion() {
     });
   });
 }
+
