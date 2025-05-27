@@ -1,3 +1,4 @@
+function initGaia() {
 const interval = setInterval(() => {
   const box = document.getElementById('guideBox');
   const icon = document.querySelector('.floating-icon');
@@ -64,3 +65,4 @@ icon.addEventListener("mouseenter", () => {
       greeting.innerHTML = "Har du læst eller lyttet til historien? - Håber du fandt det lærrigt";
   }
 }, 200);
+}
