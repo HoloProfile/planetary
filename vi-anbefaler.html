@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vi anbefaler</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="billeder/planetarisk_liv_icon_circular.png" type="image/png">
+  <meta name="theme-color" content="#f8f9f4">
+ 
+
+    <link rel="preload" href="styles/fonts/Tekst-Normal.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Tekst-Fed.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Tekst-Skraa.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+   <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <!-- Overlay til mobilmenu -->
+  <div id="navOverlay" class="nav-overlay" onclick="closeMenu()"></div>
+
+  <!-- Header / Navbar -->
+  <div w3-include-html="includes/header.html"></div>
+
+
+  <!-- Hero -->
+  <section class="hero-section ideer-bg">
+    <h1>🌿 Vi anbefaler</h1>
+    <p>Her finder du bøger, videoer og links vi selv bruger og elsker.</p>
+  </section>
+
+  <!-- Gaia-guide -->
+  <div w3-include-html="includes/gaia.html"></div>
+  
+  <!-- Indhold -->
+  <main class="ideer-main section">
+    <h2>Bøger</h2>
+    <ul>
+      <li><a href="https://www.klimaforandringer.dk">“Klimaforandringer – forstå dem”</a> – en god begynderbog.</li>
+      <li><a href="https://www.genbrugsguiden.dk">“Genbrugsguiden”</a> – lav affald, skab værdi.</li>
+    </ul>
+
+    <h2>Videoer og dokumentarer</h2>
+    <ul>
+      <li><a href="https://youtu.be/dp7zX9sxJmI">“Before the Flood” (YouTube)</a> – med Leo og alting.</li>
+      <li><a href="https://www.dr.dk/drtv/serie/jorden-set-fra-himlen">“Jorden set fra himlen” (DR)</a> – smukt og tankevækkende.</li>
+    </ul>
+
+    <h2>Hjemmesider og fællesskaber</h2>
+    <ul>
+      <li><a href="https://www.ukrudt.dk">Ukrudt.dk</a> – grøn inspiration og fællesskab.</li>
+      <li><a href="https://www.openfoodfacts.org">Open Food Facts</a> – scan din mad, se klimaaftryk.</li>
+    </ul>
+  </main>
+
+  <!-- Footer -->
+  <div w3-include-html="includes/footer.html"></div>
+
+  <!-- Scripts -->
+<script>
+  function includeHTML() {
+    const elements = document.querySelectorAll('[w3-include-html]');
+    let pending = elements.length;
+
+    elements.forEach(el => {
+      const file = el.getAttribute("w3-include-html");
+      fetch(file)
+        .then(response => response.text())
+        .then(data => {
+          el.innerHTML = data;
+          el.removeAttribute("w3-include-html");
+          pending--;
+
+          if (pending === 0) {
+            // === Når alle includes er indsat, så loader vi scripts ===
+            const mainScript = document.createElement('script');
+            mainScript.src = 'scripts/main.js';
+            document.body.appendChild(mainScript);
+
+            const gaiaScript = document.createElement('script');
+            gaiaScript.src = 'scripts/gaia.js';
+            gaiaScript.onload = function () {
+              if (typeof initGaia === 'function') initGaia(); // ← 🔥 denne linje er vigtig!
+            };
+            document.body.appendChild(gaiaScript);
+          }
+        });
+    });
+  }
+
+  includeHTML();
+</script>
+
+
+</body>
+</html>
