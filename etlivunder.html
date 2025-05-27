@@ -2,19 +2,37 @@
 <html lang="da">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Et liv under de planetære grænser</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="billeder/planetarisk_liv_icon_circular.png" type="image/png">
+  <meta name="theme-color" content="#f8f9f4">
+  
+  <link rel="preload" href="styles/fonts/Tekst-Normal.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Tekst-Fed.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Tekst-Skraa.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="styles/fonts/Poppins-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
   <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
+ <div id="navOverlay" class="nav-overlay" onclick="closeMenu()"></div>
+  
   <div w3-include-html="includes/header.html"></div>
 
+   <!-- Hero -->
+  <section class="hero-section">
+    <h1>Et liv under de planetære grænser<br>
+      <img src="billeder/planetarisk_liv_icon_192x192.png" alt="ikon" class="inline-img">  </h1>
+      <hr>
+    <p>vordan ser hverdagen ud, når man sætter sig for at leve under Jordens tålegrænser? For os handler det ikke om at være perfekte – men om at være bevidste. Vi træffer valg i vores hverdag, der reducerer vores økologiske fodaftryk og styrker vores fællesskab.</p>
+  </section>
+  
   <main class="forside-main content">
     <section class="content">
-      <h1>Et liv under de planetære grænser 🌍</h1>
-      <p>Hvordan ser hverdagen ud, når man sætter sig for at leve under Jordens tålegrænser? For os handler det ikke om at være perfekte – men om at være bevidste. Vi træffer valg i vores hverdag, der reducerer vores økologiske fodaftryk og styrker vores fællesskab.</p>
-
-      <hr class="hr-small">
 
       <h2>Mad og forbrug 🌿</h2>
       <p>Vi spiser mest plantebaseret, og bruger kasseret mad fra Too Good To Go og lokale netværk. Vi dyrker egne krydderurter, fermenterer grønt og deler med naboerne. Rester er en ressource, ikke affald.</p>
@@ -38,8 +56,38 @@
 
   <div w3-include-html="includes/footer.html"></div>
 
-  <script>
-    includeHTML();
-  </script>
+ <script>
+  function includeHTML() {
+    const elements = document.querySelectorAll('[w3-include-html]');
+    let pending = elements.length;
+
+    elements.forEach(el => {
+      const file = el.getAttribute("w3-include-html");
+      fetch(file)
+        .then(response => response.text())
+        .then(data => {
+          el.innerHTML = data;
+          el.removeAttribute("w3-include-html");
+          pending--;
+
+          if (pending === 0) {
+            // === Når alle includes er indsat, så loader vi scripts ===
+            const mainScript = document.createElement('script');
+            mainScript.src = 'scripts/main.js';
+            document.body.appendChild(mainScript);
+
+            const gaiaScript = document.createElement('script');
+            gaiaScript.src = 'scripts/gaia.js';
+            gaiaScript.onload = function () {
+              if (typeof initGaia === 'function') initGaia(); // ← 🔥 denne linje er vigtig!
+            };
+            document.body.appendChild(gaiaScript);
+          }
+        });
+    });
+  }
+
+  includeHTML();
+</script>
 </body>
 </html>
