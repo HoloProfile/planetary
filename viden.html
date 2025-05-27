@@ -49,34 +49,41 @@
   </main>
 
   <!-- 6) Footer -->
-  <footer class="footer">
-    <p>&copy; 2025 Planetært Liv – Viden med kærlighed og kompost 💚</p>
-    <a href="privatliv.html" class="btn-terms">Vilkår & Betingelser</a>
-  </footer>
+ <div w3-include-html="includes/footer.html"></div>
 
   <!-- 7) Scripts: menu & guide -->
-  <script>
-    function toggleMenu() {
-      const nav = document.getElementById("navLinks");
-      const overlay = document.getElementById("navOverlay");
-      nav.classList.toggle("open");
-      overlay.style.display = nav.classList.contains("open") ? "block" : "none";
-    }
-    function closeMenu() {
-      document.getElementById("navLinks").classList.remove("open");
-      document.getElementById("navOverlay").style.display = "none";
-    }
-    function toggleGuideBox() {
-      const box = document.getElementById("guideBox");
-      box.style.display = (box.style.display === "block") ? "none" : "block";
-    }
-    window.addEventListener('click', function(e) {
-      const box = document.getElementById("guideBox");
-      const icon = document.querySelector(".floating-icon");
-      if (!box.contains(e.target) && !icon.contains(e.target)) {
-        box.style.display = "none";
-      }
+ <script>
+  function includeHTML() {
+    const elements = document.querySelectorAll('[w3-include-html]');
+    let pending = elements.length;
+
+    elements.forEach(el => {
+      const file = el.getAttribute("w3-include-html");
+      fetch(file)
+        .then(response => response.text())
+        .then(data => {
+          el.innerHTML = data;
+          el.removeAttribute("w3-include-html");
+          pending--;
+
+          if (pending === 0) {
+            // === Når alle includes er indsat, så loader vi scripts ===
+            const mainScript = document.createElement('script');
+            mainScript.src = 'scripts/main.js';
+            document.body.appendChild(mainScript);
+
+            const gaiaScript = document.createElement('script');
+            gaiaScript.src = 'scripts/gaia.js';
+            gaiaScript.onload = function () {
+              if (typeof initGaia === 'function') initGaia(); // ← 🔥 denne linje er vigtig!
+            };
+            document.body.appendChild(gaiaScript);
+          }
+        });
     });
-  </script>
+  }
+
+  includeHTML();
+</script>
 </body>
 </html>
