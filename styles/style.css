@@ -381,7 +381,7 @@ h1, h2, h3 {
    ======================================================================== */
 
 .forside-main.content {
-  background: url('styles/HEADER9.png') no-repeat center top;
+  background: url('HEADER9.png') no-repeat center top;
   background-size: cover;
   background-attachment: fixed;
   padding: 3rem 1rem;
