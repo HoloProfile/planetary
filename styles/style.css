@@ -819,6 +819,18 @@ a.button-link:hover {
   transform: translateY(-2px);
 }
 
+/* Custom properties - fallback farve */
+:root {
+  --color-primary: #3d5c3d;
+  --bg-light: #f8f9f4;
+}
+body {
+  background: var(--bg-light);
+}
+.button-link {
+  background: var(--color-primary);
+}
+
 
 
 /* Gaia-visuelle elementer */
