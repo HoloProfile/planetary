@@ -3,25 +3,29 @@ function showGaiaMenu() {
   document.getElementById('gaiaIntro').style.display      = 'none';
   document.getElementById('gaiaMenuStart').style.display = 'block';
 }
+// 1) State‐variabel til om Gaia er åben eller ej
+let _gaiaOpen = false;
 
-// 2) toggleGaia (hvis du bruger denne i HTML onclick-attr)
+// 2) Funktionen der åbner/lukker Gaia-boksen
 function toggleGaia() {
   const box = document.getElementById('guideBox');
   if (!box) return;
-  const isOpen = getComputedStyle(box).display === 'block';
-  if (isOpen) {
-    box.style.opacity = 0;
+
+  if (_gaiaOpen) {
+    // Luk
+    box.style.opacity   = 0;
     box.style.transform = 'translateY(10px)';
     setTimeout(() => box.style.display = 'none', 300);
   } else {
-    box.style.display = 'block';
+    // Åbn
+    box.style.display   = 'block';
     setTimeout(() => {
-      box.style.opacity = 1;
+      box.style.opacity   = 1;
       box.style.transform = 'translateY(0)';
     }, 10);
   }
+  _gaiaOpen = !_gaiaOpen;
 }
-
 // 3) initGaia med resten af din logik
 function initGaia() {
   const box         = document.getElementById('guideBox');
