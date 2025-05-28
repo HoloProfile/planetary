@@ -111,3 +111,5 @@ tipElement.textContent = "🌿 Et lille planetært tip: " + tips[randomIndex];
   
 }
 
+ });
+  });
