@@ -46,18 +46,6 @@ function initGaia() {
     showMenuBtn.addEventListener('click', showGaiaMenu);
   }
 
-  // Accordion i Gaia-menuen med ARIA
-  document.querySelectorAll('.accordion-header').forEach(header => {
-    header.setAttribute('aria-expanded', 'false');
-    header.addEventListener('click', () => {
-      const expanded = header.getAttribute('aria-expanded') === 'true';
-      header.setAttribute('aria-expanded', String(!expanded));
-      header.classList.toggle('open');
-      const content = header.nextElementSibling;
-      if (content) content.classList.toggle('open');
-    });
-  });
-
   // Dynamisk hilsen baseret på side
   const greeting = document.getElementById('gaiaGreeting');
   if (greeting) {
