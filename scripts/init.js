@@ -1,6 +1,5 @@
 // scripts/init.js
 
-// 1) Loader includes og kalder initPage, når de er alle indsat
 function includeHTML(callback) {
   const els = document.querySelectorAll('[w3-include-html]');
   let pending = els.length;
@@ -16,24 +15,32 @@ function includeHTML(callback) {
       })
       .catch(err => console.error('Include fejl:', file, err))
       .finally(() => {
-        pending--;
-        if (pending === 0) callback();
+        if (--pending === 0) callback();
       });
   });
 }
 
-// 2) Når includes er færdige, loader vi main.js og gaia.js
 function initPage() {
-  const main = document.createElement('script');
-  main.src = 'scripts/main.js';
-  main.defer = true;
-  document.body.appendChild(main);
+  // 1) Indsæt main.js
+  const mainScript = document.createElement('script');
+  mainScript.src   = 'scripts/main.js';
+  mainScript.defer = true;
 
-  const gaia = document.createElement('script');
-  gaia.src = 'scripts/gaia.js';
-  gaia.defer = true;
-  document.body.appendChild(gaia);
+  // ✅ Når main.js er loaded, kør setupAccordion()
+  mainScript.onload = () => {
+    if (typeof setupAccordion === 'function') {
+      setupAccordion();
+    }
+  };
+
+  document.body.appendChild(mainScript);
+
+  // 2) Indsæt gaia.js (initGaia() kaldes selv i gaia.js)
+  const gaiaScript = document.createElement('script');
+  gaiaScript.src   = 'scripts/gaia.js';
+  gaiaScript.defer = true;
+  document.body.appendChild(gaiaScript);
 }
 
-// 3) Start processen
+// Kickstart: load includes → initPage (loader main.js + gaia.js + vores callbacks)
 includeHTML(initPage);
