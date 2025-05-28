@@ -107,28 +107,6 @@
   </footer>
 
   <!-- 7) Scripts: menu & guide -->
-  <script>
-    function toggleMenu() {
-      const nav = document.getElementById("navLinks");
-      const overlay = document.getElementById("navOverlay");
-      nav.classList.toggle("open");
-      overlay.style.display = nav.classList.contains("open") ? "block" : "none";
-    }
-    function closeMenu() {
-      document.getElementById("navLinks").classList.remove("open");
-      document.getElementById("navOverlay").style.display = "none";
-    }
-    function toggleGuideBox() {
-      const box = document.getElementById("guideBox");
-      box.style.display = (box.style.display === "block") ? "none" : "block";
-    }
-    window.addEventListener('click', function(e) {
-      const box = document.getElementById("guideBox");
-      const icon = document.querySelector(".floating-icon");
-      if (!box.contains(e.target) && !icon.contains(e.target)) {
-        box.style.display = "none";
-      }
-    });
-  </script>
+  <script defer src="scripts/init.js"></script>
 </body>
 </html>
