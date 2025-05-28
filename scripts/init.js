@@ -1,50 +1,39 @@
+// scripts/init.js
+
+// 1) Loader includes og kalder initPage, når de er alle indsat
 function includeHTML(callback) {
-  const elements = document.querySelectorAll('[w3-include-html]');
-  let pending = elements.length;
+  const els = document.querySelectorAll('[w3-include-html]');
+  let pending = els.length;
+  if (pending === 0) return callback();
 
-  if (pending === 0 && typeof callback === 'function') {
-    callback();
-    return;
-  }
-
-  elements.forEach(el => {
-    const file = el.getAttribute("w3-include-html");
+  els.forEach(el => {
+    const file = el.getAttribute('w3-include-html');
     fetch(file)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(`Include fejlede: ${file}`);
-        }
-        return response.text();
+      .then(r => r.ok ? r.text() : Promise.reject(r.status))
+      .then(html => {
+        el.innerHTML = html;
+        el.removeAttribute('w3-include-html');
       })
-      .then(data => {
-        el.innerHTML = data;
-        el.removeAttribute("w3-include-html");
+      .catch(err => console.error('Include fejl:', file, err))
+      .finally(() => {
         pending--;
-        if (pending === 0 && typeof callback === 'function') {
-          callback();
-        }
-      })
-      .catch(error => {
-        console.error('Fejl ved include af:', file, error);
-        pending--;
-        if (pending === 0 && typeof callback === 'function') {
-          callback();
-        }
+        if (pending === 0) callback();
       });
   });
 }
 
+// 2) Når includes er færdige, loader vi main.js og gaia.js
 function initPage() {
-  const mainScript = document.createElement('script');
-  mainScript.src = 'scripts/main.js';
-  document.body.appendChild(mainScript);
+  const main = document.createElement('script');
+  main.src = 'scripts/main.js';
+  main.defer = true;
+  document.body.appendChild(main);
 
-  const gaiaScript = document.createElement('script');
-  gaiaScript.src = 'scripts/gaia.js';
-  gaiaScript.onload = function () {
-    if (typeof initGaia === 'function') initGaia();
-  };
-  document.body.appendChild(gaiaScript);
+  const gaia = document.createElement('script');
+  gaia.src = 'scripts/gaia.js';
+  gaia.defer = true;
+  document.body.appendChild(gaia);
 }
 
+// 3) Start processen
 includeHTML(initPage);
