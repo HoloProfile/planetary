@@ -679,14 +679,15 @@ opacity: 0;
   background-color: #b7dcb0;
 }
 
-.footer {
+.footer, [w3-include-html] {
   background-color: #d5e6d5;
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
   margin-top: 0rem;
+  margin: 0;
+  min-height: 0;
 }
-
 /* --------------------------------------------------------------------------
    8) Accordion Sections â€“ centreret, afrundet og interaktivt
    -------------------------------------------------------------------------- */
