@@ -1,4 +1,4 @@
-unction initGaia() {
+function initGaia() {
   const interval = setInterval(() => {
     const box = document.getElementById('guideBox');
     const icon = document.querySelector('.floating-icon');
