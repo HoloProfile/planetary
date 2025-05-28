@@ -15,11 +15,14 @@ function closeMenu() {
 }
 
 // === Foldbarmenu (også Gaia)===
-document.querySelectorAll('.accordion-header').forEach(btn => {
-  btn.addEventListener('click', () => {
-    btn.classList.toggle('open');
-    const content = btn.nextElementSibling;
-    content.classList.toggle('open');
+function setupAccordion() {
+  document.querySelectorAll(".accordion-header").forEach(header => {
+    header.addEventListener("click", () => {
+      const isOpen = header.getAttribute("aria-expanded") === "true";
+      header.setAttribute("aria-expanded", String(!isOpen));
+      header.classList.toggle("open");
+      const content = header.nextElementSibling;
+      if (content) content.classList.toggle("open");
+    });
+  });
 }
-
-});
