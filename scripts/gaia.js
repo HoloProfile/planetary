@@ -14,7 +14,7 @@ function initGaia() {
 
   // 2) Klik på Gaia-ikon
   icon.addEventListener('click', () => {
-    const isOpen = box.style.display === 'block';
+    const isOpen = getComputedStyle(box).display === 'block';
     if (isOpen) {
       box.style.opacity = 0;
       box.style.transform = 'translateY(10px)';
