@@ -17,6 +17,7 @@ function closeMenu() {
 // === Foldbarmenu (også Gaia)===
 function setupAccordion() {
   document.querySelectorAll(".accordion-header").forEach(header => {
+    header.setAttribute("aria-expanded", "false");
     header.addEventListener("click", () => {
       const isOpen = header.getAttribute("aria-expanded") === "true";
       header.setAttribute("aria-expanded", String(!isOpen));
