@@ -598,9 +598,6 @@ hr {
   0%, 100% { transform: translateY(0); }
   50%      { transform: translateY(-5px); }
 }
-footer {
-  margin-top: 0rem; /* eller lign. */
-}
 /* Talebobbel-stil */
 .guide-box {
   display: none;
@@ -687,7 +684,7 @@ opacity: 0;
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
-  margin-top: 4rem;
+  margin-top: 0rem;
 }
 
 /* --------------------------------------------------------------------------
