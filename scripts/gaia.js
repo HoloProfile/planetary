@@ -22,6 +22,13 @@ function toggleGaia() {
   }
   _gaiaOpen = !_gaiaOpen;
 }
+
+// 1) Sørg for at showGaiaMenu altid er globalt tilgængelig
+function showGaiaMenu() {
+  document.getElementById('gaiaIntro').style.display      = 'none';
+  document.getElementById('gaiaMenuStart').style.display = 'block';
+}
+
 // 3) initGaia med resten af din logik
 function initGaia() {
   const box         = document.getElementById('guideBox');
