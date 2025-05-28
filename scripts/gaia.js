@@ -1,4 +1,9 @@
 // scripts/gaia.js
+// Gør showGaiaMenu globalt tilgængelig, så HTML-knappen kan kalde den
+function showGaiaMenu() {
+  document.getElementById('gaiaIntro').style.display      = 'none';
+  document.getElementById('gaiaMenuStart').style.display = 'block';
+}
 function initGaia() {
   const box = document.getElementById('guideBox');
   const icon = document.querySelector('.floating-icon');
