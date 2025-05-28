@@ -1,70 +1,70 @@
-// scripts/gaia.js
-// Gør showGaiaMenu globalt tilgængelig, så HTML-knappen kan kalde den
+// 1) Sørg for at showGaiaMenu altid er globalt tilgængelig
 function showGaiaMenu() {
   document.getElementById('gaiaIntro').style.display      = 'none';
   document.getElementById('gaiaMenuStart').style.display = 'block';
 }
-function initGaia() {
+
+// 2) toggleGaia (hvis du bruger denne i HTML onclick-attr)
+function toggleGaia() {
   const box = document.getElementById('guideBox');
-  const icon = document.querySelector('.floating-icon');
-  const greeting = document.getElementById('gaiaGreeting');
+  if (!box) return;
+  const isOpen = getComputedStyle(box).display === 'block';
+  if (isOpen) {
+    box.style.opacity = 0;
+    box.style.transform = 'translateY(10px)';
+    setTimeout(() => box.style.display = 'none', 300);
+  } else {
+    box.style.display = 'block';
+    setTimeout(() => {
+      box.style.opacity = 1;
+      box.style.transform = 'translateY(0)';
+    }, 10);
+  }
+}
+
+// 3) initGaia med resten af din logik
+function initGaia() {
+  const box         = document.getElementById('guideBox');
+  const icon        = document.querySelector('.floating-icon');
+  const greeting    = document.getElementById('gaiaGreeting');
   const showMenuBtn = document.querySelector("button[onclick='showGaiaMenu()']");
 
   if (!box || !icon) return;
 
-  // 1) Skjul boksen
-  box.style.display = 'none';
+  // Skjul boksen initialt
+  box.style.display   = 'none';
   box.style.opacity   = 0;
   box.style.transform = 'translateY(10px)';
 
-  // 2) Klik på Gaia-ikon
-  icon.addEventListener('click', () => {
-    const isOpen = getComputedStyle(box).display === 'block';
-    if (isOpen) {
-      box.style.opacity = 0;
-      box.style.transform = 'translateY(10px)';
-      setTimeout(() => box.style.display = 'none', 300);
-    } else {
-      box.style.display = 'block';
-      setTimeout(() => {
-        box.style.opacity = 1;
-        box.style.transform = 'translateY(0)';
-      }, 10);
-    }
-  });
+  // Klik på Gaia-ikon
+  icon.addEventListener('click', toggleGaia);
 
-  // 3) Hover (kun desktop)
+  // Hover kun på desktop
   icon.addEventListener('mouseenter', () => {
-    if (window.innerWidth >= 768) {
-      box.style.display = 'block';
-      setTimeout(() => {
-        box.style.opacity = 1;
-        box.style.transform = 'translateY(0)';
-      }, 10);
+    if (window.innerWidth < 768) return;
+    if (getComputedStyle(box).display !== 'block') {
+      toggleGaia();
     }
   });
 
-  // 4) Vis Gaia-menu
+  // “Vis menu”-knap
   if (showMenuBtn) {
-    showMenuBtn.addEventListener('click', () => {
-      document.getElementById('gaiaIntro').style.display      = 'none';
-      document.getElementById('gaiaMenuStart').style.display = 'block';
-    });
+    showMenuBtn.addEventListener('click', showGaiaMenu);
   }
 
-  // 5) Accordion med ARIA
+  // Accordion i Gaia-menuen
   document.querySelectorAll('.accordion-header').forEach(header => {
     header.setAttribute('aria-expanded', 'false');
     header.addEventListener('click', () => {
-      const open = header.getAttribute('aria-expanded') === 'true';
-      header.setAttribute('aria-expanded', String(!open));
+      const expanded = header.getAttribute('aria-expanded') === 'true';
+      header.setAttribute('aria-expanded', String(!expanded));
       header.classList.toggle('open');
       const content = header.nextElementSibling;
       if (content) content.classList.toggle('open');
     });
   });
 
-  // 6) Dynamisk hilsen
+  // Din dynamiske hilsen …
   if (greeting) {
     const path = location.pathname;
     let text = 'Din helt egen spireven 🌱 her på siden 🌍';
@@ -76,5 +76,6 @@ function initGaia() {
   }
 }
 
-// Kør init
+// 4) Kør initGaia så snart filen er indlæst
 if (typeof initGaia === 'function') initGaia();
+
