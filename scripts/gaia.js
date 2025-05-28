@@ -9,6 +9,7 @@ function initGaia() {
 
     clearInterval(interval);
 
+    // Klik: åbn/luk Gaia-boks
     icon.addEventListener("click", () => {
       const isOpen = box.style.display === "block";
       if (isOpen) {
@@ -24,6 +25,7 @@ function initGaia() {
       }
     });
 
+    // Hover-effekt på desktop
     icon.addEventListener("mouseenter", () => {
       if (window.innerWidth >= 768) {
         box.style.display = "block";
@@ -34,6 +36,7 @@ function initGaia() {
       }
     });
 
+    // Vis Gaia-menu
     if (showMenuBtn) {
       showMenuBtn.addEventListener("click", () => {
         document.getElementById('gaiaIntro').style.display = 'none';
@@ -41,10 +44,30 @@ function initGaia() {
       });
     }
 
-    document.querySelectorAll('.gaia-toggle').forEach(toggle => {
-      toggle.addEventListener('click', () => {
-        const target = document.getElementById(toggle.dataset.target);
-        if (target) {
-          target.style.display = target.style.display === 'block' ? 'none' : 'block';
+    // Accordion i menuen
+    document.querySelectorAll(".accordion-header").forEach(header => {
+      header.addEventListener("click", () => {
+        header.classList.toggle("open");
+        const content = header.nextElementSibling;
+        if (content) {
+          content.classList.toggle("open");
         }
       });
+    });
+
+    // Dynamisk hilsen afhængig af side
+    if (greeting) {
+      const path = window.location.pathname;
+      if (path.includes('viden.html')) {
+        greeting.innerHTML = "Vil du lære mere om planetens grænser?";
+      } else if (path.includes('100ideer.html')) {
+        greeting.innerHTML = "Skal vi finde en idé sammen?";
+      } else if (path.includes('kontakt.html')) {
+        greeting.innerHTML = "Du kan altid skrive, hvis du vil spørge eller dele noget.";
+      } else if (path.includes('historie.html')) {
+        greeting.innerHTML = "Har du læst eller lyttet til historien?<br>Håber du fandt det lærerigt.";
+      }
+    }
+
+  }, 200); // ← setInterval slut
+}
