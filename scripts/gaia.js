@@ -1,8 +1,4 @@
-// 1) Sørg for at showGaiaMenu altid er globalt tilgængelig
-function showGaiaMenu() {
-  document.getElementById('gaiaIntro').style.display      = 'none';
-  document.getElementById('gaiaMenuStart').style.display = 'block';
-}
+
 // 1) State‐variabel til om Gaia er åben eller ej
 let _gaiaOpen = false;
 
