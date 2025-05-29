@@ -10,7 +10,30 @@ function initGaia() {
   box.style.transform = 'translateY(10px)';
 
   // Klik på Gaia-ikonet
-  icon.addEventListener('click', toggleGaia);
+// Globale variable
+let _gaiaOpen = false;
+
+// Funktion til at toggle Gaia-boksen
+function toggleGaia() {
+  const box = document.getElementById('guideBox');
+  if (!box) return;
+
+  if (_gaiaOpen) {
+    box.style.opacity = 0;
+    box.style.transform = 'translateY(10px)';
+    setTimeout(() => {
+      box.style.display = 'none';
+    }, 300);
+  } else {
+    box.style.display = 'block';
+    setTimeout(() => {
+      box.style.opacity = 1;
+      box.style.transform = 'translateY(0)';
+    }, 10);
+  }
+
+  _gaiaOpen = !_gaiaOpen;
+}
 
   // “Vis menu”-knap
   const showMenuBtn = document.querySelector("button[onclick='showGaiaMenu()']");
