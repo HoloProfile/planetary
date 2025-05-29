@@ -1,16 +1,6 @@
-// --- 3) Init-funktion, binder alle event listeners + starter tips ---
-function initGaia() {
-  const box  = document.getElementById('guideBox');
-  const icon = document.querySelector('.floating-icon');
-  if (!box || !icon) return;
+let _gaiaOpen = false;
 
-  // Skjul Gaia initialt
-  box.style.display   = 'none';
-  box.style.opacity   = 0;
-  box.style.transform = 'translateY(10px)';
-
-
-// Funktion til at toggle Gaia-boksen
+// Flyt denne ud i globalt scope
 function toggleGaia() {
   const box = document.getElementById('guideBox');
   if (!box) return;
@@ -31,6 +21,17 @@ function toggleGaia() {
 
   _gaiaOpen = !_gaiaOpen;
 }
+
+// --- 3) Init-funktion, binder alle event listeners + starter tips ---
+function initGaia() {
+  const box  = document.getElementById('guideBox');
+  const icon = document.querySelector('.floating-icon');
+  if (!box || !icon) return;
+
+  // Skjul Gaia initialt
+  box.style.display   = 'none';
+  box.style.opacity   = 0;
+  box.style.transform = 'translateY(10px)';
 
   // “Vis menu”-knap
   const showMenuBtn = document.querySelector("button[onclick='showGaiaMenu()']");
