@@ -33,11 +33,6 @@ function initGaia() {
   box.style.opacity   = 0;
   box.style.transform = 'translateY(10px)';
 
-  // “Vis menu”-knap
-  const showMenuBtn = document.querySelector("button[onclick='showGaiaMenu()']");
-  if (showMenuBtn) {
-    showMenuBtn.addEventListener('click', showGaiaMenu);
-  }
 
   // Dynamisk hilsen baseret på side
   const greeting = document.getElementById('gaiaGreeting');
