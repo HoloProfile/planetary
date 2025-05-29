@@ -9,9 +9,6 @@ function initGaia() {
   box.style.opacity   = 0;
   box.style.transform = 'translateY(10px)';
 
-  // Klik på Gaia-ikonet
-// Globale variable
-let _gaiaOpen = false;
 
 // Funktion til at toggle Gaia-boksen
 function toggleGaia() {
