@@ -22,6 +22,13 @@ function toggleGaia() {
   _gaiaOpen = !_gaiaOpen;
 }
 
+  // “Vis menu”-knap
+  const showMenuBtn = document.querySelector("button[onclick='showGaiaMenu()']");
+  if (showMenuBtn) {
+    showMenuBtn.addEventListener('click', showGaiaMenu);
+  }
+
+
 // --- 3) Init-funktion, binder alle event listeners + starter tips ---
 function initGaia() {
   const box  = document.getElementById('guideBox');
