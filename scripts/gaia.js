@@ -93,6 +93,7 @@ function initGaia() {
      function updateTip() {
     tipEl.textContent = `🌿 Hey – et planetært tip: ${tips[Math.floor(Math.random() * tips.length)]}`;
   }
+  console.log("Vi forsøger at opdatere planetært tip...");
     updateTip();
     setInterval(updateTip, 300000);
 }
