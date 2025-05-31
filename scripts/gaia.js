@@ -1,7 +1,9 @@
 // gaia.js
 
 // --- 1) Global state & toggler ---
-let _gaiaOpen = false;
+if (typeof _gaiaOpen === 'undefined') {
+  var _gaiaOpen = false;
+}
 
 function toggleGaia() {
   const box = document.getElementById('guideBox');
