@@ -33,27 +33,6 @@ function showGaiaMenu() {
 
 // --- 3) Init-funktion: skjul, hilsen og tips ---
 function initGaia() {
-  const box  = document.getElementById('guideBox');
-  const icon = document.querySelector('.floating-icon');
-  if (!box || !icon) return;
-
-  // Skjul Gaia initialt
-  box.style.display   = 'none';
-  box.style.opacity   = 0;
-  box.style.transform = 'translateY(10px)';
-
-  // Dynamisk hilsen baseret på side
-  const greeting = document.getElementById('gaiaGreeting');
-  if (greeting) {
-    const path = location.pathname;
-    let text = 'Din spireven 🌱 her på siden 🌍';
-    if (path.includes('viden.html'))        text = 'Vil du lære mere om grænserne?';
-    else if (path.includes('100ideer.html')) text = 'Skal vi finde en idé?';
-    else if (path.includes('kontakt.html'))  text = 'Skriv endelig.';
-    else if (path.includes('historie.html')) text = 'Håber historien inspirerede!';
-    greeting.innerHTML = text;
-  }
-
   // Planetære tips (vis ét straks, skift hver 5. minut)
     const tips = [
       'Reducer dit plastikforbrug ved at genbruge dine indkøbsposer.',
@@ -97,6 +76,26 @@ function initGaia() {
     updateTip();
     setInterval(updateTip, 300000);
 }
+  const box  = document.getElementById('guideBox');
+  const icon = document.querySelector('.floating-icon');
+  if (!box || !icon) return;
+
+  // Skjul Gaia initialt
+  box.style.display   = 'none';
+  box.style.opacity   = 0;
+  box.style.transform = 'translateY(10px)';
+
+  // Dynamisk hilsen baseret på side
+  const greeting = document.getElementById('gaiaGreeting');
+  if (greeting) {
+    const path = location.pathname;
+    let text = 'Din spireven 🌱 her på siden 🌍';
+    if (path.includes('viden.html'))        text = 'Vil du lære mere om grænserne?';
+    else if (path.includes('100ideer.html')) text = 'Skal vi finde en idé?';
+    else if (path.includes('kontakt.html'))  text = 'Skriv endelig.';
+    else if (path.includes('historie.html')) text = 'Håber historien inspirerede!';
+    greeting.innerHTML = text;
+  }
 
 // --- 4) Start init én gang ---
 document.addEventListener('DOMContentLoaded', function () {
