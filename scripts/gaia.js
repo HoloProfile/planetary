@@ -99,4 +99,6 @@ function initGaia() {
 }
 
 // --- 4) Start init én gang ---
-if (typeof initGaia === 'function') initGaia();
+document.addEventListener('DOMContentLoaded', function () {
+  if (typeof initGaia === 'function') initGaia();
+});
