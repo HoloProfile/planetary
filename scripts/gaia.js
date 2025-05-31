@@ -55,7 +55,6 @@ function initGaia() {
   }
 
   // Planetære tips (vis ét straks, skift hver 5. minut)
-  document.addEventListener('DOMContentLoaded', function () {
     const tips = [
       'Reducer dit plastikforbrug ved at genbruge dine indkøbsposer.',
       'Sluk for standby på tv og computere for at spare strøm.',
@@ -90,6 +89,7 @@ function initGaia() {
     ];
     const tipEl = document.getElementById('gaiaTip');
     if (!tipEl) return;
+  
      function updateTip() {
     tipEl.textContent = `🌿 Hey – et planetært tip: ${tips[Math.floor(Math.random() * tips.length)]}`;
   }
