@@ -96,6 +96,7 @@ function initGaia() {
     else if (path.includes('historie.html')) text = 'Håber historien inspirerede!';
     greeting.innerHTML = text;
   }
+}
 
 // --- 4) Start init én gang ---
 document.addEventListener('DOMContentLoaded', function () {
