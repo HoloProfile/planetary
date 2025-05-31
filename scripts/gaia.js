@@ -95,7 +95,6 @@ function initGaia() {
   }
     updateTip();
     setInterval(updateTip, 300000);
-  });
 }
 
 // --- 4) Start init én gang ---
