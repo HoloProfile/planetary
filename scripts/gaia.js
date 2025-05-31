@@ -67,7 +67,10 @@ function initGaia() {
       'Gå sammen med naboer om fælles genbrugsstation i opgangen.'
     ];
     const tipEl = document.getElementById('gaiaTip');
-    if (!tipEl) return;
+if (!tipEl) {
+  console.warn("🌱 Kunne ikke finde #gaiaTip – måske er den ikke i DOM endnu?");
+  return;
+}
   
      function updateTip() {
     tipEl.textContent = `🌿 Hey – et planetært tip: ${tips[Math.floor(Math.random() * tips.length)]}`;
