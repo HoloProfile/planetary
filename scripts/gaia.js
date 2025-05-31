@@ -75,7 +75,7 @@ function initGaia() {
   console.log("Vi forsøger at opdatere planetært tip...");
     updateTip();
     setInterval(updateTip, 300000);
-}
+  
   const box  = document.getElementById('guideBox');
   const icon = document.querySelector('.floating-icon');
   if (!box || !icon) return;
