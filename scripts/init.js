@@ -25,16 +25,21 @@ function initPage() {
   const mainScript = document.createElement('script');
   mainScript.src   = 'scripts/main.js';
   mainScript.defer = true;
-
-  // ✅ Når main.js er loaded, kør setupAccordion()
   mainScript.onload = () => {
-    if (typeof setupAccordion === 'function') {
-      setupAccordion();
-    }
+    if (typeof setupAccordion === 'function') setupAccordion();
   };
-
   document.body.appendChild(mainScript);
 
+  // 2) Indsæt gaia.js
+  const gaiaScript = document.createElement('script');
+  gaiaScript.src   = 'scripts/gaia.js';
+  gaiaScript.defer = true;
+  gaiaScript.onload = () => {
+    // ✅ Nu først: kør initGaia når HTML er i DOM
+    if (typeof initGaia === 'function') initGaia();
+  };
+  document.body.appendChild(gaiaScript);
+}
   // 2) Indsæt gaia.js (initGaia() kaldes selv i gaia.js)
   const gaiaScript = document.createElement('script');
   gaiaScript.src   = 'scripts/gaia.js';
