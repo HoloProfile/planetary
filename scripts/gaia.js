@@ -99,9 +99,5 @@ if (!tipEl) {
     else if (path.includes('historie.html')) text = 'Håber historien inspirerede!';
     greeting.innerHTML = text;
   }
-}
 
-// --- 4) Start init én gang ---
-document.addEventListener('DOMContentLoaded', function () {
-  if (typeof initGaia === 'function') initGaia();
 });
