@@ -99,5 +99,4 @@ if (!tipEl) {
     else if (path.includes('historie.html')) text = 'Håber historien inspirerede!';
     greeting.innerHTML = text;
   }
-
-});
+}
