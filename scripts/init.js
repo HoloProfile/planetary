@@ -40,12 +40,7 @@ function initPage() {
   };
   document.body.appendChild(gaiaScript);
 }
-  // 2) Indsæt gaia.js (initGaia() kaldes selv i gaia.js)
-  const gaiaScript = document.createElement('script');
-  gaiaScript.src   = 'scripts/gaia.js';
-  gaiaScript.defer = true;
-  document.body.appendChild(gaiaScript);
-}
+
 
 // Kickstart: load includes → initPage (loader main.js + gaia.js + vores callbacks)
 includeHTML(initPage);
