@@ -200,6 +200,11 @@ h1, h2, h3 {
   color: #3d5c3d;
   text-shadow: 0 1px 4px rgba(0,0,0,0.3);
 }
+.nav-links a.active {
+  background: rgba(255,255,255,0.5);
+  border: 2px solid #7bbf43;
+  color: #3d5c3d;
+}
 /* --------------------------------------------------------------------------  
    3.2) Dropdowns i navigation â€“ flydende og med planetÃ¦re farver
    -------------------------------------------------------------------------- */
