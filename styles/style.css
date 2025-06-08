@@ -485,6 +485,10 @@ h1, h2, h3 {
   padding: 3rem 1rem;
   color: #2c3e50;
 }
+ul {
+  list-style: none;
+  padding-left: 0;
+}
 /* ========================================================================
    6) Text-Box Cards: automatisk baggrund, skygge & centreret tekst
    ======================================================================== */
