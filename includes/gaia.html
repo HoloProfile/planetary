@@ -2,22 +2,35 @@
 <div class="floating-guide">
   <img src="billeder/planetarisk_liv_icon_circular.png" alt="Gaia spireven" class="floating-icon" onclick="toggleGaia()"/>
   <div class="guide-box" id="guideBox" style="display: none; opacity: 0; transform: translateY(10px); transition: opacity 0.3s ease, transform 0.3s ease;">
-    <div id="gaiaIntro" style="display: none;">
-      <h3>👋🏾 Hej, jeg er Gaia! 🌀</h3> 
-      <p id="gaiaGreeting">Jeg hjælper dig rundt på siden – uanset om du er ny, skeptisk, træt eller bare nysgerrig. 🌍<br>
-      <p> Lyt til Rasmus fortælle</p>
-      <button class="guide-audio" onclick="document.getElementById('gaiaAudio').play()">
-	      🎧 Intro til siden
-      </button>
-	 
-      <audio id="gaiaAudio" src="lyd/test.m4a"></audio>
-	    <div style="height: 1rem;"></div> 
-   <p>Her finder du små skridt, ærlige svar og ideer, du kan bruge i dag – uden stress eller dårlig samvittighed.</p>
-	<p> Klik herunder 👇 hvis du vil se mere</p>
-      <button class="guide-audio" onclick="showGaiaMenu()">
-	      👀 Vis menu
-      </button>
-    </div>
+<!-- Gaia intro til forsiden -->
+<div id="gaiaIntro-index" style="display: none;">
+  <h3>👋🏾 Hej, jeg er Gaia! 🌀</h3>
+  <p>Jeg hjælper dig rundt på siden – uanset om du er ny, skeptisk, træt eller bare nysgerrig. 🌍</p>
+  <p>Lyt til Rasmus fortælle</p>
+  <button class="guide-audio" onclick="playGaiaAudio('gaiaAudio-index')">
+    🎧 Intro til siden
+  </button>
+  <audio id="gaiaAudio-index" src="lyd/index-intro.m4a"></audio>
+  <div style="height: 1rem;"></div>
+  <p>Her finder du små skridt, ærlige svar og ideer, du kan bruge i dag – uden stress eller dårlig samvittighed.</p>
+  <p>Klik herunder 👇 hvis du vil se mere</p>
+  <button class="guide-audio" onclick="showGaiaMenu()">
+    👀 Vis menu
+  </button>
+</div>
+
+<!-- Gaia intro til viden-siden -->
+<div id="gaiaIntro-viden" style="display: none;">
+  <h3>🔎 Klar på at dykke dybere? 🧠</h3>
+  <p>Her på videnssiden får du overblik over de 9 planetære grænser – og hvorfor de er vigtige.</p>
+  <p>Start evt. med at høre introduktionen:</p>
+  <button class="guide-audio" onclick="playGaiaAudio('gaiaAudio-viden')">
+    🎧 Hvad handler det om?
+  </button>
+  <audio id="gaiaAudio-viden" src="lyd/viden-intro.m4a"></audio>
+  <div style="height: 1rem;"></div>
+  <p>Du behøver ikke forstå det hele på én gang. Bare gå nysgerrigt til det – det er din planet også 🌍</p>
+</div>
 	  <p id="gaiaTip"></p>
 <div id="gaiaMenuStart" class="gaia-section" style="display: none;">
  <div class="accordion">
