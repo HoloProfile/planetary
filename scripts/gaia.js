@@ -111,7 +111,8 @@ const gaiaIntroMap = {
 };
 
 
-const currentPath = location.pathname.split('/').pop();
+const currentPath = location.pathname.split('/').pop() || 'index.html';
+
 const introId = gaiaIntroMap[currentPath] || null;
 
 if (introId) {
