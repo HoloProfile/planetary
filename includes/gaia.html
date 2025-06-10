@@ -6,11 +6,6 @@
 <div id="gaiaIntro-index" style="display: none;">
   <h3>👋🏾 Hej, jeg er Gaia! 🌀</h3>
   <p>Jeg hjælper dig rundt på siden – uanset om du er ny, skeptisk, træt eller bare nysgerrig. 🌍</p>
-  <p>Lyt til Rasmus fortælle</p>
-  <button class="guide-audio" onclick="playGaiaAudio('gaiaAudio-index')">
-    🎧 Intro til siden
-  </button>
-  <audio id="gaiaAudio-index" src="lyd/index-intro.m4a"></audio>
   <div style="height: 1rem;"></div>
   <p>Her finder du små skridt, ærlige svar og ideer, du kan bruge i dag – uden stress eller dårlig samvittighed.</p>
   <p>Klik herunder 👇 hvis du vil se mere</p>
@@ -19,13 +14,6 @@
   </button>
 </div>
 
-<!-- Gaia intro til viden-siden -->
-<div id="gaiaIntro-viden" style="display: none;">
-  <h3>🔎 Klar på at dykke dybere? 🧠</h3>
-  <p>Her på videnssiden får du overblik over de 9 planetære grænser – og hvorfor de er vigtige.</p>
-  <div style="height: 1rem;"></div>
-  <p>Du behøver ikke forstå det hele på én gang. Bare gå nysgerrigt til det – det er din planet også 🌍</p>
-</div>
 	  <p id="gaiaTip"></p>
 <div id="gaiaMenuStart" class="gaia-section" style="display: none;">
  <div class="accordion">
@@ -38,33 +26,7 @@
     <a href="enting.html">Vælg én ting, du vil gøre i dag </a>
     <a href="faq.html">⁉️ Spørgsmål og svar </a>
   </div>
-<!-- 100ideer.html -->
-<div id="gaiaIntro-100ideer" style="display: none;">
-  <h3>💡 Har du lyst til at gøre noget godt i dag?</h3>
-  <p>Her er en hel buffet af idéer – store og små – som gør en forskel.</p>
-  <div style="height: 1rem;"></div>
-  <p>Vælg én ting, der passer til dit humør. Du behøver ikke ændre hele verden på én gang 💚</p>
-</div>
-
-<!-- kontakt.html -->
-<div id="gaiaIntro-kontakt" style="display: none;">
-  <h3>📬 Hej du!</h3>
-  <p>Vil du i kontakt med os – eller har du bare en tanke, der skal ud?</p>
-
-  <div style="height: 1rem;"></div>
-  <p>Vi læser alt med nysgerrighed og varme. Skriv bare løs ✍️</p>
-</div>
-
-<!-- historie.html -->
-<div id="gaiaIntro-historie" style="display: none;">
-  <h3>📖 Vores rejse – og din</h3>
-  <p>Her kan du læse om, hvordan det hele begyndte – og hvorfor vi tror på fællesskab og forandring.</p>
-  <div style="height: 1rem;"></div>
-  <p>Måske minder det lidt om din egen historie. Eller måske giver det dig lyst til at skrive et nyt kapitel 🌍</p>
-</div>
-</div>
-	
-<div class="accordion">
+	 <div class="accordion">
   <button class="accordion-header" aria-expanded="false">
 	  🌍 Planetært Liv 
   </button>
@@ -74,83 +36,7 @@
     <a href="etlivunder.html">🏞️ Livet under grænserne </a>
     <a href="faq.html">⁉️ Spørgsmål og svar </a>
   </div>
-<!-- 2minutter.html -->
-<div id="gaiaIntro-2minutter" style="display: none;">
-  <h3>⏱️ Har du to minutter?</h3>
-  <p>Perfekt. Her er noget, du kan gøre eller forstå på ultrakort tid.</p>
-</div>
-
-<!-- enting.html -->
-<div id="gaiaIntro-enting" style="display: none;">
-  <h3>🌀 En ting ad gangen</h3>
-  <p>Nogle gange er én lille ting nok til at ændre dit perspektiv. Her samler vi dem.</p>
-</div>
-
-<!-- etlivunder.html -->
-<div id="gaiaIntro-etlivunder" style="display: none;">
-  <h3>🌿 Et liv under grænserne</h3>
-  <p>Hvordan ser det ud, hvis vi virkelig lever planetært? Her deler vi erfaringer og eksempler.</p>
-</div>
-
-<!-- faq.html -->
-<div id="gaiaIntro-faq" style="display: none;">
-  <h3>❓ Ofte stillede (og følte) spørgsmål</h3>
-  <p>Her svarer vi ærligt og uperfekt på det, mange spørger om.</p>
-</div>
-
-<!-- galleri.html -->
-<div id="gaiaIntro-galleri" style="display: none;">
-  <h3>🖼️ Se med!</h3>
-  <p>Billeder fra liv, handling og håb. Her er plads til både det smukke og det skæve.</p>
-</div>
-
-<!-- gæstebog.html -->
-<div id="gaiaIntro-gæstebog" style="display: none;">
-  <h3>📖 Skriv en tanke</h3>
-  <p>Gæstebogen er åben – del en idé, en følelse eller bare et hej.</p>
-  <button class="guide-audio" onclick="playGaiaAudio('gaiaAudio-gæstebog')">🎧 Velkommen hilsen</button>
-  <audio id="gaiaAudio-gæstebog" src="lyd/gæstebog-intro.m4a"></audio>
-</div>
-
-<!-- om.html -->
-<div id="gaiaIntro-om" style="display: none;">
-  <h3>🌍 Hvem står bag?</h3>
-  <p>Her kan du møde menneskene bag Planetært.dk – og tankerne bag idéen.</p>
-</div>
-
-<!-- privatliv.html -->
-<div id="gaiaIntro-privatliv" style="display: none;">
-  <h3>🔐 Dit privatliv</h3>
-  <p>Vi bruger ikke cookies, og vi sælger ikke dine data. Her forklarer vi hvordan vi passer på dig.</p>
-</div>
-
-<!-- projekter.html -->
-<div id="gaiaIntro-projekter" style="display: none;">
-  <h3>🛠️ Projekter i gang</h3>
-  <p>Se hvad vi roder med lige nu – og hvordan du kan være med.</p>
-</div>
-
-<!-- ressourcer.html -->
-<div id="gaiaIntro-ressourcer" style="display: none;">
-  <h3>📚 Værktøjer og viden</h3>
-  <p>Her finder du guider, links og grej til et mere planetært liv.</p>
-</div>
-
-<!-- samarbejde.html -->
-<div id="gaiaIntro-samarbejde" style="display: none;">
-  <h3>🤝 Sammen er vi stærkere</h3>
-  <p>Vil du lave noget sammen med os? Her kan du se, hvad vi gør – og hvordan du kan være med.</p>
-</div>
-
-<!-- vi-anbefaler.html -->
-<div id="gaiaIntro-vi-anbefaler" style="display: none;">
-  <h3>🌟 Vi anbefaler</h3>
-  <p>Links, steder og mennesker vi selv bliver inspireret af.</p>
-</div>
-
-</div>
-
-<div class="accordion">
+		<div class="accordion">
   <button class="accordion-header" aria-expanded="false">
 	  📘 Bliv Klog 
   </button>
@@ -188,6 +74,159 @@
   <div class="accordion-content">
     <a href="gæstebog.html">✍️ Gæstebog </a>
     <a href="kontakt.html">✉️ Kontakt </a>
-  </div>
+  </div> 
+<!-- Gaia intro til viden-siden -->
+<div id="gaiaIntro-viden" style="display: none;">
+  <h3>🔎 Klar på at dykke dybere? 🧠</h3>
+  <p>Her på videnssiden får du overblik over de 9 planetære grænser – og hvorfor de er vigtige.</p>
+  <div style="height: 1rem;"></div>
+  <p>Du behøver ikke forstå det hele på én gang. Bare gå nysgerrigt til det – det er din planet også 🌍</p>
+	  <button class="guide-audio" onclick="showGaiaMenu()">
+    👀 Vis menu
+  </button>
+</div>
+	 
+<!-- 100ideer.html -->
+<div id="gaiaIntro-100ideer" style="display: none;">
+  <h3>💡 Har du lyst til at gøre noget godt i dag?</h3>
+  <p>Her er en hel buffet af idéer – store og små – som gør en forskel.</p>
+  <div style="height: 1rem;"></div>
+  <p>Vælg én ting, der passer til dit humør. Du behøver ikke ændre hele verden på én gang 💚</p>
+	  <button class="guide-audio" onclick="showGaiaMenu()">
+    👀 Vis menu
+  </button>
+</div>
+
+<!-- kontakt.html -->
+<div id="gaiaIntro-kontakt" style="display: none;">
+  <h3>📬 Hej du!</h3>
+  <p>Vil du i kontakt med os – eller har du bare en tanke, der skal ud?</p>
+
+  <div style="height: 1rem;"></div>
+  <p>Vi læser alt med nysgerrighed og varme. Skriv bare løs ✍️</p>
+	  <button class="guide-audio" onclick="showGaiaMenu()">
+    👀 Vis menu
+  </button>
+</div>
+
+<!-- historie.html -->
+<div id="gaiaIntro-historie" style="display: none;">
+  <h3>📖 Vores rejse – og din</h3>
+  <p>Her kan du læse om, hvordan det hele begyndte – og hvorfor vi tror på fællesskab og forandring.</p>
+  <div style="height: 1rem;"></div>
+  <p>Måske minder det lidt om din egen historie. Eller måske giver det dig lyst til at skrive et nyt kapitel 🌍</p>
+	  <button class="guide-audio" onclick="showGaiaMenu()">
+    👀 Vis menu
+  </button>
+</div>
+
+	
+
+<!-- 2minutter.html -->
+<div id="gaiaIntro-2minutter" style="display: none;">
+  <h3>⏱️ Har du to minutter?</h3>
+  <p>Perfekt. Her er noget, du kan gøre eller forstå på ultrakort tid.</p>
+	  <button class="guide-audio" onclick="showGaiaMenu()">
+    👀 Vis menu
+  </button>
+</div>
+
+<!-- enting.html -->
+<div id="gaiaIntro-enting" style="display: none;">
+  <h3>🌀 En ting ad gangen</h3>
+  <p>Nogle gange er én lille ting nok til at ændre dit perspektiv. Her samler vi dem.</p>
+	  <button class="guide-audio" onclick="showGaiaMenu()">
+    👀 Vis menu
+  </button>
+</div>
+
+<!-- etlivunder.html -->
+<div id="gaiaIntro-etlivunder" style="display: none;">
+  <h3>🌿 Et liv under grænserne</h3>
+  <p>Hvordan ser det ud, hvis vi virkelig lever planetært? Her deler vi erfaringer og eksempler.</p>
+	  <button class="guide-audio" onclick="showGaiaMenu()">
+    👀 Vis menu
+  </button>
+</div>
+
+<!-- faq.html -->
+<div id="gaiaIntro-faq" style="display: none;">
+  <h3>❓ Ofte stillede (og følte) spørgsmål</h3>
+  <p>Her svarer vi ærligt og uperfekt på det, mange spørger om.</p>
+	  <button class="guide-audio" onclick="showGaiaMenu()">
+    👀 Vis menu
+  </button>
+</div>
+
+<!-- galleri.html -->
+<div id="gaiaIntro-galleri" style="display: none;">
+  <h3>🖼️ Se med!</h3>
+  <p>Billeder fra liv, handling og håb. Her er plads til både det smukke og det skæve.</p>
+	  <button class="guide-audio" onclick="showGaiaMenu()">
+    👀 Vis menu
+  </button>
+</div>
+
+<!-- gæstebog.html -->
+<div id="gaiaIntro-gæstebog" style="display: none;">
+  <h3>📖 Skriv en tanke</h3>
+  <p>Gæstebogen er åben – del en idé, en følelse eller bare et hej.</p>
+  <button class="guide-audio" onclick="showGaiaMenu()">
+    👀 Vis menu
+  </button>
+</div>
+
+<!-- om.html -->
+<div id="gaiaIntro-om" style="display: none;">
+  <h3>🌍 Hvem står bag?</h3>
+  <p>Her kan du møde menneskene bag Planetært.dk – og tankerne bag idéen.</p>
+	  <button class="guide-audio" onclick="showGaiaMenu()">
+    👀 Vis menu
+  </button>
+</div>
+
+<!-- privatliv.html -->
+<div id="gaiaIntro-privatliv" style="display: none;">
+  <h3>🔐 Dit privatliv</h3>
+  <p>Vi bruger ikke cookies, og vi sælger ikke dine data. Her forklarer vi hvordan vi passer på dig.</p>
+	  <button class="guide-audio" onclick="showGaiaMenu()">
+    👀 Vis menu
+  </button>
+</div>
+
+<!-- projekter.html -->
+<div id="gaiaIntro-projekter" style="display: none;">
+  <h3>🛠️ Projekter i gang</h3>
+  <p>Se hvad vi roder med lige nu – og hvordan du kan være med.</p>
+	  <button class="guide-audio" onclick="showGaiaMenu()">
+    👀 Vis menu
+  </button>
+</div>
+
+<!-- ressourcer.html -->
+<div id="gaiaIntro-ressourcer" style="display: none;">
+  <h3>📚 Værktøjer og viden</h3>
+  <p>Her finder du guider, links og grej til et mere planetært liv.</p>
+	  <button class="guide-audio" onclick="showGaiaMenu()">
+    👀 Vis menu
+  </button>
+</div>
+
+<!-- samarbejde.html -->
+<div id="gaiaIntro-samarbejde" style="display: none;">
+  <h3>🤝 Sammen er vi stærkere</h3>
+  <p>Vil du lave noget sammen med os? Her kan du se, hvad vi gør – og hvordan du kan være med.</p>
+	  <button class="guide-audio" onclick="showGaiaMenu()">
+    👀 Vis menu
+  </button>
+</div>
+
+<!-- vi-anbefaler.html -->
+<div id="gaiaIntro-vi-anbefaler" style="display: none;">
+  <h3>🌟 Vi anbefaler</h3>
+  <p>Links, steder og mennesker vi selv bliver inspireret af.</p>
+	  <button class="guide-audio" onclick="showGaiaMenu()">
+    👀 Vis menu
+  </button>
 </div>
 </div>
