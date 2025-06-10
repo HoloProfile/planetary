@@ -30,15 +30,17 @@ function initPage() {
   };
   document.body.appendChild(mainScript);
 
-  // 2) Indsæt gaia.js
+ // 2) Indsæt gaia.js
   const gaiaScript = document.createElement('script');
   gaiaScript.src   = 'scripts/gaia.js';
   gaiaScript.defer = true;
-  gaiaScript.onload = () => {
-    // ✅ Nu først: kør initGaia når HTML er i DOM
-    if (typeof initGaia === 'function') initGaia();
-  };
   document.body.appendChild(gaiaScript);
+
+  // 3) Kør initGaia, når begge scripts er færdigindlæst
+  // Brug et lille delay, så DOM og scripts er helt klar
+  setTimeout(() => {
+    if (typeof initGaia === 'function') initGaia();
+  }, 100); // evt. lav 300ms hvis det driller
 }
 
 
