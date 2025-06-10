@@ -131,4 +131,6 @@ function playGaiaAudio(id) {
   const el = document.getElementById(id);
   if (el) el.play();
 }
-
+window.toggleGaia = toggleGaia;
+window.initGaia   = initGaia;
+window.showGaiaMenu = showGaiaMenu;
