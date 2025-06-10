@@ -49,3 +49,15 @@ document.querySelectorAll(".polaroid img").forEach(img => {
 function closeLightbox() {
   document.getElementById("lightbox").style.display = "none";
 }
+
+// --- 4) Global lydafspiller ---
+function playGaiaAudio(id) {
+  const audioEls = document.querySelectorAll('audio[id^="gaiaAudio-"]');
+  audioEls.forEach(el => {
+    el.pause();
+    el.currentTime = 0;
+  });
+
+  const el = document.getElementById(id);
+  if (el) el.play();
+}
