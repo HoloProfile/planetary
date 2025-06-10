@@ -81,15 +81,16 @@ if (!tipEl) {
     updateTip();
     setInterval(updateTip, 300000);
   
-  const box  = document.getElementById('guideBox');
+// Skjul Gaia-boksen fra start
+  const box = document.getElementById('guideBox');
   const icon = document.querySelector('.floating-icon');
   if (!box || !icon) return;
 
-  // Skjul Gaia initialt
-  box.style.display   = 'none';
-  box.style.opacity   = 0;
+  box.style.display = 'none';
+  box.style.opacity = 0;
   box.style.transform = 'translateY(10px)';
-
+  
+// Vælg intro baseret på sidens navn
 const gaiaIntroMap = {
   'index.html': 'gaiaIntro-index',
   'viden.html': 'gaiaIntro-viden',
@@ -112,26 +113,14 @@ const gaiaIntroMap = {
 
 
 const currentPath = location.pathname.split('/').pop() || 'index.html';
+const introId = gaiaIntroMap[currentPath] || null;  
+ const intro = document.getElementById(introId);
 
-const introId = gaiaIntroMap[currentPath] || null;
-
-if (introId) {
-  const el = document.getElementById(introId);
-  if (el) el.style.display = 'block';
+ if (intro && tipEl) {
+    tipEl.innerHTML = intro.innerHTML;
   }
 }
 
-// --- 4) Global lydafspiller ---
-function playGaiaAudio(id) {
-  const audioEls = document.querySelectorAll('audio[id^="gaiaAudio-"]');
-  audioEls.forEach(el => {
-    el.pause();
-    el.currentTime = 0;
-  });
-
-  const el = document.getElementById(id);
-  if (el) el.play();
-}
 window.toggleGaia = toggleGaia;
 window.initGaia   = initGaia;
 window.showGaiaMenu = showGaiaMenu;
