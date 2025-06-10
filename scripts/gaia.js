@@ -93,8 +93,21 @@ const gaiaIntroMap = {
   'viden.html': 'gaiaIntro-viden',
   '100ideer.html': 'gaiaIntro-100ideer',
   'kontakt.html': 'gaiaIntro-kontakt',
-  'historie.html': 'gaiaIntro-historie'
+  'historie.html': 'gaiaIntro-historie',
+  '2minutter.html': 'gaiaIntro-2minutter',
+  'enting.html': 'gaiaIntro-enting',
+  'etlivunder.html': 'gaiaIntro-etlivunder',
+  'faq.html': 'gaiaIntro-faq',
+  'galleri.html': 'gaiaIntro-galleri',
+  'gæstebog.html': 'gaiaIntro-gæstebog',
+  'om.html': 'gaiaIntro-om',
+  'privatliv.html': 'gaiaIntro-privatliv',
+  'projekter.html': 'gaiaIntro-projekter',
+  'ressourcer.html': 'gaiaIntro-ressourcer',
+  'samarbejde.html': 'gaiaIntro-samarbejde',
+  'vi-anbefaler.html': 'gaiaIntro-vi-anbefaler'
 };
+
 
 const currentPath = location.pathname.split('/').pop();
 const introId = gaiaIntroMap[currentPath] || null;
