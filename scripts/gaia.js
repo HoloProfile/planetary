@@ -88,15 +88,32 @@ if (!tipEl) {
   box.style.opacity   = 0;
   box.style.transform = 'translateY(10px)';
 
-  // Dynamisk hilsen baseret på side
-  const greeting = document.getElementById('gaiaGreeting');
-  if (greeting) {
-    const path = location.pathname;
-    let text = 'Din spireven 🌱 her på siden 🌍';
-    if (path.includes('viden.html'))        text = 'Vil du lære mere om grænserne?';
-    else if (path.includes('100ideer.html')) text = 'Skal vi finde en idé?';
-    else if (path.includes('kontakt.html'))  text = 'Skriv endelig.';
-    else if (path.includes('historie.html')) text = 'Håber historien inspirerede!';
-    greeting.innerHTML = text;
+const gaiaIntroMap = {
+  'index.html': 'gaiaIntro-index',
+  'viden.html': 'gaiaIntro-viden',
+  '100ideer.html': 'gaiaIntro-100ideer',
+  'kontakt.html': 'gaiaIntro-kontakt',
+  'historie.html': 'gaiaIntro-historie'
+};
+
+const currentPath = location.pathname.split('/').pop();
+const introId = gaiaIntroMap[currentPath] || null;
+
+if (introId) {
+  const el = document.getElementById(introId);
+  if (el) el.style.display = 'block';
   }
 }
+
+// --- 4) Global lydafspiller ---
+function playGaiaAudio(id) {
+  const audioEls = document.querySelectorAll('audio[id^="gaiaAudio-"]');
+  audioEls.forEach(el => {
+    el.pause();
+    el.currentTime = 0;
+  });
+
+  const el = document.getElementById(id);
+  if (el) el.play();
+}
+
