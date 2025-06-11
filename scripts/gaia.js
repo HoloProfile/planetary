@@ -99,11 +99,25 @@ function initGaia() {
   const greeting = document.getElementById('gaiaGreeting');
   if (greeting) {
     if (!isIndex) {
-      let text = 'Din spireven 🌱 her på siden 🌍';
+    let text = 'Din spireven 🌱 her på siden 🌍';
       if (path.includes('viden.html'))        text = 'Vil du lære mere om grænserne?';
       else if (path.includes('100ideer.html')) text = 'Skal vi finde en idé?';
-      else if (path.includes('kontakt.html'))  text = 'Skriv endelig.';
+      else if (path.includes('2minutter.html')) text = 'Få styr på essensen på 2 minutter!';
+      else if (path.includes('enting.html'))    text = 'Vælg én ting, du vil gøre i dag.';
+      else if (path.includes('etlivunder.html')) text = 'Livet under grænserne – udforsk her.';
+      else if (path.includes('faq.html'))      text = '⁉️ Ofte stillede spørgsmål – svarene her.';
+      else if (path.includes('galleri.html'))  text = '🖼️ Velkommen til galleriet – inspirer dig.';
+      else if (path.includes('gæstebog.html')) text = '✍️ Skriv et aftryk i vores gæstebog.';
       else if (path.includes('historie.html')) text = 'Håber historien inspirerede!';
+      else if (path.includes('kontakt.html')) text = '✉️ Har du spørgsmål? Skriv endelig.';
+      else if (path.includes('manifest.html')) text = 'Læs vores manifest og bliv klogere.';
+      else if (path.includes('om.html'))       text = '👨‍👩‍👦‍👦 Mød os og vores vision.';
+      else if (path.includes('privatliv.html'))text = '🔒 Privatlivspolitik – vi passer på dig.';
+      else if (path.includes('projekter.html'))text = '👷‍♀️ Se vores projekter i aktion.';
+      else if (path.includes('ressourcer.html')) text = '📚 Tjek vores ressourcer.';
+      else if (path.includes('samarbejde.html')) text = '🤝 Lad os samarbejde om grøn forandring.';
+      else if (path.includes('vi-anbefaler.html')) text = '💭 Vores anbefalinger – se dem her.';
+      else if (path.includes('blog.html'))    text = '📝 Læs blog-indlæg med friske perspektiver.';
       greeting.innerHTML      = text;
       greeting.style.display  = 'block';
     } else {
