@@ -25,10 +25,10 @@ function toggleGaia() {
 // --- 2) Vis-menu-funktion (globalt) ---
 function showGaiaMenu() {
   const gaiaIntro = document.getElementById('gaiaIntro-index');
-  const menu  = document.getElementById('gaiaMenuStart');
-  if (!intro || !menu) return;
-  intro.style.display = 'none';
-  menu.style.display  = 'block';
+  const gaiaMenu  = document.getElementById('gaiaMenuStart');
+  if (!gaiaIntro || !gaiaMenu) return;        // tjekker de korrekte variabler
+  gaiaIntro.style.display = 'none';            // skjul intro
+  gaiaMenu.style.display  = 'block';           // vis menu
 }
 
 // --- 3) Init-funktion: skjul, hilsen og tips ---
