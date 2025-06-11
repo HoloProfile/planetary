@@ -73,7 +73,8 @@ if (!tipEl) {
 }
   
      function updateTip() {
-    tipEl.textContent = 🌿 Hey – et planetært tip: ${tips[Math.floor(Math.random() * tips.length)]};
+    tipEl.textContent = `🌿 Hey – et planetært tip: ${tips[Math.floor(Math.random() * tips.length)]}`;
+
   }
   console.log("Vi forsøger at opdatere planetært tip...");
     updateTip();
