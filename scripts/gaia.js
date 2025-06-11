@@ -34,8 +34,8 @@ const tips = [
   'Gå sammen med naboer om fælles genbrugsstation i opgangen.'
 ];
 
-let _gaiaOpen = window._gaiaOpen || false;
-let _gaiaTipInterval = window._gaiaTipInterval || null;
+if (typeof _gaiaOpen === "undefined") var _gaiaOpen = false;
+if (typeof _gaiaTipInterval === "undefined") var _gaiaTipInterval = null;
 
 // Utility: toggle Gaia-boksen
 function toggleGaia() {
