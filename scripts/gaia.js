@@ -106,4 +106,5 @@ const gaiaIntro = document.getElementById('gaiaIntro-index');
 
 if (gaiaIntro && (path.includes('index.html') || path === '/' || path === '')) {
   gaiaIntro.style.display = 'block';
+ }
 }
