@@ -24,7 +24,7 @@ function toggleGaia() {
 
 // --- 2) Vis-menu-funktion (globalt) ---
 function showGaiaMenu() {
-  const intro = document.getElementById('gaiaIntro');
+  const gaiaIntro = document.getElementById('gaiaIntro-index');
   const menu  = document.getElementById('gaiaMenuStart');
   if (!intro || !menu) return;
   intro.style.display = 'none';
@@ -101,7 +101,8 @@ if (!tipEl) {
     greeting.innerHTML = text;
   }
 const path = location.pathname;
-const gaiaIntro = document.getElementById('gaiaIntro');
+const gaiaIntro = document.getElementById('gaiaIntro-index');
+
 
 if (gaiaIntro && (path.includes('index.html') || path === '/' || path === '')) {
   gaiaIntro.style.display = 'block';
