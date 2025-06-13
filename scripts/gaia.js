@@ -86,15 +86,9 @@ function initGaia() {
   box.style.transform = 'translateY(10px)';
 
   // Path og index-check
-  const path    = location.pathname;
-  const isIndex = path.includes('index.html') || path === '/' || path === '';
-
-  // Intro til forsiden
   const gaiaIntro = document.getElementById('gaiaIntro-index');
-  if (gaiaIntro) {
-    gaiaIntro.style.display = isIndex ? 'block' : 'none';
-  }
-
+if (gaiaIntro) gaiaIntro.style.display = 'block';
+  
   // Greeting til undersider
   const greeting = document.getElementById('gaiaGreeting');
   if (greeting) {
