@@ -33,6 +33,12 @@ function showGaiaMenu() {
 
 // --- 3) Init-funktion: tip, intro & greeting ---
 function initGaia() {
+
+ // 0) DEFINER PATH & INDEX-FLAG
+  const path    = window.location.pathname;                           
+  const isIndex = path === '/' || path.endsWith('index.html');       
+
+
   // Planetære tips (vis ét straks, skift hver 5. minut)
   const tips = [
     'Reducer dit plastikforbrug ved at genbruge dine indkøbsposer.',
