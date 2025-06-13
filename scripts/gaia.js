@@ -124,3 +124,6 @@ function initGaia() {
 
 // Eksportér ikke moduler – kør bare på window-load eller via init.js
 
+
+// --- 4) Run init when DOM is ready ---
+window.addEventListener('load', initGaia);
