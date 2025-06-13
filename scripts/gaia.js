@@ -218,5 +218,7 @@ if (gaiaIntro) gaiaIntro.style.display = 'block';
   }
 }
 
+} // ← Dette ekstra krøllet øje
+
 // Eksportér ikke moduler – kør bare på window-load eller via init.js
 
