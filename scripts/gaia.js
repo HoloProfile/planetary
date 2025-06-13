@@ -23,13 +23,7 @@ function toggleGaia() {
 }
 
 // --- 2) Vis-menu-funktion ---
-function showGaiaMenu() {
-  const gaiaIntro = document.getElementById('gaiaIntro-index');
-  const gaiaMenu  = document.getElementById('gaiaMenuStart');
-  if (!gaiaIntro || !gaiaMenu) return;
-  gaiaIntro.style.display = 'none';
-  gaiaMenu.style.display  = 'block';
-}
+
 
 // --- 3) Init-funktion: tip, intro & greeting ---
 function initGaia() {
@@ -83,6 +77,16 @@ function initGaia() {
     setInterval(updateTip, 300000);
   }
 
+
+// --- 2) Vis-menu-funktion ---
+function showGaiaMenu() {
+  const gaiaIntro = document.getElementById('gaiaIntro-index');
+  const gaiaMenu  = document.getElementById('gaiaMenuStart');
+  if (!gaiaIntro || !gaiaMenu) return;
+  gaiaIntro.style.display = 'none';
+  gaiaMenu.style.display  = 'block';
+  }
+  
   // Hide guideBox initialt
  const box  = document.getElementById('guideBox');
   const icon = document.querySelector('.floating-icon');
