@@ -102,7 +102,6 @@ if (gaiaIntro) gaiaIntro.style.display = 'block';
   // Greeting til undersider
   const greeting = document.getElementById('gaiaGreeting');
   if (greeting) {
-    if (!isIndex) {
     let text = 'Din spireven 🌱 her på siden 🌍';
     if (path.includes('index.html')) {
       text = `
