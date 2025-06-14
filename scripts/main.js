@@ -1,7 +1,7 @@
 // scripts/main.js
 
-
-// === Mobilmenu ===
+// === 1) Mobilmenu ===
+// Åbner/lukker navigation på mobil med overlay
 function toggleMenu() {
   const nav = document.getElementById("navLinks");
   const overlay = document.getElementById("navOverlay");
@@ -13,17 +13,37 @@ function closeMenu() {
   document.getElementById("navLinks").classList.remove("open");
   document.getElementById("navOverlay").style.display = "none";
 }
+
+// === 2) Når siden er loadet ===
 document.addEventListener('DOMContentLoaded', () => {
+  // a) Highlight aktivt link i menuen
   const links = document.querySelectorAll('.nav-links a');
   const path = window.location.pathname.split('/').pop(); // fx 'faq.html'
-
   links.forEach(link => {
     if (link.getAttribute('href') === path) {
       link.classList.add('active');
     }
   });
+
+  // b) Karussel (vis ét slide ad gangen)
+  const slides = document.querySelectorAll('.carousel-slide');
+  if (slides.length) {
+    let current = 0;
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+    showSlide(current);
+    setInterval(nextSlide, 6000); // Skift slide hver 6. sekund
+  }
 });
-// === Foldbarmenu (også Gaia)===
+
+// === 3) Fold-ud-accordion ===
 function setupAccordion() {
   document.querySelectorAll(".accordion-header").forEach(header => {
     header.setAttribute("aria-expanded", "false");
@@ -36,6 +56,8 @@ function setupAccordion() {
     });
   });
 }
+
+// === 4) Klik-på-billede (polaroid zoom) ===
 document.querySelectorAll(".polaroid img").forEach(img => {
   img.style.cursor = "zoom-in";
   img.addEventListener("click", () => {
@@ -50,7 +72,7 @@ function closeLightbox() {
   document.getElementById("lightbox").style.display = "none";
 }
 
-// --- 4) Global lydafspiller ---
+// === 5) Global lydafspiller til Gaia ===
 function playGaiaAudio(id) {
   const audioEls = document.querySelectorAll('audio[id^="gaiaAudio-"]');
   audioEls.forEach(el => {
@@ -62,7 +84,7 @@ function playGaiaAudio(id) {
   if (el) el.play();
 }
 
-// --- 5) Global søgefunktion ---
+// === 6) Søgefunktion til opskrifter ===
 const recipeInput = document.getElementById('recipeSearch');
 if (recipeInput) {
   recipeInput.addEventListener('input', function() {
@@ -73,26 +95,4 @@ if (recipeInput) {
       card.style.display = text.includes(query) ? 'block' : 'none';
     });
   });
-} 
-
-// --- 6) Karussel-rotation ---
-document.addEventListener('DOMContentLoaded', () => {
-  const slides = document.querySelectorAll('.carousel-slide');
-  if (!slides.length) return;
-
-  let current = 0;
-
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.toggle('active', i === index);
-    });
-  }
-
-  function nextSlide() {
-    current = (current + 1) % slides.length;
-    showSlide(current);
-  }
-
-  showSlide(current);
-  setInterval(nextSlide, 6000);
-});
+}
