@@ -102,13 +102,15 @@ if (gaiaIntro) gaiaIntro.style.display = 'block';
   // Greeting til undersider
   const greeting = document.getElementById('gaiaGreeting');
   if (greeting) {
-    let text = 'Din spireven 🌱 her på siden 🌍';
-    if (path.includes('index.html')) {
+    let text = '';
+    
+    if (isIndex || path.includes('index.html')) {
       text = `
         <h3>Din spireven 🌱 her på siden 🌍?</h3>
         <p>Dyk ned i de ni planetære grænser – helt nørdet og konkret.</p>
       `;
     }
+      
  else if (path.includes('viden.html')) {
       text = `
           <h3>🧠 Vil du lære mere om grænserne?</h3>
