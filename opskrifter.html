@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Opskrifter i det Planetære Liv</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="billeder/planetarisk_liv_icon_circular.png" type="image/png">
+  <meta name="theme-color" content="#f8f9f4">
+
+ <link rel="preload" href="styles/fonts/Tekst-Normal.woff2" as="font" type="font/woff2">
+<link rel="preload" href="styles/fonts/Tekst-fed.woff2" as="font" type="font/woff2">
+<link rel="preload" href="styles/fonts/Tekst-Skraa.woff2" as="font" type="font/woff2">
+<link rel="preload" href="styles/fonts/Poppins-Light.woff2" as="font" type="font/woff2">
+<link rel="preload" href="styles/fonts/Poppins-Regular.woff2" as="font" type="font/woff2">
+<link rel="preload" href="styles/fonts/Poppins-Semibold.woff2" as="font" type="font/woff2">
+<link rel="preload" href="styles/fonts/Poppins-Bold.woff2" as="font" type="font/woff2">
+
+  <link rel="stylesheet" href="styles/style.css">
+    <!-- Scripts -->
+<script defer src="scripts/init.js"></script>
+
+</head>
+<body>
+  <!-- Overlay til mobilmenu -->
+  <div id="navOverlay" class="nav-overlay" onclick="closeMenu()"></div>
+
+  <!-- Header / Navbar -->
+  <div w3-include-html="includes/header.html"></div>
+
+<!-- Hero-sektion -->
+<section class="hero bg-green-100 p-6 rounded-2xl shadow-xl max-w-3xl mx-auto my-8">
+  <h1 class="text-3xl font-bold mb-2">🥄 Hverdagens Opskrifter</h1>
+  <p class="text-lg">Velkommen til vores samling af planetariske opskrifter! Her finder du nemme løsninger til mad, drikke og husholdning – alt sammen lavet med kærlighed, omtanke og måske lidt ukrudt fra haven 🌿</p>
+</section>
+
+<!-- Søgefelt -->
+<div class="max-w-3xl mx-auto my-4">
+  <input type="text" id="recipeSearch" placeholder="🔍 Søg opskrift..." class="w-full p-2 border border-gray-300 rounded-xl">
+</div>
+
+<!-- Opskriftsliste med kategorier -->
+<main class="max-w-3xl mx-auto space-y-8" id="recipeList">
+
+  <!-- Morgenmad -->
+  <section>
+    <h2 class="text-2xl font-semibold mb-2">🥣 Morgenmad</h2>
+    <div class="accordion">
+      <button class="accordion-header" aria-expanded="false">🥛 Havremælk</button>
+      <div class="accordion-content">
+        <p><strong>Ingredienser:</strong> 1 dl havregryn, 5 dl vand</p>
+        <p><strong>Sådan gør du:</strong> Blend i 30 sekunder, si med stofklud. Tilsæt evt. salt, vanilje eller lidt dadel for sødme.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rester & genbrug -->
+  <section>
+    <h2 class="text-2xl font-semibold mb-2">🧈 Rester & Genbrug</h2>
+    <div class="accordion">
+      <button class="accordion-header" aria-expanded="false">🧈 Smør af rester</button>
+      <div class="accordion-content">
+        <p><strong>Ingredienser:</strong> 2 dl rest, 1 spsk olie, salt, evt. hvidløg eller krydderurter</p>
+        <p><strong>Sådan gør du:</strong> Blend til cremet konsistens. Smag til. Brug som pålæg eller dip.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flere kategorier kan tilføjes her -->
+
+  </main>
+
+  <!-- Footer -->
+  <div w3-include-html="includes/footer.html"></div>
+
+
+</body>
+</html>
