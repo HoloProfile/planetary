@@ -233,7 +233,7 @@ if (gaiaIntro) gaiaIntro.style.display = 'block';
   else {
     greeting.style.display = 'none';
     }
-  }
+  
 
 } // ← Dette ekstra krøllet øje
 
