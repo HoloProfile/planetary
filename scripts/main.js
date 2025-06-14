@@ -63,14 +63,17 @@ function playGaiaAudio(id) {
 }
 
 // --- 5) Global søgefunktion ---
-document.getElementById('recipeSearch').addEventListener('input', function() {
-  const query = this.value.toLowerCase();
-  const cards = document.querySelectorAll('#recipeList .accordion');
-  cards.forEach(card => {
-    const text = card.innerText.toLowerCase();
-    card.style.display = text.includes(query) ? 'block' : 'none';
+const recipeInput = document.getElementById('recipeSearch');
+if (recipeInput) {
+  recipeInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase();
+    const cards = document.querySelectorAll('#recipeList .accordion');
+    cards.forEach(card => {
+      const text = card.innerText.toLowerCase();
+      card.style.display = text.includes(query) ? 'block' : 'none';
+    });
   });
-});
+} 
 
 // --- 6) Karussel-rotation ---
 document.addEventListener('DOMContentLoaded', () => {
