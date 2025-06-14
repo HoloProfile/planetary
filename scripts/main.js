@@ -61,3 +61,13 @@ function playGaiaAudio(id) {
   const el = document.getElementById(id);
   if (el) el.play();
 }
+
+// --- 5) Global søgefunktion ---
+document.getElementById('recipeSearch').addEventListener('input', function() {
+  const query = this.value.toLowerCase();
+  const cards = document.querySelectorAll('#recipeList .accordion');
+  cards.forEach(card => {
+    const text = card.innerText.toLowerCase();
+    card.style.display = text.includes(query) ? 'block' : 'none';
+  });
+});
