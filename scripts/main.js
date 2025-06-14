@@ -71,7 +71,7 @@ document.getElementById('recipeSearch').addEventListener('input', function() {
     card.style.display = text.includes(query) ? 'block' : 'none';
   });
 });
-}
+
 // --- 6) Karussel-rotation ---
 document.addEventListener('DOMContentLoaded', () => {
   const slides = document.querySelectorAll('.carousel-slide');
