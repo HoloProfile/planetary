@@ -892,3 +892,27 @@ body {
   display: block;
   margin: 2rem auto;
 }
+
+/* ========================================
+   10. karusel
+   ======================================== */
+.carousel {
+  position: relative;
+  max-width: 600px;
+  margin: 3rem auto;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  text-align: center;
+  padding: 1rem;
+}
+
+.carousel-slide.active {
+  display: block;
+  opacity: 1;
+}
+
