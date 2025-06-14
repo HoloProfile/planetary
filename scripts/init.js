@@ -47,5 +47,4 @@ function initPage() {
 // Kickstart: load includes → initPage (loader main.js + gaia.js + vores callbacks)
 includeHTML(() => {
   initPage();
-  initGaia();
 });
