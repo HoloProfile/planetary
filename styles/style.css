@@ -808,12 +808,7 @@ padding-top: 1rem;
   position: relative;
   transition: color 0.2s;
 }
-.idea-header::after {
-  content: '▼';
-  position: absolute;
-  right: 0;
-  transition: transform 0.3s;
-}
+
 .idea-header.open::after {
   transform: rotate(90deg);
 }
