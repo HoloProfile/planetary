@@ -3,38 +3,45 @@
    Planetært Liv – Det sikre råderum  
    ========================================================================== -->
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="da">
 <head>
-  <!-- 1) Metadata & Stylesheet -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Det sikre råderum – Planetært Liv</title>
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="billeder/planetarisk_liv_icon_circular.png" type="image/png">
   <meta name="theme-color" content="#f8f9f4">
-  <!-- Font Preload -->
- <link rel="preload" href="styles/fonts/Tekst-Normal.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="styles/fonts/Tekst-Fed.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="styles/fonts/Tekst-Skraa.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="styles/fonts/Poppins-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="styles/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="styles/fonts/Poppins-Semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="styles/fonts/Poppins-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="stylesheet" href="styles/style.css">
+
+ <link rel="preload" href="styles/fonts/Tekst-Normal.woff2" as="font" type="font/woff2">
+<link rel="preload" href="styles/fonts/Tekst-fed.woff2" as="font" type="font/woff2">
+<link rel="preload" href="styles/fonts/Tekst-Skraa.woff2" as="font" type="font/woff2">
+<link rel="preload" href="styles/fonts/Poppins-Light.woff2" as="font" type="font/woff2">
+<link rel="preload" href="styles/fonts/Poppins-Regular.woff2" as="font" type="font/woff2">
+<link rel="preload" href="styles/fonts/Poppins-Semibold.woff2" as="font" type="font/woff2">
+<link rel="preload" href="styles/fonts/Poppins-Bold.woff2" as="font" type="font/woff2">
+
+<link rel="stylesheet" href="styles/style.css">
+    <!-- Scripts -->
+<script defer src="scripts/init.js"></script>
+
 </head>
 <body>
-  <!-- 2) Nav Overlay & Header -->
- <div id="navOverlay" class="nav-overlay" onclick="closeMenu()"></div>
- <div w3-include-html="includes/header.html"></div>
+<!-- Overlay til mobilmenu -->
+  <div id="navOverlay" class="nav-overlay" onclick="closeMenu()"></div>
+
+  <!-- Header / Navbar -->
+  <div w3-include-html="includes/header.html"></div>
+
   <!-- 3) Hero Section -->
   <section class="hero-section viden-bg">
     <h1>Det sikre råderum</h1>
     <p>Forstå de planetære grænser og find balance mellem livsglæde og bæredygtighed.</p>
   </section>
 
-  <!-- 4) Flyvende Guide -->
+ <!-- Gaia-guide -->
   <div w3-include-html="includes/gaia.html"></div>
-
+<script defer src="scripts/gaia.js"></script>
 
   <!-- 5) Main Content -->
   <main class="viden2-main content">
@@ -119,7 +126,5 @@
   <!-- 6) Footer -->
  <div w3-include-html="includes/footer.html"></div>
 
-  <!-- 7) Scripts: menu & guide -->
-<script defer src="scripts/init.js"></script>
 </body>
 </html>
