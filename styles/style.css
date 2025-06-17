@@ -388,6 +388,11 @@ h1, h2, h3 {
    background-size: cover;
   background-color: #e9f0e4; 
 }
+.kommed-bg {
+  background: url('billeder/kommed1.png') no-repeat center center;
+   background-size: cover;
+  background-color: #e9f0e4; 
+}
 .hero-section::after {
   content: "";
   position: absolute;
@@ -480,6 +485,13 @@ h1, h2, h3 {
 }
 .kontakt-main.content {
   background: url('billeder/kontakt3.png') no-repeat center top;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 3rem 1rem;
+  color: #2c3e50;
+}
+.kommed-main.content {
+  background: url('billeder/kommed2.png') no-repeat center top;
   background-size: cover;
   background-attachment: fixed;
   padding: 3rem 1rem;
