@@ -106,7 +106,7 @@ if (gaiaIntro) gaiaIntro.style.display = 'block';
     
     if (isIndex || path.includes('index.html')) {
       text = `
-        <h3>Din spireven 🌱 her på siden 🌍?</h3>
+        <h3>Din spireven 🌱 her på siden 🌍</h3>
         <p>Dyk ned i de ni planetære grænser – helt nørdet og konkret.</p>
       `;
     }
