@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Opskrifter i det Planetære Liv</title>
-  <link rel="manifest" href="manifest.json">
+ <link rel="manifest" href="manifest.json">
   <link rel="icon" href="billeder/planetarisk_liv_icon_circular.png" type="image/png">
   <meta name="theme-color" content="#f8f9f4">
 
@@ -29,18 +29,24 @@
   <div w3-include-html="includes/header.html"></div>
 
 <!-- Hero-sektion -->
-<section class="hero bg-green-100 p-6 rounded-2xl shadow-xl max-w-3xl mx-auto my-8">
+ <section class="hero-section kommed-bg">
   <h1 class="text-3xl font-bold mb-2">🥄 Hverdagens Opskrifter</h1>
   <p class="text-lg">Velkommen til vores samling af planetariske opskrifter! Her finder du nemme løsninger til mad, drikke og husholdning – alt sammen lavet med kærlighed, omtanke og måske lidt ukrudt fra haven 🌿</p>
 </section>
 
+  <!-- Gaia-guide -->
+  <div w3-include-html="includes/gaia.html"></div>
+<script defer src="scripts/gaia.js"></script>
+  <!-- Indhold -->
+  <main class="forside-main content">
+  
 <!-- Søgefelt -->
 <div class="max-w-3xl mx-auto my-4">
   <input type="text" id="recipeSearch" placeholder="🔍 Søg opskrift..." class="w-full p-2 border border-gray-300 rounded-xl">
 </div>
 
 <!-- Opskriftsliste med kategorier -->
-<main class="max-w-3xl mx-auto space-y-8" id="recipeList">
+ <main class="kommed-main content">
 
   <!-- Morgenmad -->
   <section>
