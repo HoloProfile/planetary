@@ -49,31 +49,92 @@
 
 <!-- Opskriftsliste med kategorier -->
  
-  <!-- Morgenmad -->
-  <section>
-    <h2 class="text-2xl font-semibold mb-2">🥣 Morgenmad</h2>
-    <div class="accordion">
-      <button class="accordion-header" aria-expanded="false">🥛 Havremælk</button>
-      <div class="accordion-content">
-        <p><strong>Ingredienser:</strong> 1 dl havregryn, 5 dl vand</p>
-        <p><strong>Sådan gør du:</strong> Blend i 30 sekunder, si med stofklud. Tilsæt evt. salt, vanilje eller lidt dadel for sødme.</p>
+<!-- Morgenmad -->
+<section>
+  <h2 class="text-2xl font-semibold mb-2">🥣 Morgenmad</h2>
+  <p class="mb-4 italic">
+    🌾 Ved at bruge havre, byg og rester sparer du import, emballage og ressourcer. Det her er slow food for planeten – klar på 5 min.
+  </p>
+
+  <div class="accordion">
+    <button class="accordion-header" aria-expanded="false">🥛 Havremælk</button>
+    <div class="accordion-content">
+      <p><strong>Ingredienser:</strong> 1 dl havregryn, 5 dl vand</p>
+      <p><strong>Sådan gør du:</strong> Blend i 30 sekunder, si med stofklud eller osteklæde. Tilsæt evt. salt, sirup, urter, vanilje eller lidt dadel for variation</p>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <button class="accordion-header" aria-expanded="false">🍞 Restebrød (uden gær)</button>
+    <div class="accordion-content">
+      <p><strong>Ingredienser:</strong> 2 dl mel, 1 dl kogt grødris/grøntsagsrester, 1 tsk bagepulver, 1 dl vand</p>
+      <p><strong>Sådan gør du:</strong> Rør sammen, form flade brød og bag på pande eller i ovn ved 200°C i ca. 15 min.</p>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <button class="accordion-header" aria-expanded="false">🌰 Nødde-/frøsmør</button>
+    <div class="accordion-content">
+      <p><strong>Ingredienser:</strong> 2 dl ristede solsikkefrø / hasselnødder, evt. lidt salt og olie</p>
+      <p><strong>Sådan gør du:</strong> Blend i foodprocessor til cremet konsistens. Brug som pålæg eller i grød.</p>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <button class="accordion-header" aria-expanded="false">🍌 Grødbananpandekager</button>
+    <div class="accordion-content">
+      <p><strong>Ingredienser:</strong> 1 moden banan, 1 dl kogt havregrød, 1 æg</p>
+      <p><strong>Sådan gør du:</strong> Mos og rør sammen. Steg små pandekager ved middel varme. Perfekt til rester!</p>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <button class="accordion-header" aria-expanded="false">🌾 Byggrød med æble</button>
+    <div class="accordion-content">
+      <p><strong>Ingredienser:</strong> 1 dl perlebyg, 2 dl vand, 1 revet æble, kanel</p>
+      <p><strong>Sådan gør du:</strong> Kog byg mør, tilsæt revet æble og krydderi. Server med plantemælk eller restesirup.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Kaffealternativ -->
+<section>
+  <h2 class="text-2xl font-semibold mb-2">☕ Kaffealternativ</h2>
+  <p class="mb-4 italic">
+    🌱 Kaffedyrkning belaster klima, skov og vandressourcer. Bygkaffe er lokalt, billigt og planetært mildt – uden koffein og klimaskam.
+  </p>
+
+  <div class="accordion">
+    <button class="accordion-header" aria-expanded="false">🌾 Bygkaffe (ristet byg)</button>
+    <div class="accordion-content">
+      <p><strong>Ingredienser:</strong> Hel byg (økologisk, fx Aurion)</p>
+      <ul>
+        <li>1) Skyl byggen og rist den på en tør pande i 10–15 min ved middel varme, til den er mørk og dufter ristet. Rør undervejs.</li>
+        <li>2) Lad byggen køle, og kværn den groft – i kværn, minihakker eller morter.</li>
+        <li>3) Bryg som stempelkande eller i espressokande. Ca. 1 spsk pr. kop. Trækketid ca. 5 min.</li>
+      </ul>
+      <div class="accordion nested-accordion">
+        <button class="accordion-header" aria-expanded="false">🌍 Hvad sparer du?</button>
+        <div class="accordion-content">
+          <ul>
+            <li>💧 <strong>Vand:</strong> En kop kaffe bruger 140 liter vand – byg er regnvandet markafgrøde.</li>
+            <li>🌬️ <strong>CO₂:</strong> Op til 90 % lavere CO₂-udledning end kaffe.</li>
+            <li>🚒 <strong>Transport:</strong> Kaffe flyves/sejles globalt – byg dyrkes i Danmark/EU.</li>
+            <li>🌿 <strong>Areal og biodiversitet:</strong> Mindre pres på tropiske skove.</li>
+            <li>💸 <strong>Pris:</strong> Byg koster ~30 kr/kg og rækker længe. Billigt + bæredygtigt.</li>
+          </ul>
+          <p>
+            Det er ikke <em>kaffe-kaffe</em> – men det føles godt i både krop og klode ☕🌍
+          </p>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Rester & genbrug -->
-  <section>
-    <h2 class="text-2xl font-semibold mb-2">🧈 Rester & Genbrug</h2>
-    <div class="accordion">
-      <button class="accordion-header" aria-expanded="false">🧈 Smør af rester</button>
-      <div class="accordion-content">
-        <p><strong>Ingredienser:</strong> 2 dl rest, 1 spsk olie, salt, evt. hvidløg eller krydderurter</p>
-        <p><strong>Sådan gør du:</strong> Blend til cremet konsistens. Smag til. Brug som pålæg eller dip.</p>
-      </div>
-    </div>
-  </section>
+<!-- Flere sektioner indsættes nedenfor... (frokost/snack, rester mm.) -->
 
-  <!-- Flere kategorier kan tilføjes her -->
+   
 
   </main>
 
