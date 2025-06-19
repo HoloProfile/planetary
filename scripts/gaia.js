@@ -110,7 +110,12 @@ if (gaiaIntro) gaiaIntro.style.display = 'block';
         <p>Dyk ned i de ni planetære grænser – helt nørdet og konkret.</p>
       `;
     }
-      
+else if (path.includes('index-firsttime.html')) {
+      text = `
+          <h3>Hey første gang du bruger gaia?🌍</h3>
+        <p>Dyk ned i menuen, vores ideer og de ni planetære grænser – helt simpelt.</p>
+      `;
+    } 
  else if (path.includes('viden.html')) {
       text = `
           <h3>🧠 Vil du lære mere om grænserne?</h3>
