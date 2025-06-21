@@ -1,0 +1,117 @@
+<!-- ==========================================================================  
+   co2.html  
+   Planetært Liv – Det sikre råderum  
+   ========================================================================== -->
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CO2 Beregner – Planetært Liv</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="billeder/planetarisk_liv_icon_circular.png" type="image/png">
+  <meta name="theme-color" content="#f8f9f4">
+
+ <link rel="preload" href="styles/fonts/Tekst-Normal.woff2" as="font" type="font/woff2">
+<link rel="preload" href="styles/fonts/Tekst-fed.woff2" as="font" type="font/woff2">
+<link rel="preload" href="styles/fonts/Tekst-Skraa.woff2" as="font" type="font/woff2">
+<link rel="preload" href="styles/fonts/Poppins-Light.woff2" as="font" type="font/woff2">
+<link rel="preload" href="styles/fonts/Poppins-Regular.woff2" as="font" type="font/woff2">
+<link rel="preload" href="styles/fonts/Poppins-Semibold.woff2" as="font" type="font/woff2">
+<link rel="preload" href="styles/fonts/Poppins-Bold.woff2" as="font" type="font/woff2">
+
+<link rel="stylesheet" href="styles/style.css">
+    <!-- Scripts -->
+<script defer src="scripts/init.js"></script>
+
+</head>
+<body>
+<!-- Overlay til mobilmenu -->
+  <div id="navOverlay" class="nav-overlay" onclick="closeMenu()"></div>
+
+  <!-- Header / Navbar -->
+  <div w3-include-html="includes/header.html"></div>
+
+  <!-- 3) Hero Section -->
+  <section class="hero-section viden-bg">
+    <h1>Forskellige beregningsmetoder til daglig CO2 forbrug</h1>
+    <p>Forstå dit eget klimaaftryk.</p>
+  </section>
+
+ <!-- Gaia-guide -->
+  <div w3-include-html="includes/gaia.html"></div>
+<script defer src="scripts/gaia.js"></script>
+
+  <!-- 5) Main Content -->
+  <main class="viden2-main content">
+<section class="content">
+  <h1 class="text-3xl font-bold mb-4">🌍 CO₂-beregner</h1>
+
+  <p>Vil du vide, hvor meget du udleder? Her får du en introduktion til CO₂-emissioner, CO₂-ækvivalenter – og nogle konkrete faktorer, du kan bruge til at regne på jeres klimaaftryk.</p>
+
+  <hr class="my-4">
+
+  <h2 class="text-2xl font-semibold mt-6 mb-2">🔍 Hvad er CO₂ og CO₂e?</h2>
+  <p><strong>CO₂-emissioner</strong> betyder udledning af kuldioxid – typisk fra fossile brændstoffer som olie og kul.</p>
+  <p><strong>CO₂-ækvivalenter (CO₂e)</strong> bruges til at omregne andre drivhusgasser (som metan og lattergas) til den mængde CO₂, der ville give samme opvarmningseffekt. Det gør det lettere at regne samlet på klimaaftryk.</p>
+
+  <h2 class="text-2xl font-semibold mt-6 mb-2">📊 Emissionsfaktorer (standardværdier)</h2>
+
+  <div class="accordion">
+    <button class="accordion-header" aria-expanded="false">⚡ Elektricitet</button>
+    <div class="accordion-content">
+      <p><strong>Regn sådan:</strong> kWh × 0.233 kg CO₂</p>
+      <p>Gennemsnit for dansk elmix. Kilde: <a href="https://ens.dk" target="_blank">Energistyrelsen</a>, <a href="https://energinet.dk" target="_blank">Energinet</a></p>
+    </div>
+
+    <button class="accordion-header" aria-expanded="false">🔥 Fjernvarme</button>
+    <div class="accordion-content">
+      <p><strong>Regn sådan:</strong> kWh × 0.057 kg CO₂</p>
+      <p>Afhænger af varmekilde. Kilde: Energistyrelsen, Energinet.</p>
+    </div>
+
+    <button class="accordion-header" aria-expanded="false">🚗 Bilkørsel</button>
+    <div class="accordion-content">
+      <p><strong>Regn sådan:</strong> km × 0.12 kg CO₂ (dieselbil)</p>
+      <p>Afhænger af køretøjstype. Kilde: <a href="https://mst.dk" target="_blank">Miljøstyrelsen</a>, Energistyrelsen</p>
+    </div>
+
+    <button class="accordion-header" aria-expanded="false">✈️ Flyrejser</button>
+    <div class="accordion-content">
+      <p><strong>Regn sådan:</strong> km × 0.15 kg CO₂</p>
+      <p>Kilde: <a href="https://www.icao.int" target="_blank">ICAO</a>, <a href="https://eea.europa.eu" target="_blank">EEA</a></p>
+    </div>
+
+    <button class="accordion-header" aria-expanded="false">🗑️ Affald</button>
+    <div class="accordion-content">
+      <p><strong>Regn sådan:</strong> kg × 1.2 kg CO₂</p>
+      <p>Gennemsnit for ikke-genanvendt affald. Kilde: <a href="https://mst.dk" target="_blank">Miljøstyrelsen</a>, <a href="https://www.epa.gov" target="_blank">EPA</a></p>
+    </div>
+  </div>
+
+  <h2 class="text-2xl font-semibold mt-6 mb-2">🚚 Transport – flere køretøjer</h2>
+  <ul class="ml-4 list-disc">
+    <li>Benzinbil – 0.15 kg CO₂/km</li>
+    <li>Dieselbil – 0.12 kg CO₂/km</li>
+    <li>Elbil – 0.02 kg CO₂/km</li>
+    <li>Lille lastbil – 0.25 kg CO₂/km</li>
+    <li>Mellem lastbil – 0.35 kg CO₂/km</li>
+    <li>Stor lastbil – 0.60 kg CO₂/km</li>
+  </ul>
+  <p class="mt-2">Kilde: Energistyrelsen, <a href="https://europarl.europa.eu" target="_blank">Europaparlamentet</a></p>
+
+  <hr class="my-6">
+
+  <p>💡 Du kan også finde CO₂-beregnere online, f.eks. via <a href="https://www.carbonfootprint.com/" target="_blank">carbonfootprint.com</a> eller <a href="https://www.klimatiltak.dk" target="_blank">KlimatilTAK</a>.</p>
+
+  <p>🔗 Hvis du hellere vil have et link i stedet for en hel side, finder du det hele under <a href="ressourcer.html">Ressourcer</a>.</p>
+</section>
+
+  </main>
+
+  <!-- 6) Footer -->
+ <div w3-include-html="includes/footer.html"></div>
+
+</body>
+</html>
