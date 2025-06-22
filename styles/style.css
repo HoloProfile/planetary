@@ -738,7 +738,7 @@ padding-top: 1rem;
 /* Selve knappen til at Ã¥bne boksen */
 .accordion-header {
   width: 100%;
-  padding: 1rem 1.5rem;
+   padding: 1rem 2.5rem 1rem 1.5rem;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 0.9rem;
@@ -755,6 +755,7 @@ padding-top: 1rem;
   content: '⬇️';
   position: absolute;
   right: 1.5rem;
+margin-left: 0.5rem; /* ← ekstra luft mellem tekst og pil */
   transition: transform 0.3s;
 }
 /* Roter pil pÃ¥ Ã¥ben */
