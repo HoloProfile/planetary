@@ -96,8 +96,8 @@ function initGaia() {
   box.style.transform = 'translateY(10px)';
 
   // Path og index-check
-  const gaiaIntro = document.getElementById('gaiaIntro-index');
-if (gaiaIntro) gaiaIntro.style.display = 'block';
+// vi viser ikke intro automatisk længere – kun ved klik
+// if (gaiaIntro) gaiaIntro.style.display = 'block';
   
   // Greeting til undersider
   const greeting = document.getElementById('gaiaGreeting');
