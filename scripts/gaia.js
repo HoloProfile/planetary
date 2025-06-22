@@ -97,7 +97,7 @@ function initGaia() {
 
   // Path og index-check
 const gaiaIntro = document.getElementById('gaiaIntro-index');
-if (gaiaIntro) gaiaIntro.style.display = 'block';
+if (gaiaIntro) gaiaIntro.style.display = 'none'; // hold intro skjult i starten
   
   // Greeting til undersider
   const greeting = document.getElementById('gaiaGreeting');
