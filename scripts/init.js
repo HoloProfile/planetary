@@ -20,32 +20,34 @@ function includeHTML(callback) {
   });
 }
 
-function initPage() {
-  // 1) Indsæt main.js
-  const mainScript = document.createElement('script');
-  mainScript.src   = 'scripts/main.js';
-  mainScript.defer = true;
-  mainScript.onload = () => {
-    if (typeof setupAccordion === 'function') setupAccordion();
-  };
-  document.body.appendChild(mainScript);
-
- // 2) Indsæt gaia.js
-cconst gaiaScript = document.createElement('script');
-  gaiaScript.src   = 'scripts/gaia.js';
-  gaiaScript.defer = true;
-  document.body.appendChild(gaiaScript);
-
-  // 3) Kør initGaia, når begge scripts er færdigindlæst
-  // Brug et lille delay, så DOM og scripts er helt klar
-  setTimeout(() => {
-    if (typeof initGaia === 'function') initGaia();
-  }, 100); // evt. lav 300ms hvis det driller
+function loadScript(src, onload) {
+  const script = document.createElement('script');
+  script.src = src;
+  script.defer = true;
+  script.onload = onload;
+  script.onerror = () => console.error(`⚠️ Kunne ikke loade script: ${src}`);
+  document.body.appendChild(script);
 }
 
+function initPage() {
+  // Først load main.js
+  loadScript('scripts/main.js', () => {
+    if (typeof setupAccordion === 'function') setupAccordion();
+  });
 
+  // Så load gaia.js, og vent på den er klar før du kalder initGaia
+  loadScript('scripts/gaia.js', () => {
+    if (typeof initGaia === 'function') {
+      console.log("✅ initGaia kaldes nu");
+      initGaia();
+    } else {
+      console.warn("⚠️ initGaia blev ikke fundet – er gaia.js korrekt?");
+    }
+  });
+}
 
-// Kickstart: load includes → initPage (loader main.js + gaia.js + vores callbacks)
+// Først: vent på includeHTML er færdig → så loader vi scripts
 includeHTML(() => {
+  console.log("✅ HTML includes færdig – loader scripts");
   initPage();
 });
