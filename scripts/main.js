@@ -15,7 +15,7 @@ function closeMenu() {
 }
 
 // === 2) Når siden er loadet ===
-document.addEventListener('DOMContentLoaded', () => {
+
   // a) Highlight aktivt link i menuen
   const links = document.querySelectorAll('.nav-links a');
   const path = window.location.pathname.split('/').pop(); // fx 'faq.html'
