@@ -1,5 +1,8 @@
 // scripts/main.js
 console.log("📦 main.js er indlæst");
+setupAccordion();
+setupLightbox();
+
 // === 1) Mobilmenu ===
 // Åbner/lukker navigation på mobil med overlay
 function toggleMenu() {
@@ -15,7 +18,9 @@ function closeMenu() {
 }
 
 // === 2) Når siden er loadet ===
-document.addEventListener('DOMContentLoaded', () => {
+
+
+  
   // a) Highlight aktivt link i menuen
   const links = document.querySelectorAll('.nav-links a');
   const path = window.location.pathname.split('/').pop(); // fx 'faq.html'
@@ -152,4 +157,4 @@ if (recipeInput) {
     }, 150); // debounce
   });
 } 
-}); 
+
