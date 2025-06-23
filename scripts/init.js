@@ -33,6 +33,7 @@ function initPage() {
   // Først load main.js
   loadScript('scripts/main.js', () => {
     if (typeof setupAccordion === 'function') setupAccordion();
+    if (typeof setupLightbox === "function") setupLightbox();
   });
 
   // Så load gaia.js, og vent på den er klar før du kalder initGaia
