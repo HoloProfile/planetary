@@ -905,36 +905,46 @@ body {
    10. lydkasse
    ======================================== */
 .audio-box {
-  background-color: #e0f3e0;
+  background-color: #e2f3e2;
   border-radius: 1rem;
   padding: 1rem;
-  max-width: 300px;
+  max-width: 360px;
   margin: 1rem auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+.audio-label {
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #2c3e50;
+}
+
+.audio-controls {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.7rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  font-family: 'Poppins', sans-serif;
 }
 
-.audio-box button {
-  background-color: #b4dfb4;
+.audio-controls button {
+  background: #bfe4bf;
   border: none;
   border-radius: 0.5rem;
-  padding: 0.4rem 0.7rem;
-  cursor: pointer;
+  padding: 0.5rem 0.8rem;
   font-size: 1rem;
+  cursor: pointer;
   font-weight: 600;
-  transition: background-color 0.2s;
 }
 
-.audio-box button:hover {
-  background-color: #a0d1a0;
+.audio-controls button:hover {
+  background-color: #aadbaa;
 }
 
-.audio-box span {
-  min-width: 40px;
+.audio-controls span {
+  min-width: 48px;
   text-align: right;
   font-weight: 500;
   color: #2c3e50;
