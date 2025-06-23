@@ -105,9 +105,6 @@ function rewindAudio(id, sec=10) {
 
 // === INIT alle ting ===
 console.log("📦 main.js er indlæst");
-setupLightbox();
-highlightActiveLink();
-setupRecipeSearch();
 // Eksporter menu-funktioner til onclick i HTML:
 window.toggleMenu = toggleMenu;
 window.closeMenu  = closeMenu;
