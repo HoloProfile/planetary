@@ -84,12 +84,15 @@ function playAudio(id) {
   if (el) {
     el.play();
 
-    const timeDisplay = document.getElementById(`${id}-time`);
+ const timeDisplay = document.getElementById(`${id}-time`);
     if (timeDisplay) {
       el.ontimeupdate = () => {
-        const min = Math.floor(el.currentTime / 60);
-        const sec = Math.floor(el.currentTime % 60).toString().padStart(2, '0');
-        timeDisplay.textContent = `${min}:${sec}`;
+        if (el.duration) {
+          const remaining = Math.max(0, el.duration - el.currentTime);
+          const min = Math.floor(remaining / 60);
+          const sec = Math.floor(remaining % 60).toString().padStart(2, '0');
+          timeDisplay.textContent = `-${min}:${sec}`;
+        }
       };
     }
   }
