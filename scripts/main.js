@@ -47,13 +47,26 @@ document.querySelectorAll(".polaroid img").forEach(img => {
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
     lightboxImg.src = img.src;
-    lightbox.style.display = "flex";
+    lightbox.classList.add("show");
   });
 });
 
 function closeLightbox() {
-  document.getElementById("lightbox").style.display = "none";
+  const lightbox = document.getElementById("lightbox");
+  lightbox.classList.remove("show");
+  setTimeout(() => {
+    lightbox.style.display = "none";
+  }, 300); // matcher fade-out tid
 }
+
+document.getElementById("lightbox").addEventListener("transitionend", e => {
+  const lightbox = e.currentTarget;
+  if (!lightbox.classList.contains("show")) {
+    lightbox.style.display = "none";
+  } else {
+    lightbox.style.display = "flex";
+  }
+});
 
 // === 5) Global lydafspiller til Gaia ===
 function playAudio(id) {
