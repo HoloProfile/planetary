@@ -151,4 +151,5 @@ if (recipeInput) {
       if (noResults) noResults.style.display = anyVisible ? 'none' : 'block';
     }, 150); // debounce
   });
+ });
 }
