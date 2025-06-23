@@ -544,9 +544,17 @@ ul {
   margin-bottom: 0.5rem;
   color: #3e2f1c;
 }
+.recipe-section .accordion {
+  margin-bottom: 1.5rem;
+}
+.nested-accordion .accordion-content {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
 
 /* ========================================================================
-   6.1) galleriet
+   6.2) galleriet
    ======================================================================== */
 .gallery-grid {
   display: grid;
