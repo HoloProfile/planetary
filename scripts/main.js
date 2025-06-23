@@ -105,7 +105,6 @@ function rewindAudio(id, sec=10) {
 
 // === INIT alle ting ===
 console.log("📦 main.js er indlæst");
-setupAccordion();
 setupLightbox();
 highlightActiveLink();
 setupRecipeSearch();
