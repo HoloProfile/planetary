@@ -63,6 +63,7 @@ function setupLightbox() {
 function setupRecipeSearch() {
   const input = document.getElementById('recipeSearch');
   if (!input) return;
+  document.getElementById('noResults').style.display = 'none';
   let timeout;
   input.addEventListener('input', () => {
     clearTimeout(timeout);
