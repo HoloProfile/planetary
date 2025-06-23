@@ -1,5 +1,5 @@
 // scripts/main.js
-
+console.log("📦 main.js er indlæst");
 // === 1) Mobilmenu ===
 // Åbner/lukker navigation på mobil med overlay
 function toggleMenu() {
