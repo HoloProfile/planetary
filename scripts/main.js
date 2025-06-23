@@ -75,7 +75,7 @@ function setupRecipeSearch() {
         card.style.display = show ? 'block' : 'none';
         any = any || show;
       });
-      document.getElementById('noResults').style.display = any ? 'none' : 'block';
+     document.getElementById('noResults').style.display = q.length === 0 ? 'none' : (any ? 'none' : 'block');
     }, 150);
   });
 }
