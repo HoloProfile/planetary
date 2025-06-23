@@ -119,12 +119,31 @@ function rewindAudio(id, seconds = 10) {
 // === 6) Søgefunktion til opskrifter ===
 const recipeInput = document.getElementById('recipeSearch');
 if (recipeInput) {
-  recipeInput.addEventListener('input', function() {
-    const query = this.value.toLowerCase();
-    const cards = document.querySelectorAll('#recipeList .accordion');
-    cards.forEach(card => {
-      const text = card.innerText.toLowerCase();
-      card.style.display = text.includes(query) ? 'block' : 'none';
-    });
+  let timeout = null;
+
+  recipeInput.addEventListener('input', function () {
+    clearTimeout(timeout);
+
+    timeout = setTimeout(() => {
+      const query = this.value.toLowerCase().trim();
+      const cards = document.querySelectorAll('#recipeList .accordion');
+      let anyVisible = false;
+
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        const match = text.includes(query);
+
+        // Vis eller skjul med lidt finesse
+        card.style.transition = 'opacity 0.2s ease';
+        card.style.opacity = match ? '1' : '0';
+        card.style.display = match ? 'block' : 'none';
+
+        if (match) anyVisible = true;
+      });
+
+      // Vis "ingen resultater"-besked
+      const noResults = document.getElementById('noResults');
+      if (noResults) noResults.style.display = anyVisible ? 'none' : 'block';
+    }, 150); // debounce delay
   });
 }
