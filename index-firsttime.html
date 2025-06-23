@@ -72,13 +72,13 @@
     <br><br>
     Vi startede også langsomt og usikkert – og vi er ikke endt her uden tvivl og tøven undervejs.</p>
     <br><br>
-    <button
-  class="guide-audio"
-  onclick="new Audio('lyd/Introlyd.m4a').play()"
->
-	     🎧 <strong>Lyt til Rasmus fortælle</strong> 
-	    om de første skridt og valg af retning. 
-      </button>
+ <audio id="introAudio" src="lyd/Introlyd.m4a"></audio>
+
+<div class="audio-player">
+  <button onclick="toggleGaiaAudio('introAudio')">⏯️</button>
+  <button onclick="rewindGaiaAudio('introAudio')">⏪ 10 sek</button>
+  <span id="introAudio-time">0:00</span>
+</div>
   <div class="spiral"></div>
 Når du har læst lidt videre – og er mere nysgerrig –
 kan du klikke på symbolet i hjørnet.
