@@ -81,7 +81,37 @@ function playGaiaAudio(id) {
   });
 
   const el = document.getElementById(id);
-  if (el) el.play();
+  if (el) {
+    el.play();
+
+    // Find tilhørende tidsvisning
+    const timeDisplay = document.querySelector(`#${id}-time`);
+    if (timeDisplay) {
+      el.ontimeupdate = () => {
+        const min = Math.floor(el.currentTime / 60);
+        const sec = Math.floor(el.currentTime % 60).toString().padStart(2, '0');
+        timeDisplay.textContent = `${min}:${sec}`;
+      };
+    }
+  }
+}
+
+function toggleGaiaAudio(id) {
+  const el = document.getElementById(id);
+  if (el) {
+    if (el.paused) {
+      playGaiaAudio(id);
+    } else {
+      el.pause();
+    }
+  }
+}
+
+function rewindGaiaAudio(id, seconds = 10) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.currentTime = Math.max(0, el.currentTime - seconds);
+  }
 }
 
 // === 6) Søgefunktion til opskrifter ===
