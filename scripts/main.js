@@ -54,9 +54,9 @@ function setupLightbox() {
     lb.classList.remove("show");
     setTimeout(() => lb.style.display = "none", 300);
   });
-  lb.addEventListener("transitionend", () => {
-    lb.style.display = lb.classList.contains("show") ? "flex" : "none";
-  });
+ lb.addEventListener("transitionend", () => {
+  // do nothing her – eller brug evt. kun console.log
+});
 }
 
 // === 5) Opskrift-søgning ===
