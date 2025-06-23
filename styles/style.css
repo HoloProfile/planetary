@@ -583,6 +583,8 @@ ul {
   justify-content: center;
   align-items: center;
   cursor: zoom-out;
+   opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .lightbox img {
@@ -590,6 +592,11 @@ ul {
   max-height: 90%;
   border-radius: 8px;
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.lightbox.show {
+  display: flex;
+  opacity: 1;
 }
 
 /* ========================================================================
