@@ -73,8 +73,8 @@ function closeLightbox() {
 }
 
 // === 5) Global lydafspiller til Gaia ===
-function playGaiaAudio(id) {
-  const audioEls = document.querySelectorAll('audio[id^="gaiaAudio-"]');
+function playAudio(id) {
+  const audioEls = document.querySelectorAll('audio[id^="audio-"]');
   audioEls.forEach(el => {
     el.pause();
     el.currentTime = 0;
@@ -84,8 +84,7 @@ function playGaiaAudio(id) {
   if (el) {
     el.play();
 
-    // Find tilhørende tidsvisning
-    const timeDisplay = document.querySelector(`#${id}-time`);
+    const timeDisplay = document.getElementById(`${id}-time`);
     if (timeDisplay) {
       el.ontimeupdate = () => {
         const min = Math.floor(el.currentTime / 60);
@@ -96,18 +95,18 @@ function playGaiaAudio(id) {
   }
 }
 
-function toggleGaiaAudio(id) {
+function toggleAudio(id) {
   const el = document.getElementById(id);
   if (el) {
     if (el.paused) {
-      playGaiaAudio(id);
+      playAudio(id);
     } else {
       el.pause();
     }
   }
 }
 
-function rewindGaiaAudio(id, seconds = 10) {
+function rewindAudio(id, seconds = 10) {
   const el = document.getElementById(id);
   if (el) {
     el.currentTime = Math.max(0, el.currentTime - seconds);
