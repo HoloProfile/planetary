@@ -50,8 +50,16 @@
   <h2>Begyndelsen</h2>
   <p><strong>Af Rasmus Sommerhave og familie</strong></p>
   <p>Vil du høre fortællingen?</p>
-  <button class="guide-audio" onclick="new Audio('lyd/historie.m4a').play()">🎧 Lyt til vores rejse</button>
-  <p>
+
+   <audio id="audio-historie" src="lyd/historie.m4a"></audio>
+      🎧 Lyt til vores rejse
+<div class="audio-box">
+  <button onclick="toggleAudio('audio-historie')">⏯️</button>
+  <button onclick="rewindAudio('audio-historie')">⏪ 10 sek</button>
+  <span id="audio-historie-time">0:00</span>
+</div>
+      
+<p>
     Vi troede egentlig, vi var nogenlunde med – omend vi godt vidste, vi ikke var optimale. Lidt affaldssortering her, lidt plantebaseret mad der, og vi prøvede at huske at slukke for strømmen.  
     <br><br>
     Men vi boede stort, kørte bil uden at tænke over det, købte lidt for mange småting online, og lod strømmen løbe, når ingen så det. Vores Van bragte os rundt i Danmark, og vi nød det – men tænkte sjældent over de etiske dilemmaer ved at være dansker i en verden med begrænsede ressourcer.
