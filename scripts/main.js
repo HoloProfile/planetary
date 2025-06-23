@@ -126,13 +126,15 @@ if (recipeInput) {
 
     timeout = setTimeout(() => {
       const query = this.value.toLowerCase().trim();
-      const cards = document.querySelectorAll('#recipeList .accordion');
+      const cards = document.querySelectorAll('#recipeList .accordion:not(.nested-accordion)');
       const noResults = document.getElementById('noResults');
       let anyVisible = false;
 
       cards.forEach(card => {
-        const text = card.innerText.toLowerCase();
-        const match = text.includes(query);
+        const button = card.querySelector('.accordion-header');
+        const content = card.querySelector('.accordion-content');
+        const text = (button?.innerText || '') + ' ' + (content?.innerText || '');
+        const match = text.toLowerCase().includes(query);
 
         card.style.transition = 'opacity 0.2s ease';
 
@@ -151,6 +153,6 @@ if (recipeInput) {
       });
 
       if (noResults) noResults.style.display = anyVisible ? 'none' : 'block';
-    }, 150); // debounce-tid
+    }, 150); // debounce
   });
 }
