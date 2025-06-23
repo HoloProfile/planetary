@@ -576,27 +576,20 @@ ul {
 .lightbox {
   display: none;
   position: fixed;
-  z-index: 1000;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0.8);
-  justify-content: center;
+  top:0; left:0; width:100%; height:100%;
+  background: rgba(0,0,0,0.8);
   align-items: center;
-  cursor: zoom-out;
-   opacity: 0;
-  transition: opacity 0.3s ease;
+  justify-content: center;
+  transition: opacity .3s;
+  opacity: 0;
 }
-
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
-}
-
 .lightbox.show {
   display: flex;
   opacity: 1;
+}
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
 }
 
 /* ========================================================================
