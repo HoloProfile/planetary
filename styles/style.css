@@ -521,6 +521,30 @@ ul {
     margin: 1.5rem 1rem;
   }
 }
+
+
+/* ========================================================================
+   6.1) kun til opskrifter
+   ======================================================================== */
+
+.recipe-section {
+ background: #fffdf7;
+  border: 1px solid #e3dbc9;
+  padding: 2.5rem 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  border-radius: 1rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  font-family: "Georgia", serif;
+  text-align: left;
+}
+.recipe-section h2 {
+  font-family: "Georgia", serif;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #3e2f1c;
+}
+
 /* ========================================================================
    6.1) galleriet
    ======================================================================== */
