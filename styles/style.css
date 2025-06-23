@@ -949,3 +949,15 @@ body {
   font-weight: 500;
   color: #2c3e50;
 }
+
+/* ========================================
+   10. søgning
+   ======================================== */
+.search-input {
+  max-width: 700px;
+  margin: 1rem auto;
+  padding: 0.5rem;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
