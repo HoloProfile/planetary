@@ -127,23 +127,30 @@ if (recipeInput) {
     timeout = setTimeout(() => {
       const query = this.value.toLowerCase().trim();
       const cards = document.querySelectorAll('#recipeList .accordion');
+      const noResults = document.getElementById('noResults');
       let anyVisible = false;
 
       cards.forEach(card => {
         const text = card.innerText.toLowerCase();
         const match = text.includes(query);
 
-        // Vis eller skjul med lidt finesse
         card.style.transition = 'opacity 0.2s ease';
-        card.style.opacity = match ? '1' : '0';
-        card.style.display = match ? 'block' : 'none';
 
-        if (match) anyVisible = true;
+        if (match) {
+          card.style.display = 'block';
+          requestAnimationFrame(() => {
+            card.style.opacity = '1';
+          });
+          anyVisible = true;
+        } else {
+          card.style.opacity = '0';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 200);
+        }
       });
 
-      // Vis "ingen resultater"-besked
-      const noResults = document.getElementById('noResults');
       if (noResults) noResults.style.display = anyVisible ? 'none' : 'block';
-    }, 150); // debounce delay
+    }, 150); // debounce-tid
   });
 }
