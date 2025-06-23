@@ -41,18 +41,17 @@
 <script defer src="scripts/gaia.js"></script>
   <!-- Indhold -->
  <main class="kommed-main content">
- 
-<!-- Søgefelt -->
-<div class="max-w-3xl mx-auto my-4">
-  <input type="text" id="recipeSearch" placeholder="🔍 Søg opskrift..." class="w-full p-2 border border-gray-300 rounded-xl">
-<p id="noResults" style="display:none; text-align:center; margin-top:1rem; color:#888;">
-  🤷‍♂️ Ingen opskrifter matcher det, du leder efter - men skriv gerne til os, så ligger vi mere op.
-</p>
-</div>
+
+   <!-- Søgefelt -->
+   <section class="content">
+  <input type="text" id="recipeSearch" placeholder="🔍 Søg opskrift..." class="search-input">
+  <p id="noResults">🤷‍♂️ Ingen opskrifter matcher det, du leder efter - men skriv gerne til os, så ligger vi mere op.</p>
+</section>
+
 
 <!-- Opskriftsliste med kategorier -->
- <div id="recipeList">
-<section class="text-box">
+<div id="recipeList">
+<section class="content">
   <h2>🥣 Morgenmad</h2>
   <p>
     🌾 Ved at bruge havre, byg og rester sparer du import, emballage og ressourcer. Det her er slow food for planeten – klar på 5 min.
@@ -152,7 +151,7 @@
 
 <!-- Frokost & Snacks -->
 <section class="content">
-  <h2">🥪 Frokost & Snacks</h2>
+  <h2>🥪 Frokost & Snacks</h2>
   <p>
     🥕 Brug rester, grove danske råvarer og hjemmelavede snacks – så sparer du både penge, plast og CO₂.
   </p>
