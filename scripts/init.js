@@ -23,7 +23,6 @@ function includeHTML(callback) {
 function loadScript(src, onload) {
   const script = document.createElement('script');
   script.src = src;
-  script.defer = true;
   script.onload = onload;
   script.onerror = () => console.error(`⚠️ Kunne ikke loade script: ${src}`);
   document.body.appendChild(script);
