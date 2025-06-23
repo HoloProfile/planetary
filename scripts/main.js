@@ -67,7 +67,7 @@ document.getElementById("lightbox").addEventListener("transitionend", e => {
     lightbox.style.display = "flex";
   }
 });
-
+});
 // === 5) Global lydafspiller til Gaia ===
 function playAudio(id) {
   const audioEls = document.querySelectorAll('audio[id^="audio-"]');
