@@ -632,10 +632,12 @@ ul {
 }
 
 .polaroid .caption {
-  font-family: 'PatrickHand', 'Comic Sans MS', cursive;
-  font-size: 1rem;
-  margin-top: 1rem;
-  color: #444;
+  font-family: 'PatrickHand', cursive;
+  font-size: 1.1rem;     /* lidt større end standard */
+  line-height: 1.5;
+  padding-top: 0.5rem;
+  color: #333;
+  text-align: center;
 }
 
 /* ========================================================================
