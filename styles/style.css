@@ -627,7 +627,7 @@ ul {
 
 @font-face {
   font-family: 'PatrickHand';
-  src: url('styles/fonts/PatrickHand-Regular.woff2') format('woff2');
+  src: url('fonts/PatrickHand-Regular.woff2') format('woff2');
   font-display: swap;
 }
 
