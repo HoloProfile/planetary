@@ -557,12 +557,11 @@ ul {
    6.2) galleriet
    ======================================================================== */
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  justify-items: center;
-  align-items: start;
-  padding-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
 }
 
 .gallery-grid img {
