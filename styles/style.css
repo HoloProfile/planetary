@@ -624,6 +624,20 @@ ul {
   max-height: 90%;
 }
 
+@font-face {
+  font-family: 'PatrickHand';
+  src: url('styles/fonts/PatrickHand-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+
+.polaroid .caption {
+  font-family: 'PatrickHand', sans-serif;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  color: #333;
+  text-align: center;
+}
+
 /* ========================================================================
    6.5) Visuelle opdelinger
    ======================================================================== */
