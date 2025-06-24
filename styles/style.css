@@ -169,7 +169,7 @@ h1, h2, h3 {
 }
 .desktop-text { display: none; }
 .mobile-text { display: inline; }
-@media (min-width: 1024px) {
+@media (min-width: 1300px) {
   .desktop-text { display: inline; }
   .mobile-text { display: none; }
 }
