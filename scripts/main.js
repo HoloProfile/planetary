@@ -45,8 +45,9 @@ function setupLightbox() {
   document.querySelectorAll(".polaroid img").forEach(img => {
     img.style.cursor = "zoom-in";
     img.addEventListener("click", () => {
-      imgEl.src = img.src;
-      lb.classList.add("show");
+     imgEl.src = img.src;
+lb.style.display = "flex"; // 👈 det manglede!
+lb.classList.add("show");
     });
   });
 
