@@ -601,7 +601,6 @@ ul {
   padding: 0.5rem 0.5rem 2.5rem 0.5rem; /* bredere bund */
   margin: 1rem;
   border-radius: 6px;
-  transform: rotate(-1.5deg);
   transition: transform 0.2s ease;
   max-width: 240px;
   text-align: center;
