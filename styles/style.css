@@ -1032,3 +1032,154 @@ body {
   flex-direction: column;
   gap: 1rem;
 }
+
+
+/* ==========================================================================
+   DILEMMA-SIDE: Interaktive kort med natur-inspireret design
+   ========================================================================== */
+.dilemma-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(61, 92, 61, 0.15);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Merriweather', serif;
+  text-align: left;
+}
+
+/* Blad- og natur-inspirerede detaljer */
+.dilemma-card::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 120px;
+  height: 120px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,50 Q10,30 30,20 Q50,10 70,30 Q90,50 70,70 Q50,90 30,70 Q10,50 20,50" fill="%23d5e6d5" opacity="0.3"/></svg>');
+  background-size: contain;
+  z-index: 0;
+}
+
+/* Hover-effekt: Løft kortet og giv dybde */
+.dilemma-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* Overskrifter i dilemma-kort */
+.dilemma-card h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #3d5c3d;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+/* Understregning med grøn farve */
+.dilemma-card h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: #7bbf43;
+  border-radius: 2px;
+}
+
+/* Brødtekst i dilemma-kort */
+.dilemma-card p {
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+  color: #3a4a3a;
+}
+
+/* Lister i dilemma-kort */
+.dilemma-card ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.dilemma-card li {
+  margin-bottom: 0.75rem;
+  color: #3a4a3a;
+  position: relative;
+  padding-left: 0.75rem;
+}
+
+.dilemma-card li::before {
+  content: "🌱";
+  position: absolute;
+  left: -0.75rem;
+  color: #7bbf43;
+}
+
+/* Highlight af vigtige ord */
+.dilemma-card strong {
+  color: #3d5c3d;
+  font-weight: 700;
+}
+
+/* "Del dine tanker"-sektion */
+.dilemma-card .share-section {
+  background: rgba(213, 230, 213, 0.3);
+  border-left: 4px solid #7bbf43;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border-radius: 0.5rem;
+  font-style: italic;
+}
+
+/* Links i dilemma-kort */
+.dilemma-card a {
+  color: #3d5c3d;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.dilemma-card a:hover {
+  color: #5a8a3a;
+  text-decoration: underline;
+}
+
+/* Responsiv tilpasning */
+@media (max-width: 768px) {
+  .dilemma-card {
+    padding: 1.5rem;
+    margin: 1.5rem auto;
+  }
+  .dilemma-card h2 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Animation for indhold, der vises efter load */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dilemma-card {
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+}
+
+.dilemma-card:nth-child(1) { animation-delay: 0.1s; }
+.dilemma-card:nth-child(2) { animation-delay: 0.2s; }
+.dilemma-card:nth-child(3) { animation-delay: 0.3s; }
+.dilemma-card:nth-child(4) { animation-delay: 0.4s; }
+.dilemma-card:nth-child(5) { animation-delay: 0.5s; }
